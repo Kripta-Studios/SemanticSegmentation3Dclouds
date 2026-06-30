@@ -1,0 +1,474 @@
+{
+    "in_pcloud_concat": [
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/ceb3b39c9a035752b4fc059d1d10ec5d.las",
+			"conditions": null,
+			"center": [90, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/ced1a454c0e5fadd567f010bb1e0a2a4.las",
+			"conditions": null,
+			"center": [90, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/ceeb38ab7929361e76ec14627bf6bbcb.las",
+			"conditions": null,
+			"center": [90, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/cf8fe702232541376e5c3f959847ffe.las",
+			"conditions": null,
+			"center": [95, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/cff4276a47f1a4e29d5aeb7097eddbda.las",
+			"conditions": null,
+			"center": [95, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d04de9ffdb1f36c1deef0cfd16bc41f6.las",
+			"conditions": null,
+			"center": [95, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d179811d0522500f881796c365ec5f7e.las",
+			"conditions": null,
+			"center": [95, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d1c757548ead4a4d8d03ca4865da5b6.las",
+			"conditions": null,
+			"center": [95, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d23341ca5eb721abefafd451049df010.las",
+			"conditions": null,
+			"center": [95, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d243969f5010c6c29b5844aa8fc56c71.las",
+			"conditions": null,
+			"center": [95, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d3ba7967cea5550405f236096897d.las",
+			"conditions": null,
+			"center": [95, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d4be83e3062bfe9086bbb74f0f607cdd.las",
+			"conditions": null,
+			"center": [95, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d5167211e757e79f012465c621a63e3.las",
+			"conditions": null,
+			"center": [95, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d5f29a19d7523c8df1f105747d69ebcd.las",
+			"conditions": null,
+			"center": [95, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d61a5fa6dc3f703613abf93d1c879c43.las",
+			"conditions": null,
+			"center": [95, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d63521a0dfac9c1f342494fa6f09f376.las",
+			"conditions": null,
+			"center": [95, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d68ad03780e0e08ee527a71b8fef8ccf.las",
+			"conditions": null,
+			"center": [95, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d6924db1f51953eecaecbfc7057f661f.las",
+			"conditions": null,
+			"center": [95, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d69e028056c9291069654277b747a908.las",
+			"conditions": null,
+			"center": [95, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d6e9e4e07bafca0fa37f3fc191551700.las",
+			"conditions": null,
+			"center": [95, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d78c656d1847b92ddadc002e53eaf226.las",
+			"conditions": null,
+			"center": [95, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d7cd204b24ccfc99baa86a06fa108e26.las",
+			"conditions": null,
+			"center": [100, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/d9a9c77250224c5c9037640567c760d8.las",
+			"conditions": null,
+			"center": [100, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/da94bafd8b3ea6a6a6e0c365eca0e86d.las",
+			"conditions": null,
+			"center": [100, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/dac1fc01fb44b2b9cb7078d644842b01.las",
+			"conditions": null,
+			"center": [100, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/daf2098f026e292c152b5e07600b5ea7.las",
+			"conditions": null,
+			"center": [100, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/db13421379091e50e0b68f51ad1c0011.las",
+			"conditions": null,
+			"center": [100, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/db33d647c8e9c8f9aa19ff1f7032d4a0.las",
+			"conditions": null,
+			"center": [100, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/db7be6ac02bf5e48e2bb19fbad3e4596.las",
+			"conditions": null,
+			"center": [100, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/dce941899bcb752dfe474f09e3f3ac9a.las",
+			"conditions": null,
+			"center": [100, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/dd2173371e7d5f83e255124126c8e640.las",
+			"conditions": null,
+			"center": [100, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/dde6b5fad601b25e80b72a37a25b7e72.las",
+			"conditions": null,
+			"center": [100, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/de62211649b4cced49384f9741ad64d8.las",
+			"conditions": null,
+			"center": [100, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/de69d6441bbf8d39230a4d129580843a.las",
+			"conditions": null,
+			"center": [100, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/debbbf239d59d8724662dc124dd336ed.las",
+			"conditions": null,
+			"center": [100, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/decf7a4989469d3289eec1cc60f7c002.las",
+			"conditions": null,
+			"center": [100, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/df0a8c7d1629313915538488147db324.las",
+			"conditions": null,
+			"center": [100, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/df1d7bc513c304c3196b7bf084026530.las",
+			"conditions": null,
+			"center": [100, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/df6ce028a9a0d8178bcec9d54ae64e9.las",
+			"conditions": null,
+			"center": [100, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/df7a65224f295122ed9c5b25fef60d04.las",
+			"conditions": null,
+			"center": [105, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/dfabed4f151870eb4bd26ac3bc3791a7.las",
+			"conditions": null,
+			"center": [105, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e03a2ab2b6506ca0ef1f81f15fbe736c.las",
+			"conditions": null,
+			"center": [105, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e0a78d771cfde145a5cea7e40e4d21ff.las",
+			"conditions": null,
+			"center": [105, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e199629e24c10052ed9c5b25fef60d04.las",
+			"conditions": null,
+			"center": [105, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e2a838d9c35af903e332fb3cb6ebe50.las",
+			"conditions": null,
+			"center": [105, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e2cd287563f26e3eef1f81f15fbe736c.las",
+			"conditions": null,
+			"center": [105, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e31978ce34a288461b22d29e47ec3f2.las",
+			"conditions": null,
+			"center": [105, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e355bd01c8bacaa53630ed68aee4bf94.las",
+			"conditions": null,
+			"center": [105, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e43c5d6241344913c40c6b891c4913bd.las",
+			"conditions": null,
+			"center": [105, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e47774ba19c5aa99988abef1fd117e7.las",
+			"conditions": null,
+			"center": [105, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e4f610f36ba3c6f69246ea0301684d80.las",
+			"conditions": null,
+			"center": [105, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e5bc92012784d89592cea77f96988ae6.las",
+			"conditions": null,
+			"center": [105, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e688f0697b9a970c6402b8f491cd92c7.las",
+			"conditions": null,
+			"center": [105, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e6b32b3c927a7fbeae29387f6eb32067.las",
+			"conditions": null,
+			"center": [105, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e6b5462b34d8809529b0445cdc28e4cd.las",
+			"conditions": null,
+			"center": [105, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e6d18d45abd40a22e5ae31c6c631a39.las",
+			"conditions": null,
+			"center": [105, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e6e452eb238659f61ce93adae4bc9483.las",
+			"conditions": null,
+			"center": [105, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e79481b2fde3a3ab340fbf70397ab69a.las",
+			"conditions": null,
+			"center": [110, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e8a6915bd0bcf1bebaa284808a1567a8.las",
+			"conditions": null,
+			"center": [110, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e9280056548518c0ce7c7b3554aba2f8.las",
+			"conditions": null,
+			"center": [110, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/e98bc872371c852e15b040d25222e627.las",
+			"conditions": null,
+			"center": [110, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/ea2a14aa25e34566ed60d0c28bcebc7c.las",
+			"conditions": null,
+			"center": [110, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/eaffd07694c11b20afc61ad0921c25e.las",
+			"conditions": null,
+			"center": [110, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/ebfb56c4968055e794581d435607029.las",
+			"conditions": null,
+			"center": [110, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/ec1eb959cc203f1de5a365227cfe63ec.las",
+			"conditions": null,
+			"center": [110, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/ee0b4054d8b40ba5812bade9b93f0eaa.las",
+			"conditions": null,
+			"center": [110, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/ee7ced71701c3e88b9e3f0d9deebf307.las",
+			"conditions": null,
+			"center": [110, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/eeb6322ec7492375bef48d9603e8869b.las",
+			"conditions": null,
+			"center": [110, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/eef74fec4fd6537f89145655be527428.las",
+			"conditions": null,
+			"center": [110, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/ef0dd0f2af9869325867e536d32c89f6.las",
+			"conditions": null,
+			"center": [110, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/efbe696985dcb81ae3912d46f2dbb69d.las",
+			"conditions": null,
+			"center": [110, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/f0402647fd0236f999abe44c28bf45e.las",
+			"conditions": null,
+			"center": [110, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/f19fe19693937db1cb03b57fca000b1f.las",
+			"conditions": null,
+			"center": [110, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/f316283f7b179d69faf4eb5f62ee440.las",
+			"conditions": null,
+			"center": [110, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/f4dc11f89dd2d21eccd82bb51193a7f.las",
+			"conditions": null,
+			"center": [110, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/f5abb706dd1c1e931fc43d5b32fa230f.las",
+			"conditions": null,
+			"center": [115, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/f639cff54b955a9b39c78a1e40e247f3.las",
+			"conditions": null,
+			"center": [115, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/faa118fc5de302338ba8cbbd590b1b6b.las",
+			"conditions": null,
+			"center": [115, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/fb1f385d487d13d7aa0079d6fb0f853c.las",
+			"conditions": null,
+			"center": [115, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/fba0688dcfa8e2d6b9db80316f5d0ba3.las",
+			"conditions": null,
+			"center": [115, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/fbce3be99b20b169f1ae0a5e4119d01e.las",
+			"conditions": null,
+			"center": [115, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/fc40e3685a99eff084db38829945aab.las",
+			"conditions": null,
+			"center": [115, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/fca703c2489237d51b44a9962207f944.las",
+			"conditions": null,
+			"center": [115, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/fe975241a968467ac3669fe98cc0dfc0.las",
+			"conditions": null,
+			"center": [115, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Knife/val/ff949d2335a226fde1c0dc67e69df88e.las",
+			"conditions": null,
+			"center": [115, 45, 0]
+		}
+    ],
+	"out_pcloud": "/ext4/lidar_data/shapenet/vl3d/out/knife/fixed/order1/*",
+	"sequential_pipeline": [
+        {
+            "predict": "PredictivePipeline",
+            "model_path": "/ext4/lidar_data/shapenet/vl3d/out/knife/fixed/order1/model/rf.pipe",
+            "nn_path": null
+        },
+        {
+			"writer": "ClassifiedPcloudWriter",
+			"out_pcloud": "*/predicted.las"
+		},
+        {
+            "eval": "ClassificationEvaluator",
+            "class_names": ["handle", "blade", "other"],
+            "ignore_classes": ["other"],
+            "ignore_predictions": true,
+            "metrics": ["OA", "P", "R", "F1", "IoU", "wP", "wR", "wF1", "wIoU", "MCC", "Kappa"],
+            "class_metrics": ["P", "R", "F1", "IoU"],
+            "report_path": "*/eval/report/global_eval.log",
+            "class_report_path": "*/eval/report/class_eval.log",
+            "confusion_matrix_report_path" : "*/eval/report/confusion_matrix.log",
+            "confusion_matrix_plot_path" : "*/eval/plot/confusion_matrix.svg",
+            "confusion_matrix_normalization_strategy": "row",
+            "class_distribution_report_path": "*/eval/report/class_distribution.log",
+            "class_distribution_plot_path": "*/eval/plot/class_distribution.svg",
+            "nthreads": -1
+        },
+		{
+		    "eval": "ClassificationUncertaintyEvaluator",
+		    "class_names": ["handle", "blade", "other"],
+		    "ignore_classes": ["other"],
+		    "include_probabilities": true,
+		    "include_weighted_entropy": false,
+		    "include_clusters": false,
+		    "weight_by_predictions": false,
+		    "num_clusters": 0,
+		    "clustering_max_iters": 0,
+		    "clustering_batch_size": 0,
+		    "clustering_entropy_weights": false,
+		    "clustering_reduce_function": null,
+		    "gaussian_kernel_points": 256,
+		    "report_path": "*/uncertainty/uncertainty.las",
+		    "plot_path": "*/uncertainty/"
+		}
+    ]
+}

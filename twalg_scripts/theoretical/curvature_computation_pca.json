@@ -1,0 +1,51 @@
+{
+  "in_pcloud": [  	
+	"/ext4/lidar_data/math/geomfeats2nd/cat_h1_3_a1_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/elc_h1_5_a0_6_b0_5_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/ell_a1_3_b1_1_c0_9_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/hpa_h1_a0_6_b0_9_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/osh_a0_5_b0_75_c1_25_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/sph_r1_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/tor_r0_5_R1_0_vl3d.las"
+  ],
+  "out_pcloud": [  	
+	"/ext4/lidar_data/math/geomfeats2nd/cat_h1_3_a1_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/elc_h1_5_a0_6_b0_5_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/ell_a1_3_b1_1_c0_9_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/hpa_h1_a0_6_b0_9_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/osh_a0_5_b0_75_c1_25_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/sph_r1_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/tor_r0_5_R1_0_vl3d.las"
+  ],
+  "sequential_pipeline": [
+    {
+      "miner": "GeometricFeaturesPP",
+      "first_order_strategy": "pca",
+      "second_order_strategy": "pca_bias",
+      "idw_p": 0,
+      "idw_eps": 11,
+    "  foc_K": 0,
+    "  foc_sigma": 3.14159265358979323846264338327950288419716939937510,
+      "neighborhood": {
+        "type": "sphere",
+        "radius": 0.4,
+        "k": 1024,
+        "lower_bound": 0,
+    	"upper_bound": 0
+      },
+      "fnames": [
+        "gauss_curv_full", "mean_curv_full", 
+        "full_maxabscurv", "full_minabscurv",
+        "full_umbilic_dev", "full_shape_index"
+      ],
+      "frenames": [
+        "gauss_curv_pca", "mean_curv_pca", 
+        "maxabscurv_pca", "minabscurv_pca",
+        "umbilic_dev_pca", "shpidx_pca"
+      ],
+      "non_degenerate_eigenthreshold": 0.00001,
+      "tikhonov_parameter": 0.0000001,
+      "nthreads": -1
+    }
+  ]
+}

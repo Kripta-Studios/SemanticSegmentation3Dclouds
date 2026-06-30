@@ -1,0 +1,20 @@
+data:
+  blocks_dir: data/processed/galicia_blocks_mixed_tw
+  use_tw_input: false
+  max_train_blocks: 0
+  max_val_blocks: 0
+
+training:
+  epochs: 80
+  batch_size: 24
+  num_workers: 8
+  learning_rate: 0.0003
+  sigreg_weight: 0.1
+  sigreg_slices: 256
+  tw_target: true
+
+masking:
+  type: spatial_block
+
+output:
+  dir: outputs/tw_jepa

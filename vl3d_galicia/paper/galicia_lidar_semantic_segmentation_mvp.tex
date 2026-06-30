@@ -1,0 +1,545 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=2.15cm]{geometry}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{caption}
+
+\definecolor{evoblue}{HTML}{1769E0}
+\definecolor{evogreen}{HTML}{16824A}
+\definecolor{evodark}{HTML}{18212B}
+\definecolor{evosoft}{HTML}{5A6775}
+\definecolor{evogray}{HTML}{F1F5F9}
+\definecolor{evowarn}{HTML}{BF6B00}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=evoblue,
+  urlcolor=evoblue,
+  citecolor=evoblue,
+  pdftitle={Airborne LiDAR Semantic Segmentation with Robust Local Geometric Context},
+  pdfauthor={EVOCON Research Group}
+}
+
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{EVOCON Research Group}
+\rhead{Airborne LiDAR Segmentation MVP}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\titleformat{\section}{\Large\bfseries\color{evodark}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{evodark}}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{evodark}}{\thesubsubsection}{0.6em}{}
+
+\setlist[itemize]{leftmargin=1.45em,itemsep=0.25em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.55em,itemsep=0.25em,topsep=0.35em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\renewcommand{\arraystretch}{1.16}
+
+\newcommand{\pp}{\,pp}
+\newcommand{\modelinternal}{\texttt{geom\_concat\_h256\_balancedval}}
+\newcommand{\modelrobust}{\texttt{geom\_robustnorm\_cb20k\_seed42}}
+\newcommand{\good}[1]{\textcolor{evogreen}{\textbf{#1}}}
+\newcommand{\caution}[1]{\textcolor{evowarn}{\textbf{#1}}}
+
+\title{\textbf{Airborne LiDAR Semantic Segmentation with Label-Free Local Geometric Context, Robust Normalization, and External Geographic Validation}\\[0.45em]
+\large Technical state and commercial MVP report}
+\author{EVOCON Research Group}
+\date{June 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report describes the updated technical state of an airborne LiDAR semantic-segmentation and forest-intelligence minimum viable product. The deployable core is a supervised point-wise model enhanced with label-free multi-scale geometric context, Taubin--Weingarten-inspired descriptors, robust coordinate and spectral normalization, focal loss, and class-balanced training. Two models are retained for different objectives. The original local-context model remains the internal macro-F1 and mean-IoU leader, reaching 86.49\% overall accuracy, 82.60\% macro-F1, and 72.63\% mean IoU. A robustness-oriented model trained on 20,000 balanced blocks reaches 86.71\% overall accuracy, 82.48\% macro-F1, and 72.50\% mean IoU internally while generalizing substantially better to geographically separate data. On a fresh, tile-disjoint external holdout, the robust model reaches 83.27\% overall accuracy, 61.80\% macro-F1, and 50.98\% mean IoU, improving a strong TW baseline by 5.94, 10.42, and 10.35 percentage points respectively. The model improves all six class IoUs against that baseline. Water and building support are sparse in the fresh holdout, so absolute external claims for those classes require a more representative dataset. Geo-JEPA and TW-JEPA remain implemented research tracks rather than the source of the strongest current downstream result. The product currently delivers GIS-ready semantic layers, point-cloud exports, forest proxies, anomaly candidates, and auditable evaluation reports.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Executive Summary}
+
+The project converts airborne LiDAR point clouds into operational land-cover and forest-intelligence outputs. Its six semantic classes are:
+
+\begin{enumerate}
+  \item ground;
+  \item low vegetation;
+  \item medium vegetation;
+  \item high vegetation;
+  \item building;
+  \item water.
+\end{enumerate}
+
+The current product should be described as:
+
+\begin{quote}
+A supervised airborne LiDAR semantic-segmentation and forest-intelligence platform enhanced with label-free local geometry and robust normalization, with strong internal performance and demonstrated improvement over a strong baseline on a separate geographic holdout.
+\end{quote}
+
+The project now has two relevant model references:
+
+\begin{itemize}
+  \item \textbf{Internal macro-F1 and mIoU leader:} \modelinternal.
+  \item \textbf{Deployment and geographic-generalization candidate:} \modelrobust.
+\end{itemize}
+
+The distinction is important. The first model has the highest internal macro-F1 and mIoU. The second keeps almost the same internal quality, obtains the highest internal overall accuracy, and performs materially better under geographic and sensor-domain shift.
+
+\section{Business Motivation}
+
+Airborne LiDAR provides explicit 3D measurements of terrain, vegetation, buildings, and water. Regional surveys, however, may contain hundreds of millions or billions of points. Manual interpretation is slow, expensive, difficult to reproduce, and poorly suited to repeated monitoring.
+
+The commercial value is not merely point classification. The system turns raw point clouds into:
+
+\begin{itemize}
+  \item classified point-cloud layers;
+  \item GIS-ready terrain, vegetation, building, and water maps;
+  \item forest structure and canopy proxies;
+  \item anomaly and disagreement candidates;
+  \item prioritized review areas;
+  \item reproducible metrics and technical reports.
+\end{itemize}
+
+A customer can begin with a bounded pilot on one area and one operational use case. The result is a measurable decision about scaling, rather than a large up-front platform commitment.
+
+\section{Current Product Scope}
+
+\subsection{Deployable segmentation core}
+
+The deployable route combines:
+
+\begin{itemize}
+  \item supervised point-wise segmentation;
+  \item Taubin--Weingarten-inspired surface descriptors;
+  \item a 56-dimensional label-free geometric-context cache;
+  \item local statistics at 2.5 m, 5 m, and 10 m;
+  \item focal loss;
+  \item inverse-square-root class weighting;
+  \item class-balanced block sampling;
+  \item robust coordinate and spectral normalization.
+\end{itemize}
+
+The local-context cache declares \texttt{uses\_labels=false}. It is derived from coordinates, raw point features, and TW descriptors, not from ground-truth labels or test predictions.
+
+\subsection{Geo-JEPA research track}
+
+Geo-JEPA is the self-supervised research direction. Its intended task hides spatial regions and predicts latent target representations from visible context. Implemented components include:
+
+\begin{itemize}
+  \item LiDAR/PNOA data loaders and COL/CIR pairing;
+  \item spatial masking;
+  \item GeoPointJEPA;
+  \item TW-JEPA auxiliary prediction;
+  \item latent embedding prediction;
+  \item SIGReg-style regularization;
+  \item frozen, semi-frozen, and fine-tuned downstream evaluation.
+\end{itemize}
+
+Frozen JEPA encoders did not beat the strongest supervised routes. Geo-JEPA therefore remains a research track for future pretraining, domain adaptation, and uncertainty-aware representation learning.
+
+\subsection{Forest intelligence layer}
+
+The forest-facing layer derives operational indicators from semantic predictions and LiDAR geometry:
+
+\begin{itemize}
+  \item vegetation ratio;
+  \item high-vegetation ratio;
+  \item forest-core ratio;
+  \item canopy-cover proxy;
+  \item canopy-height proxy;
+  \item canopy-gap flags;
+  \item per-cell and per-tile metrics;
+  \item rule-based anomaly candidates.
+\end{itemize}
+
+These outputs are practical proxies. They are not certified biomass estimates, species classifications, or verified temporal-change measurements.
+
+\section{Data and Experimental Protocol}
+
+\subsection{Internal data}
+
+The internal development pipeline uses airborne LiDAR data with XYZ coordinates, RGB/CIR/NIR information, laser intensity, classification labels, and TW descriptors. The original strongest local-context run used 12,000 class-balanced training blocks, 2,000 class-balanced validation blocks, and the full 34,577-block internal test split.
+
+The internal test split was not truncated for the reported main result. Train and validation selection were balanced to provide meaningful support for minority classes, especially buildings and low/medium vegetation.
+
+\subsection{Robust training configuration}
+
+The deployment-oriented model \modelrobust{} uses:
+
+\begin{itemize}
+  \item 20,000 class-balanced training blocks;
+  \item 4,000 class-balanced validation blocks;
+  \item 56 external geometric-context channels;
+  \item TW input features;
+  \item \texttt{coordinate\_normalization=xy\_unit\_z\_robust};
+  \item \texttt{spectral\_normalization=block\_robust};
+  \item robust normalization of external spectral context;
+  \item focal loss and class-balanced sampling;
+  \item 35 requested epochs and 33 completed epochs;
+  \item early stopping;
+  \item best validation macro-F1 of 0.816798.
+\end{itemize}
+
+\subsection{External development benchmark}
+
+The first external CAT-32 set contains 32 geographically separate \texttt{CAT-2016} COL/CIR tile pairs:
+
+\begin{itemize}
+  \item 48,696 blocks;
+  \item 119,005,770 points;
+  \item all six semantic classes;
+  \item Galicia campaign prefixes excluded;
+  \item training-pipeline TW normalization reused;
+  \item geometric context generated without labels.
+\end{itemize}
+
+This set was initially used as an external evaluation set. It was subsequently used to diagnose domain shift and choose the robust-normalization strategy. It is therefore reported as an \textbf{external development and robustness benchmark}, not as the final untouched holdout.
+
+\subsection{Fresh tile-disjoint external holdout}
+
+A second set was selected without tile overlap with the external development benchmark:
+
+\begin{itemize}
+  \item 32 \texttt{CAT-2016} tiles;
+  \item 49,853 blocks;
+  \item 130,588,254 points;
+  \item 51.76\% ground;
+  \item 8.80\% low vegetation;
+  \item 10.51\% medium vegetation;
+  \item 28.07\% high vegetation;
+  \item 0.80\% building;
+  \item 0.064\% water.
+\end{itemize}
+
+This holdout is geographically separate and tile-disjoint from the first CAT-32 set. It is the strongest current evidence of out-of-region generalization. Its main limitation is inadequate support for water and limited support for buildings.
+
+\section{Feature Representation}
+
+\subsection{Taubin--Weingarten descriptors}
+
+TW descriptors provide physically meaningful local surface information. In the supervised route, they expose shape and curvature cues beyond raw XYZ and color values. This is useful for separating flat roofs, continuous terrain, irregular vegetation, and local boundaries.
+
+\subsection{Multi-scale local geometric context}
+
+The geometric-context cache contains 56 features derived at 2.5 m, 5 m, and 10 m scales. Signals include:
+
+\begin{itemize}
+  \item point density and local counts;
+  \item local height range and relative height;
+  \item coordinate summaries;
+  \item intensity and color summaries;
+  \item NIR and NDVI-like cues when available;
+  \item TW summaries and local surface statistics.
+\end{itemize}
+
+The intuition is straightforward. A single high point may be ambiguous, but an irregular high neighborhood is likely a tree crown, while a flat rectangular neighborhood is more likely a roof.
+
+\subsection{Robust normalization}
+
+The first local-context model remained strong internally but degraded under external domain shift. The corrected route reduces sensitivity to region-specific photometric and height distributions by using robust within-block normalization for coordinates and spectral channels.
+
+\section{Internal Results}
+
+\subsection{Best internal macro-F1 and mIoU run}
+
+Table~\ref{tab:internal-main} compares the original internal baseline with \modelinternal.
+
+\begin{table}[ht]
+\centering
+\caption{Internal test metrics for the original baseline and best internal mIoU run.}
+\label{tab:internal-main}
+\begin{tabular}{lrrr}
+\toprule
+Metric & Original baseline & Local-context model & Delta \\
+\midrule
+Overall accuracy & 83.03\% & 86.49\% & \good{+3.45\pp} \\
+Macro-F1 & 74.82\% & 82.60\% & \good{+7.78\pp} \\
+Mean IoU & 63.49\% & 72.63\% & \good{+9.14\pp} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:internal-class-old} shows that all six class IoUs improve.
+
+\begin{table}[ht]
+\centering
+\caption{Per-class internal IoU improvement for the best internal mIoU run.}
+\label{tab:internal-class-old}
+\begin{tabular}{lrrr}
+\toprule
+Class & Baseline IoU & Best IoU & Delta \\
+\midrule
+Ground & 72.63\% & 75.60\% & \good{+2.97\pp} \\
+Low vegetation & 33.54\% & 44.39\% & \good{+10.85\pp} \\
+Medium vegetation & 40.70\% & 53.29\% & \good{+12.59\pp} \\
+High vegetation & 91.06\% & 94.74\% & \good{+3.69\pp} \\
+Building & 45.75\% & 69.88\% & \good{+24.13\pp} \\
+Water & 97.26\% & 97.88\% & \good{+0.62\pp} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Three-seed stability}
+
+\begin{table}[ht]
+\centering
+\caption{Three-seed internal stability of the original local-context configuration.}
+\label{tab:seeds}
+\begin{tabular}{lrrr}
+\toprule
+Run & OA & Macro-F1 & mIoU \\
+\midrule
+Seed 42 & 86.49\% & 82.60\% & 72.63\% \\
+Seed 1337 & 85.92\% & 82.00\% & 71.87\% \\
+Seed 2026 & 84.61\% & 79.97\% & 69.52\% \\
+\midrule
+Mean & 85.67\% & 81.52\% & 71.34\% \\
+Worst run & 84.61\% & 79.97\% & 69.52\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All three seeds were positive against the original internal baseline and improved the tracked class IoUs.
+
+\subsection{Robust deployment candidate}
+
+The robust model reaches 86.71\% overall accuracy, 82.48\% macro-F1, and 72.50\% mIoU internally. It has the highest internal overall accuracy and nearly matches the original mIoU leader.
+
+\begin{table}[ht]
+\centering
+\caption{Internal per-class metrics for the robust deployment candidate.}
+\label{tab:robust-internal}
+\begin{tabular}{lrrrr}
+\toprule
+Class & Precision & Recall & F1 & IoU \\
+\midrule
+Ground & 83.72\% & 89.86\% & 86.68\% & 76.49\% \\
+Low vegetation & 67.98\% & 55.36\% & 61.02\% & 43.91\% \\
+Medium vegetation & 64.72\% & 73.96\% & 69.03\% & 52.71\% \\
+High vegetation & 98.79\% & 95.63\% & 97.19\% & 94.53\% \\
+Building & 76.01\% & 89.05\% & 82.01\% & 69.51\% \\
+Water & 98.55\% & 99.29\% & 98.92\% & 97.86\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{External Geographic Validation}
+
+\subsection{External development benchmark}
+
+Table~\ref{tab:cat32-dev} reports the first CAT-32 external benchmark. The robust model improves all six class IoUs against the strong TW baseline.
+
+\begin{table}[ht]
+\centering
+\caption{External development benchmark on the first CAT-32 set.}
+\label{tab:cat32-dev}
+\begin{tabular}{lrrrr}
+\toprule
+Model & OA & Macro-F1 & mIoU & Delta mIoU \\
+\midrule
+Strong TW baseline & 72.60\% & 63.99\% & 49.45\% & -- \\
+Robust local-context & 80.83\% & 73.42\% & 60.41\% & \good{+10.96\pp} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The corresponding gains are +8.23 percentage points in overall accuracy, +9.43 points in macro-F1, and +10.96 points in mean IoU.
+
+\subsection{Fresh disjoint external holdout}
+
+Table~\ref{tab:fresh-global} reports the fresh holdout. The robust model improves every global metric and all six class IoUs against the strong baseline.
+
+\begin{table}[ht]
+\centering
+\caption{Global metrics on the fresh tile-disjoint external holdout.}
+\label{tab:fresh-global}
+\begin{tabular}{lrrrr}
+\toprule
+Model & OA & Macro-F1 & mIoU & mIoU excl. water \\
+\midrule
+Strong TW baseline & 77.33\% & 51.38\% & 40.62\% & 48.33\% \\
+Robust local-context & 83.27\% & 61.80\% & 50.98\% & 60.62\% \\
+\midrule
+Delta & \good{+5.94\pp} & \good{+10.42\pp} & \good{+10.35\pp} & \good{+12.29\pp} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Per-class IoU on the fresh external holdout.}
+\label{tab:fresh-class}
+\begin{tabular}{lrrr}
+\toprule
+Class & Strong baseline & Robust model & Delta \\
+\midrule
+Ground & 73.43\% & 79.97\% & \good{+6.54\pp} \\
+Low vegetation & 21.23\% & 27.70\% & \good{+6.47\pp} \\
+Medium vegetation & 47.28\% & 56.46\% & \good{+9.18\pp} \\
+High vegetation & 81.93\% & 88.47\% & \good{+6.54\pp} \\
+Building & 17.80\% & 50.50\% & \good{+32.70\pp} \\
+Water & 2.09\% & 2.77\% & \good{+0.68\pp} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The improvement is operationally meaningful, but the class composition must be interpreted carefully. Water represents only 0.064\% of reliable points and buildings 0.80\%. The external water IoU is therefore not representative enough for a strong absolute customer claim. An additional external set with meaningful water and building support is required.
+
+\section{Domain-Shift Analysis}
+
+The degradation of the first local-context model outside the original region was not explained solely by insufficient model capacity. The external campaign differs substantially in photometry, elevation range, density, and class priors.
+
+Key observations include:
+
+\begin{itemize}
+  \item mean NIR changed from 0.5050 internally to 0.2955 externally;
+  \item NIR Jensen--Shannon divergence was 0.2420;
+  \item mean block z-range changed from 16.99 to 61.58;
+  \item z-range p95 changed from 42.54 to 423.26;
+  \item class proportions changed substantially across regions.
+\end{itemize}
+
+The most effective correction was the combination of robust normalization, label-free local geometry, and genuine class-balanced selection over 20,000 training blocks. Strong spectral augmentation and metric-height variants did not outperform this configuration.
+
+\section{JEPA and Image-Foundation-Model Findings}
+
+\subsection{Geo-JEPA and TW-JEPA}
+
+The repository contains working self-supervised components, but frozen downstream JEPA models remained below the strong supervised baseline. The current product should therefore not be represented as a self-supervised JEPA winner.
+
+The most promising future JEPA direction is to place self-supervised prediction over a stronger local/contextual 3D backbone and evaluate frozen, semi-frozen, and target-domain adaptation settings under a new untouched holdout.
+
+\subsection{DINOv2}
+
+DINOv2 dense features were fused with LiDAR/TW inputs. Direct concatenation and gated residual fusion were both negative against the strong LiDAR baseline. DINOv2 is therefore not a current product improvement.
+
+\subsection{DINOv3 and V-JEPA-style extensions}
+
+Potential future experiments include:
+
+\begin{itemize}
+  \item aerial or satellite DINOv3 late fusion;
+  \item teacher distillation into the 3D model;
+  \item auxiliary raster decoding;
+  \item dense predictive losses over point and raster tokens;
+  \item multi-date predictive modeling when aligned temporal data exists.
+\end{itemize}
+
+\section{Forest Analytics and GIS Deliverables}
+
+\subsection{Forest proxies}
+
+The forest layer can compute:
+
+\begin{itemize}
+  \item point counts and height statistics;
+  \item vegetation, high-vegetation, and medium-high ratios;
+  \item canopy-cover proxies;
+  \item canopy-height proxies;
+  \item canopy-gap flags;
+  \item dominant class and per-cell error fields;
+  \item rule-based anomaly candidates.
+\end{itemize}
+
+When a local ground proxy is available, canopy height is estimated from vegetation z95 relative to local ground. Otherwise, a conservative z95-minus-zmin fallback is used. This must remain documented as a proxy.
+
+\subsection{Customer deliverables}
+
+A pilot or deployment can deliver:
+
+\begin{itemize}
+  \item classified and colored LAZ files;
+  \item terrain, vegetation, building, and water layers;
+  \item CSV, raster, or GeoPackage-style grids;
+  \item forest proxy maps;
+  \item anomaly and model-disagreement maps;
+  \item overall and class-level metrics;
+  \item confusion matrices;
+  \item technical and executive reports;
+  \item a prioritized review queue.
+\end{itemize}
+
+Outputs can be integrated with QGIS, ArcGIS, PostGIS, GeoServer, internal viewers, or customer APIs.
+
+\section{Commercial Deployment Path}
+
+A low-risk commercial path is:
+
+\begin{enumerate}
+  \item \textbf{Discover:} select one territory and one operational objective.
+  \item \textbf{Prepare:} audit LiDAR, reference maps, identifiers, and output requirements.
+  \item \textbf{Pilot:} process a representative sample and deliver maps and metrics.
+  \item \textbf{Validate:} review representative zones with GIS or field experts.
+  \item \textbf{Scale:} run tiled inference and merge outputs for a larger territory.
+  \item \textbf{Operate:} monitor data quality, model drift, and future survey updates.
+\end{enumerate}
+
+The product's commercial promise is operational acceleration: less manual mapping, faster review, consistent geographic layers, and measurable evidence before full integration.
+
+\section{Limitations}
+
+The current limitations are:
+
+\begin{itemize}
+  \item the deployable winner is supervised rather than a self-supervised JEPA model;
+  \item low vegetation remains the weakest class;
+  \item the fresh external holdout has insufficient water support and limited building support;
+  \item calibrated uncertainty is not yet a completed production component;
+  \item complete production-scale tiled inference and merging still require hardening;
+  \item forest outputs are proxies rather than certified inventory variables;
+  \item true temporal change detection requires aligned multi-date data;
+  \item a modern strong local 3D backbone has not yet been reproduced under the same complete protocol.
+\end{itemize}
+
+These limitations do not invalidate the current MVP. They define the correct scope for a paid technical pilot and the evidence required for broader claims.
+
+\section{Recommended Next Steps}
+
+\begin{enumerate}
+  \item obtain another external holdout with meaningful water and building support;
+  \item benchmark an efficient local 3D backbone such as a RandLA-, Point-Transformer-, KPConv-, or Superpoint-Transformer-style model;
+  \item add calibrated confidence and uncertainty outputs;
+  \item productionize tiled inference, merging, and GIS packaging;
+  \item validate forest proxies against authoritative or field measurements;
+  \item continue Geo-JEPA over the robust local-context backbone;
+  \item document any unlabeled target-domain adaptation as transductive domain adaptation and retain another untouched holdout;
+  \item add multi-date analysis only when aligned temporal surveys are available.
+\end{enumerate}
+
+\section{Conclusion}
+
+The project has moved beyond an internal-only LiDAR experiment. It now has:
+
+\begin{itemize}
+  \item a strong internal segmentation result;
+  \item a robustness-oriented deployment candidate;
+  \item a diagnosed and corrected domain-shift problem;
+  \item clear improvement over a strong baseline on a fresh geographic holdout;
+  \item GIS-ready outputs and forest analytics;
+  \item a transparent distinction between deployable supervised performance and the ongoing Geo-JEPA research track.
+\end{itemize}
+
+The strongest concise statement is:
+
+\begin{quote}
+This MVP turns airborne LiDAR into GIS-ready land-cover maps, forest indicators, and prioritized review areas. Its robust supervised model combines label-free local geometry with domain-aware normalization and demonstrates clear improvement over a strong baseline on geographically separate, tile-disjoint data.
+\end{quote}
+
+\end{document}

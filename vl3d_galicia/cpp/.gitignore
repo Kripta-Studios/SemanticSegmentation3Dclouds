@@ -1,0 +1,11 @@
+# ----------------------------- #
+# ---   VL3D++ .gitignore   --- #
+# ----------------------------- #
+build/
+build-debug/
+lib/*
+!lib/*.sh
+pybind11/*
+CMakeFiles
+CMakeCache.txt
+_deps

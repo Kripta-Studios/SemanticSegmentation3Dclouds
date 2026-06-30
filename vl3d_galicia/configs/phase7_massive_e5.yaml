@@ -1,0 +1,53 @@
+# Phase 7: Massive E5 (TW-JEPA) Pipeline Configuration for CESGA Finisterrae III
+# Hardware Target: 1x NVIDIA A100 (40GB VRAM), 32 CPUs, 128GB RAM
+
+data:
+  blocks_dir: "data/processed/galicia_blocks_mixed"
+  train_split: "train"
+  val_split: "val"
+  test_split: "test"
+  
+  # Usamos -1 para indicar que queremos usar TODOS los bloques disponibles de los 16GB
+  max_train_blocks: -1
+  max_val_blocks: -1
+  max_test_blocks: -1
+  
+  points_per_block: 8192
+  
+  ignore_index: 6
+  
+  # Usamos class_weights debido al enorme desbalance natural (mucha vegetación, pocos edificios)
+  loss_type: "class_weights"
+  use_balanced_sampler: false
+
+training:
+  epochs: 100
+  
+  # OPTIMIZACIÓN A100 (40GB VRAM): 
+  # Dado que las nubes son de 8192 puntos, un batch size de 64 o 128 llenará bien la VRAM.
+  # Empezamos con 64 para asegurar que los gradientes de JEPA y el Backbone no hagan OOM.
+  batch_size: 64
+  
+  learning_rate: 0.0005
+  weight_decay: 1e-4
+  patience: 15
+  
+  # OPTIMIZACIÓN RAM (128GB) y CPU (32 Cores):
+  # PyTorch DataLoader podrá leer muchos archivos .laz en paralelo sin colapsar la RAM.
+  num_workers: 16
+  
+  seeds: [42]
+
+models:
+  # Ejecutaremos ÚNICAMENTE la versión definitiva E5
+  E5:
+    type: "backbone"
+    # El backbone recibe (x,y,z,rgb,nir). Las features TW no se pasan como input directo,
+    # sino que el encoder JEPA ya ha aprendido a extraerlas de forma implícita y latente 
+    # durante el preentrenamiento.
+    use_tw: false 
+    jepa_features: true
+    jepa_path: "models/tw_jepa_smoke.pth"
+
+output:
+  reports_dir: "reports/phase7_massive_e5"

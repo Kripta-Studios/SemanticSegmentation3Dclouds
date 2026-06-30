@@ -1,0 +1,346 @@
+ELI5: 3D LiDAR Semantic Segmentation and Forest Intelligence MVP
+================================================================
+
+What this project is
+--------------------
+
+Imagine an aircraft flying over a landscape with a laser scanner.
+
+The scanner sends millions of laser pulses toward the ground. Every returned pulse becomes a tiny 3D point. Together, those points form a detailed three-dimensional copy of the territory.
+
+The raw points do not automatically say what they represent. This project teaches a computer to classify them as:
+
+- ground
+- low vegetation
+- medium vegetation
+- high vegetation or trees
+- buildings
+- water
+
+The simplest explanation is:
+
+    Airborne LiDAR + color + infrared + intensity
+                         |
+                         v
+              Clean 3D point blocks
+                         |
+                         v
+       Local shape, height and density context
+                         |
+                         v
+          Point-by-point AI classification
+                         |
+                         v
+        GIS maps, forest indicators and reports
+
+It is like giving the computer a giant 3D coloring book and asking it to color every point correctly.
+
+What problem it solves
+----------------------
+
+LiDAR contains a great deal of useful information, but a territory may contain hundreds of millions of points. A person cannot review and classify every point manually.
+
+Without automation, organizations face:
+
+- slow map production
+- expensive manual GIS work
+- inconsistent classification
+- confusion between roofs and tree crowns
+- difficulty separating low and medium vegetation
+- too many field visits
+- valuable LiDAR data that is never fully used
+
+The product creates an automatic first map so specialists can focus on validation and important areas instead of beginning from an empty GIS layer.
+
+How the model decides what a point is
+-------------------------------------
+
+A single point can be ambiguous.
+
+A point ten meters above the ground could be part of a tree, a roof, a tower or a measurement error. The model therefore looks at the point and its surroundings.
+
+For each point, it asks questions such as:
+
+- What exists within 2.5 meters?
+- What exists within 5 meters?
+- What exists within 10 meters?
+- Is the neighborhood flat, curved or irregular?
+- Is the area dense or sparse?
+- How high is the point relative to nearby ground?
+- Do RGB, infrared and laser-intensity values resemble vegetation, water or a roof?
+
+Example:
+
+    A high point
+        |
+        +-- irregular high neighborhood -> probably a tree crown
+        |
+        +-- flat rectangular neighborhood -> probably a roof
+        |
+        +-- isolated from nearby surfaces -> possible noise or unusual object
+
+The extra local geometric features are calculated without using class labels. The final segmentation model is then trained with labeled examples.
+
+What is currently proven
+------------------------
+
+The current production candidate is not a fully self-supervised Geo-JEPA model.
+
+The strongest deployable route is:
+
+- supervised point-wise segmentation
+- label-free local geometric context
+- Taubin-Weingarten-inspired surface features
+- robust coordinate and spectral normalization
+- focal loss
+- class-balanced training
+
+Geo-JEPA and TW-JEPA are implemented research tracks. Frozen JEPA encoders did not beat the strongest supervised models. DINOv2 fusion was also tested, but it did not improve the strong LiDAR baseline.
+
+Two useful model references
+---------------------------
+
+There are two important models because "best" depends on the objective.
+
+1. Best internal macro-F1 and mean IoU
+
+    Overall accuracy: 86.49%
+    Macro-F1:         82.60%
+    Mean IoU:         72.63%
+
+This model is the highest internal mIoU result in the current comparison.
+
+2. Best deployment and geographic-generalization candidate
+
+    Overall accuracy: 86.71%
+    Macro-F1:         82.48%
+    Mean IoU:         72.50%
+
+This model uses robust normalization and 20,000 class-balanced training blocks. It keeps almost the same internal performance while performing much better on separate geographic data.
+
+Internal class performance of the robust model
+----------------------------------------------
+
+    Ground IoU:             76.49%
+    Low vegetation IoU:     43.91%
+    Medium vegetation IoU:  52.71%
+    High vegetation IoU:    94.53%
+    Building IoU:           69.51%
+    Water IoU:              97.86%
+
+Low vegetation remains the most difficult internal class. High vegetation and water are very strong on the internal distribution.
+
+Has it been tested outside the original region?
+------------------------------------------------
+
+Yes.
+
+The model was evaluated on airborne LiDAR tiles from a geographically separate campaign.
+
+External development benchmark
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+On a 32-tile external benchmark, the robust model achieved:
+
+    Overall accuracy: 80.83%
+    Macro-F1:         73.42%
+    Mean IoU:         60.41%
+
+Compared with a strong TW baseline, it improved:
+
+    Overall accuracy: +8.23 percentage points
+    Macro-F1:         +9.43 percentage points
+    Mean IoU:         +10.96 percentage points
+
+This first external set was later used to understand domain shift and design the robust-normalization strategy, so it is best described as an external development benchmark.
+
+Fresh external holdout
+~~~~~~~~~~~~~~~~~~~~~~
+
+A second set of 32 tiles was selected with no overlap with the first external set.
+
+On this fresh holdout:
+
+    Strong baseline:
+        Overall accuracy: 77.33%
+        Macro-F1:         51.38%
+        Mean IoU:         40.62%
+
+    Robust model:
+        Overall accuracy: 83.27%
+        Macro-F1:         61.80%
+        Mean IoU:         50.98%
+
+Improvement:
+
+    Overall accuracy: +5.94 percentage points
+    Macro-F1:         +10.42 percentage points
+    Mean IoU:         +10.35 percentage points
+
+The robust model improved all six class IoUs compared with the strong baseline.
+
+Important detail about water and buildings
+------------------------------------------
+
+The fresh external holdout contains very little water and few building points:
+
+- building: 0.80% of reliable points
+- water: 0.064% of reliable points
+
+This means the comparison against the baseline is useful, but the absolute external water result is not yet representative enough for a strong customer promise. A future external dataset or customer pilot should contain meaningful water and building coverage.
+
+Why the robust model generalizes better
+---------------------------------------
+
+The original model learned some statistics that were specific to the original region and sensor campaign.
+
+The external data had different:
+
+- infrared values
+- terrain height ranges
+- point densities
+- class proportions
+
+The solution was not simply to make the neural network larger. The most effective combination was:
+
+1. robust coordinate normalization
+2. robust spectral normalization
+3. label-free local geometric context
+4. true class-balanced selection over 20,000 training blocks
+
+This preserved strong internal performance and improved external geographic generalization.
+
+What the customer receives
+--------------------------
+
+1. Classified point clouds
+
+Every point receives a semantic category.
+
+2. GIS-ready maps
+
+- ground
+- low vegetation
+- medium vegetation
+- high vegetation
+- buildings
+- water
+- vegetation density
+- canopy gaps
+- anomaly candidates
+
+3. Standard outputs
+
+- classified or colored LAZ
+- CSV grids
+- GeoPackage-style layers
+- maps and rasters
+- class metrics
+- confusion matrices
+- technical and executive reports
+
+4. A review queue
+
+The product can highlight areas that deserve human attention first, such as:
+
+- possible canopy gaps
+- building versus vegetation boundaries
+- unusual height or density patterns
+- disagreement between models
+- sparse or uncertain cells
+
+Forest intelligence layer
+-------------------------
+
+The forest-facing layer converts LiDAR classification into practical indicators:
+
+- vegetation ratio
+- high-vegetation ratio
+- forest-core ratio
+- canopy-cover proxy
+- canopy-height proxy
+- canopy-gap flags
+- rule-based anomaly candidates
+
+These are useful operational proxies. They are not certified biomass estimates, species classifications or verified temporal-change measurements.
+
+What Geo-JEPA means here
+------------------------
+
+Geo-JEPA is the research direction for learning geographic structure without requiring labels for every example.
+
+The idea is:
+
+    Show most of a 3D landscape block
+                  |
+                  v
+       Hide one spatial region
+                  |
+                  v
+    Predict the hidden representation
+                  |
+                  v
+    Learn reusable geographic structure
+
+This route is implemented and useful for continued research, especially for domain adaptation and future pretraining. It is not currently the strongest production model.
+
+How it is deployed
+------------------
+
+Phase 1 - Historical pilot
+
+The customer provides existing LiDAR, the target area and any available reference maps. The system processes a representative sample and produces maps, metrics and forest indicators.
+
+Phase 2 - Validation
+
+The customer's GIS or field team reviews representative zones. Success is measured through accuracy, correction effort, processing time and operational usefulness.
+
+Phase 3 - Full-area processing
+
+The pipeline processes all target tiles and merges the outputs into standard GIS deliverables.
+
+Phase 4 - Integration
+
+Outputs can be delivered to QGIS, ArcGIS, PostGIS, GeoServer, web viewers or customer APIs.
+
+Phase 5 - Repeated monitoring
+
+When aligned surveys from several dates become available, a future extension can compare periods and flag changes.
+
+Why a company would buy it
+--------------------------
+
+- It unlocks LiDAR the organization already owns.
+- It reduces manual mapping work.
+- It prioritizes field and GIS review.
+- It creates consistent outputs over large areas.
+- It exports standard files instead of trapping results inside an AI prototype.
+- It has demonstrated improvement over a strong baseline on a separate geographic holdout.
+- It can begin as a limited pilot before a larger investment.
+
+The strongest current sales statement
+--------------------------------------
+
+    This product turns airborne LiDAR into GIS-ready land-cover maps,
+    forest indicators and prioritized review areas. Its supervised model
+    combines label-free local geometry with robust normalization and has
+    demonstrated clear improvement over a strong baseline on a separate
+    geographic holdout.
+
+What comes next
+---------------
+
+The next technical priorities are:
+
+1. obtain another external holdout with enough water and buildings;
+2. benchmark a stronger efficient local 3D backbone;
+3. add calibrated confidence and uncertainty;
+4. productionize tiled inference and merging over complete surveys;
+5. validate forest proxies against authoritative or field measurements;
+6. continue Geo-JEPA over the stronger robust backbone;
+7. add temporal change analysis when aligned multi-date data exists.
+
+One-sentence pitch
+------------------
+
+This project converts millions of airborne laser points into useful GIS maps, forest indicators and prioritized decisions, with strong internal results and demonstrated geographic generalization over a strong baseline.

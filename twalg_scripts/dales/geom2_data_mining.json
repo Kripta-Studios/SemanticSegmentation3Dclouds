@@ -1,0 +1,317 @@
+{
+    "in_pcloud": [
+        "/oldext4/lidar_data/dales/las/dales_las/train/5080_54435.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5085_54320.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5095_54440.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5095_54455.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5100_54495.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5105_54405.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5105_54460.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5110_54320.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5110_54460.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5110_54475.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5110_54495.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5115_54480.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5130_54355.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5135_54495.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5140_54445.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5145_54340.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5145_54405.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5145_54460.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5145_54470.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5145_54480.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5150_54340.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5160_54330.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5165_54390.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5165_54395.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5180_54435.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5180_54485.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5185_54390.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5185_54485.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/train/5190_54400.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/test/5080_54400.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/test/5080_54470.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/test/5100_54440.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/test/5100_54490.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/test/5120_54445.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/test/5135_54430.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/test/5135_54435.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/test/5140_54390.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/test/5150_54325.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/test/5155_54335.laz",
+        "/oldext4/lidar_data/dales/las/dales_las/test/5175_54395.laz"
+    ],
+    "out_pcloud": [
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5080_54435.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5085_54320.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5095_54440.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5095_54455.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5100_54495.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5105_54405.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5105_54460.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5110_54320.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5110_54460.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5110_54475.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5110_54495.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5115_54480.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5130_54355.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5135_54495.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5140_54445.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5145_54340.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5145_54405.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5145_54460.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5145_54470.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5145_54480.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5150_54340.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5160_54330.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5165_54390.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5165_54395.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5180_54435.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5180_54485.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5185_54390.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5185_54485.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/train/5190_54400.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/test/5080_54400.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/test/5080_54470.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/test/5100_54440.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/test/5100_54490.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/test/5120_54445.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/test/5135_54430.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/test/5135_54435.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/test/5140_54390.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/test/5150_54325.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/test/5155_54335.las",
+        "/oldext4/lidar_data/dales/las/dales_las/train/vl3d_framework/out/geom2_mined/test/5175_54395.las"
+    ],
+    "sequential_pipeline": [
+    	{
+            "miner": "GeometricFeaturesPP",
+            "first_order_strategy": "pca",
+			"second_order_strategy": "taubin_bias",
+			"idw_p": 0,
+			"idw_eps": 11,
+			"foc_K": 0,
+			"foc_sigma": 3.14159265358979323846264338327950288419716939937510,
+			"neighborhood": {
+			  "type": "sphere",
+			  "radius": 1.0,
+			  "k": 1024,
+			  "lower_bound": 0,
+			  "upper_bound": 0
+			},
+            "fnames": [
+            	"linearity", "planarity", "sphericity", "surface_variation", "anisotropy",
+            	"roughness", "verticality", "PCA1", "PCA2",
+            	"gauss_curv_full", "mean_curv_full", "full_quad_dev", "full_abs_algdist", "full_gradient_norm",
+            	"full_laplacian", "full_rmsc", "full_gauss_umbilicality", "full_shape_index", "saddleness", "full_normalized_gac",
+            	"full_mean_qdev", "full_linear_norm", "full_spectral", "full_frobenius", "normalized_bipgnorm"
+        	],
+            "frenames": [
+            	"linearity_r1", "planarity_r1", "sphericity_r1", "surfvar_r1", "anisotropy_r1",
+            	"roughness_r1", "verticality_r1", "PCA1_r1", "PCA2_r1",
+            	"gauss_curv_r1", "mean_curv_r1", "quad_dev_r1", "abs_algdist_r1", "gradnorm_r1",
+            	"laplacian_r1", "rmsc_r1", "gumbilicality_r1", "shpidx_r1", "saddleness_r1", "normal_gac_r1",
+            	"mean_qdev_r1", "linear_norm_r1", "spectral_r1", "frobenius_r1", "normal_bipgnorm_r1"
+            	
+            	
+            ],
+            "non_degenerate_eigenthreshold": 0.00001,
+    		"tikhonov_parameter": 0.0000001,
+            "nthreads": -1
+        },
+        {
+            "miner": "GeometricFeaturesPP",
+            "first_order_strategy": "pca",
+			"second_order_strategy": "taubin_bias",
+			"idw_p": 0,
+			"idw_eps": 11,
+			"foc_K": 0,
+			"foc_sigma": 3.14159265358979323846264338327950288419716939937510,
+			"neighborhood": {
+			  "type": "sphere",
+			  "radius": 1.5,
+			  "k": 1024,
+			  "lower_bound": 0,
+			  "upper_bound": 0
+			},
+            "fnames": [
+            	"linearity", "planarity", "sphericity", "surface_variation", "anisotropy",
+            	"roughness", "verticality", "PCA1", "PCA2",
+            	"gauss_curv_full", "mean_curv_full", "full_quad_dev", "full_abs_algdist", "full_gradient_norm",
+            	"full_laplacian", "full_rmsc", "full_gauss_umbilicality", "full_shape_index", "saddleness", "full_normalized_gac",
+            	"full_mean_qdev", "full_linear_norm", "full_spectral", "full_frobenius", "normalized_bipgnorm"
+        	],
+            "frenames": [
+            	"linearity_r1_5", "planarity_r1_5", "sphericity_r1_5", "surfvar_r1_5", "anisotropy_r1_5",
+            	"roughness_r1_5", "verticality_r1_5", "PCA1_r1_5", "PCA2_r1_5",
+            	"gauss_curv_r1_5", "mean_curv_r1_5", "quad_dev_r1_5", "abs_algdist_r1_5", "gradnorm_r1_5",
+            	"laplacian_r1_5", "rmsc_r1_5", "gumbilicality_r1_5", "shpidx_r1_5", "saddleness_r1_5", "normal_gac_r1_5",
+            	"mean_qdev_r1_5", "linear_norm_r1_5", "spectral_r1_5", "frobenius_r1_5", "normal_bipgnorm_r1_5"
+            	
+            	
+            ],
+        	"non_degenerate_eigenthreshold": 0.00001,
+    		"tikhonov_parameter": 0.0000001,
+            "nthreads": -1
+        },
+        {
+            "miner": "GeometricFeaturesPP",
+            "first_order_strategy": "pca",
+			"second_order_strategy": "taubin_bias",
+			"idw_p": 0,
+			"idw_eps": 11,
+			"foc_K": 0,
+			"foc_sigma": 3.14159265358979323846264338327950288419716939937510,
+			"neighborhood": {
+			  "type": "sphere",
+			  "radius": 2.0,
+			  "k": 1024,
+			  "lower_bound": 0,
+			  "upper_bound": 0
+			},
+            "fnames": [
+            	"linearity", "planarity", "sphericity", "surface_variation", "anisotropy",
+            	"roughness", "verticality", "PCA1", "PCA2",
+            	"gauss_curv_full", "mean_curv_full", "full_quad_dev", "full_abs_algdist", "full_gradient_norm",
+            	"full_laplacian", "full_rmsc", "full_gauss_umbilicality", "full_shape_index", "saddleness", "full_normalized_gac",
+            	"full_mean_qdev", "full_linear_norm", "full_spectral", "full_frobenius", "normalized_bipgnorm"
+        	],
+            "frenames": [
+            	"linearity_r2", "planarity_r2", "sphericity_r2", "surfvar_r2", "anisotropy_r2",
+            	"roughness_r2", "verticality_r2", "PCA1_r2", "PCA2_r2",
+            	"gauss_curv_r2", "mean_curv_r2", "quad_dev_r2", "abs_algdist_r2", "gradnorm_r2",
+            	"laplacian_r2", "rmsc_r2", "gumbilicality_r2", "shpidx_r2", "saddleness_r2", "normal_gac_r2",
+            	"mean_qdev_r2", "linear_norm_r2", "spectral_r2", "frobenius_r2", "normal_bipgnorm_r2"
+            ],
+        	"non_degenerate_eigenthreshold": 0.00001,
+    		"tikhonov_parameter": 0.0000001,
+            "nthreads": -1
+        },
+        {
+            "miner": "GeometricFeaturesPP",
+            "first_order_strategy": "pca",
+			"second_order_strategy": "taubin_bias",
+			"idw_p": 0,
+			"idw_eps": 11,
+			"foc_K": 0,
+			"foc_sigma": 3.14159265358979323846264338327950288419716939937510,
+			"neighborhood": {
+			  "type": "sphere",
+			  "radius": 3.0,
+			  "k": 1024,
+			  "lower_bound": 0,
+			  "upper_bound": 0
+			},
+            "fnames": [
+            	"linearity", "planarity", "sphericity", "surface_variation", "anisotropy",
+            	"roughness", "verticality", "PCA1", "PCA2",
+            	"gauss_curv_full", "mean_curv_full", "full_quad_dev", "full_abs_algdist", "full_gradient_norm",
+            	"full_laplacian", "full_rmsc", "full_gauss_umbilicality", "full_shape_index", "saddleness", "full_normalized_gac",
+            	"full_mean_qdev", "full_linear_norm", "full_spectral", "full_frobenius", "normalized_bipgnorm"
+        	],
+            "frenames": [
+            	"linearity_r3", "planarity_r3", "sphericity_r3", "surfvar_r3", "anisotropy_r3",
+            	"roughness_r3", "verticality_r3", "PCA1_r3", "PCA2_r3",
+            	"gauss_curv_r3", "mean_curv_r3", "quad_dev_r3", "abs_algdist_r3", "gradnorm_r3",
+            	"laplacian_r3", "rmsc_r3", "gumbilicality_r3", "shpidx_r3", "saddleness_r3", "normal_gac_r3",
+            	"mean_qdev_r3", "linear_norm_r3", "spectral_r3", "frobenius_r3", "normal_bipgnorm_r3"
+            ],
+        	"non_degenerate_eigenthreshold": 0.00001,
+    		"tikhonov_parameter": 0.0000001,
+            "nthreads": -1
+        },
+        {
+            "miner": "FPSDecorated",
+            "fps_decorator": {
+                "num_points": "m/2",
+                "fast": 2,
+                "num_encoding_neighbors": 1,
+                "num_decoding_neighbors": 1,
+                "release_encoding_neighborhoods": false,
+                "threads": -1,
+                "representation_report_path": null
+            },
+            "decorated_miner": {
+		        "miner": "GeometricFeaturesPP",
+		        "first_order_strategy": "pca",
+				"second_order_strategy": "taubin_bias",
+				"idw_p": 0,
+				"idw_eps": 11,
+				"foc_K": 0,
+				"foc_sigma": 3.14159265358979323846264338327950288419716939937510,
+				"neighborhood": {
+				  "type": "sphere",
+				  "radius": 5.0,
+				  "k": 1024,
+				  "lower_bound": 0,
+				  "upper_bound": 0
+				},
+		        "fnames": [
+		        	"linearity", "planarity", "sphericity", "surface_variation", "anisotropy",
+		        	"roughness", "verticality", "PCA1", "PCA2",
+		        	"gauss_curv_full", "mean_curv_full", "full_quad_dev", "full_abs_algdist", "full_gradient_norm",
+		        	"full_laplacian", "full_rmsc", "full_gauss_umbilicality", "full_shape_index", "saddleness", "full_normalized_gac",
+		        	"full_mean_qdev", "full_linear_norm", "full_spectral", "full_frobenius", "normalized_bipgnorm"
+		    	],
+		        "frenames": [
+		        	"linearity_r5", "planarity_r5", "sphericity_r5", "surfvar_r5", "anisotropy_r5",
+		        	"roughness_r5", "verticality_r5", "PCA1_r5", "PCA2_r5",
+		        	"gauss_curv_r5", "mean_curv_r5", "quad_dev_r5", "abs_algdist_r5", "gradnorm_r5",
+		        	"laplacian_r5", "rmsc_r5", "gumbilicality_r5", "shpidx_r5", "saddleness_r5", "normal_gac_r5",
+		        	"mean_qdev_r5", "linear_norm_r5", "spectral_r5", "frobenius_r5", "normal_bipgnorm_r5"
+		        ],
+		    	"non_degenerate_eigenthreshold": 0.00001,
+				"tikhonov_parameter": 0.0000001,
+		        "nthreads": -1
+	        }
+        },
+        {
+            "miner": "FPSDecorated",
+            "fps_decorator": {
+                "num_points": "m/3",
+                "fast": 2,
+                "num_encoding_neighbors": 1,
+                "num_decoding_neighbors": 1,
+                "release_encoding_neighborhoods": false,
+                "threads": -1,
+                "representation_report_path": null
+            },
+            "decorated_miner": {
+                "miner": "HeightFeaturesPP",
+                "nthreads": -1,
+                "neighborhood": {
+                    "type": "Cylinder",
+                    "radius": 10.0,
+                    "separation_factor": 0
+                },
+                "outlier_filter": "stdev",
+                "fnames": ["floor_distance", "ceil_distance"],
+                "frenames": ["floordist_r10", "ceildist_r10"]
+            }
+        },
+        {
+            "miner": "FPSDecorated",
+            "fps_decorator": {
+                "num_points": "m/5",
+                "fast": 2,
+                "num_encoding_neighbors": 1,
+                "num_decoding_neighbors": 1,
+                "release_encoding_neighborhoods": false,
+                "threads": -1,
+                "representation_report_path": null
+            },
+            "decorated_miner": {
+                "miner": "HeightFeaturesPP",
+                "nthreads": -1,
+                "neighborhood": {
+                    "type": "Cylinder",
+                    "radius": 30.0,
+                    "separation_factor": 0
+                },
+                "outlier_filter": "stdev",
+                "fnames": ["floor_distance", "ceil_distance"],
+                "frenames": ["floordist_r30", "ceildist_r30"]
+            }
+        }
+    ]
+}

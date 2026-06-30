@@ -1,0 +1,1554 @@
+{
+    "in_pcloud_concat": [
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/103e3c517cd759657395d58407f193ba.las",
+			"conditions": null,
+			"center": [0, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/104d1e5422e79ff667691228a451173a.las",
+			"conditions": null,
+			"center": [0, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/115a5200ff80b5d0b37378f3c85478b4.las",
+			"conditions": null,
+			"center": [0, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/11b1e520db0bf1a1d5dde04c96fd8146.las",
+			"conditions": null,
+			"center": [0, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/12f06f32ede64d613ff4d2f5a7608a24.las",
+			"conditions": null,
+			"center": [0, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/12ffd15dabd7e3b596b84415a3f1393b.las",
+			"conditions": null,
+			"center": [0, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/13a245da7b0567509c6d15186da929c5.las",
+			"conditions": null,
+			"center": [0, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/152de80e31b016d4ced49279fbb1dcc7.las",
+			"conditions": null,
+			"center": [0, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/1650afa5bf6c8335b37378f3c85478b4.las",
+			"conditions": null,
+			"center": [0, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/170cfc531a4fd09fe6905ba5363784c3.las",
+			"conditions": null,
+			"center": [0, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/177c8a8394f5a78772408d74edbb952e.las",
+			"conditions": null,
+			"center": [0, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/179998dd1743facfd5dde04c96fd8146.las",
+			"conditions": null,
+			"center": [0, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/18f5c9d827522c859cfdf97abe35029d.las",
+			"conditions": null,
+			"center": [0, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/1a2d2208f73d0531cec33e62192b66e5.las",
+			"conditions": null,
+			"center": [0, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/1a48f3b3c0ab0fdeba8e0a95fbfb7c9.las",
+			"conditions": null,
+			"center": [0, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/1d8fb258aac4175a5834749a5ef37100.las",
+			"conditions": null,
+			"center": [0, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/1e664c94e932ece9883158c0007ed9ba.las",
+			"conditions": null,
+			"center": [5, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/22ae98e613bb8e188249f134aca4c817.las",
+			"conditions": null,
+			"center": [5, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/242d8c07fabbdabc78fe949fc1419876.las",
+			"conditions": null,
+			"center": [5, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/24359f14ac176b13d270caeadc60b9bb.las",
+			"conditions": null,
+			"center": [5, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/24e12e9dfab0892e468bac13e007a6e9.las",
+			"conditions": null,
+			"center": [5, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/25ae9e6628ed05d81e32f79edfad8027.las",
+			"conditions": null,
+			"center": [5, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/2610c94869f2456c3630e1f3568e4cec.las",
+			"conditions": null,
+			"center": [5, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/269bfe1b994ac28617798af67b81f2f.las",
+			"conditions": null,
+			"center": [5, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/27733dbe070efcd8c9a9842c993649ff.las",
+			"conditions": null,
+			"center": [5, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/295de7567ed18e692692003428d9fde9.las",
+			"conditions": null,
+			"center": [5, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/2c6e2d1e743b93b67f44d6925c8a069.las",
+			"conditions": null,
+			"center": [5, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/2d50553277d64ebda513de4eb79b310d.las",
+			"conditions": null,
+			"center": [5, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/2d655fc4ecb2df2a747c19778aa6cc0.las",
+			"conditions": null,
+			"center": [5, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/2f32164c5a422fe8b44d82a74ebc14c0.las",
+			"conditions": null,
+			"center": [5, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/2fa098eefef49c8c85b48ea6a7114159.las",
+			"conditions": null,
+			"center": [5, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/2ff252507b18ce60cd4bec905df51d1d.las",
+			"conditions": null,
+			"center": [5, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/30157c4a6c09f884c97a3fcdcfe70d5.las",
+			"conditions": null,
+			"center": [10, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/30968c53e0d37b6448c90b3a2fec4b8.las",
+			"conditions": null,
+			"center": [10, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/30f5eec1a7fbb5884fcfb655743e93d8.las",
+			"conditions": null,
+			"center": [10, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/3156fd3e3101da329b0e27507dc1a100.las",
+			"conditions": null,
+			"center": [10, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/31a96fc694f0e58cd5dde04c96fd8146.las",
+			"conditions": null,
+			"center": [10, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/329e47988e39df1b8c1912cd8631ab82.las",
+			"conditions": null,
+			"center": [10, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/3339fcde0648dadd11d830afc8c91af.las",
+			"conditions": null,
+			"center": [10, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/3388b8d2486d366ab19ce2dec0d1925.las",
+			"conditions": null,
+			"center": [10, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/33aa1eadcd21734148272812609617e2.las",
+			"conditions": null,
+			"center": [10, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/33b1973524b81c4ecafb6b9dbe847b85.las",
+			"conditions": null,
+			"center": [10, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/346e30470cfbabdd7395d58407f193ba.las",
+			"conditions": null,
+			"center": [10, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/365c1f92a54c8cb52a45a87054fa7272.las",
+			"conditions": null,
+			"center": [10, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/3837c8ef573c2a7b360cf6eb12fae4.las",
+			"conditions": null,
+			"center": [10, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/3a247c8b82bd675c1fbdb352261d023.las",
+			"conditions": null,
+			"center": [10, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/3a94134ec9698b74ec5901a85efd6b67.las",
+			"conditions": null,
+			"center": [10, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/3d37db1d974499287395d58407f193ba.las",
+			"conditions": null,
+			"center": [10, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/3de5068dfcbc766d3b44aa8d94a815c0.las",
+			"conditions": null,
+			"center": [15, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/3ef6b2e0a896e4ce54d08b5b71c0b603.las",
+			"conditions": null,
+			"center": [15, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/3fd1bff496b369f71765540024eb9fef.las",
+			"conditions": null,
+			"center": [15, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/40b7a63fd9ede0cf48272812609617e2.las",
+			"conditions": null,
+			"center": [15, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/40d84e407c46e8d8b31e74d456742c7.las",
+			"conditions": null,
+			"center": [15, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/41cc9674e700c3fdb37378f3c85478b4.las",
+			"conditions": null,
+			"center": [15, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/42857ece33bd9119617798af67b81f2f.las",
+			"conditions": null,
+			"center": [15, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/42b5ea257418825b5c11b538bde9e3f1.las",
+			"conditions": null,
+			"center": [15, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/45009f5fa4cb295e52ee90e577613070.las",
+			"conditions": null,
+			"center": [15, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/450aa58cb4bcd8a34d8ad024e30db0d.las",
+			"conditions": null,
+			"center": [15, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/4548d86cf7f1c11ad373c34785838ee4.las",
+			"conditions": null,
+			"center": [15, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/455485399ab75f93429f1c522640e6f0.las",
+			"conditions": null,
+			"center": [15, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/45b69ab448b01056267aabe46d1527a0.las",
+			"conditions": null,
+			"center": [15, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/464a86f04b0f6e452a643a53ea2e7c56.las",
+			"conditions": null,
+			"center": [15, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/46afe9d5d8a45a17a26d3c6c2e980dd5.las",
+			"conditions": null,
+			"center": [15, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/46e38cf88b07de0ee2b85785c47c5d52.las",
+			"conditions": null,
+			"center": [15, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/47054c1839830834a88e8cb97b773125.las",
+			"conditions": null,
+			"center": [20, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/481f7a57a12517e0fe1b9fad6c90c7bf.las",
+			"conditions": null,
+			"center": [20, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/48233d99d0bd59e5d8a587623571014e.las",
+			"conditions": null,
+			"center": [20, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/48372a904ec9cda048272812609617e2.las",
+			"conditions": null,
+			"center": [20, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/485a6b42bc4f7e59d373c34785838ee4.las",
+			"conditions": null,
+			"center": [20, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/4878886fb154d54366c6576de41cd6b9.las",
+			"conditions": null,
+			"center": [20, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/48bd19f7d6a20c5c52ee90e577613070.las",
+			"conditions": null,
+			"center": [20, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/49b7ec863c4599aabd1734e75169b9e0.las",
+			"conditions": null,
+			"center": [20, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/49edb54e97458de8d373c34785838ee4.las",
+			"conditions": null,
+			"center": [20, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/4a2f0b20ef680347395d58407f193ba.las",
+			"conditions": null,
+			"center": [20, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/4df789715eea8fa552ee90e577613070.las",
+			"conditions": null,
+			"center": [20, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/4f30742005b7c20e883158c0007ed9ba.las",
+			"conditions": null,
+			"center": [20, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/4fd8e8522a431781924dd6806b28c0a2.las",
+			"conditions": null,
+			"center": [20, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/5037cad0901fb395b37378f3c85478b4.las",
+			"conditions": null,
+			"center": [20, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/506962955771904b1d471e626c3ad496.las",
+			"conditions": null,
+			"center": [20, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/5131b742dad94f6175dadc997718614d.las",
+			"conditions": null,
+			"center": [20, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/52e096f02d12b3bfa70f3e863a68c2c2.las",
+			"conditions": null,
+			"center": [25, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/52e2bc89667a8e35617798af67b81f2f.las",
+			"conditions": null,
+			"center": [25, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/53062381d490e3d1e203ed9c6e5dca08.las",
+			"conditions": null,
+			"center": [25, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/532e6f88a9975a27b37378f3c85478b4.las",
+			"conditions": null,
+			"center": [25, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/53d6f04450a85fe9ca547803ba354ce.las",
+			"conditions": null,
+			"center": [25, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/543ccc442390ac8ad3e27012e0feb9f.las",
+			"conditions": null,
+			"center": [25, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/54f016b47a5864cd5dde04c96fd8146.las",
+			"conditions": null,
+			"center": [25, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/559b67efe09f141052fa4ad29a1236d7.las",
+			"conditions": null,
+			"center": [25, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/55caf44a43f2c04d468bac13e007a6e9.las",
+			"conditions": null,
+			"center": [25, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/56f5e30ad65f01561c6c61410fc904b.las",
+			"conditions": null,
+			"center": [25, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/5742426c4c9fa2e4b37378f3c85478b4.las",
+			"conditions": null,
+			"center": [25, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/57a7a9e163e8f087fe11eeaa72c8aa36.las",
+			"conditions": null,
+			"center": [25, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/582e995c76ba36a44f5a72a02a218ed6.las",
+			"conditions": null,
+			"center": [25, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/58705c949dd5d944d9d3572bbd9cf789.las",
+			"conditions": null,
+			"center": [25, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/59a2f0fd2b81bb273b6d7f17f2b61d2d.las",
+			"conditions": null,
+			"center": [25, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/59c019516149fe33d5dde04c96fd8146.las",
+			"conditions": null,
+			"center": [25, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/5a1e4b1b6dfe231a362d3a933f999b0.las",
+			"conditions": null,
+			"center": [30, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/5a34a535ced91869354ab1decf4fe605.las",
+			"conditions": null,
+			"center": [30, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/5a997a42abaf1a0d52ee90e577613070.las",
+			"conditions": null,
+			"center": [30, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/5bb3597d49c58017b37378f3c85478b4.las",
+			"conditions": null,
+			"center": [30, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/5bd41c7d3e158ac93ff4d2f5a7608a24.las",
+			"conditions": null,
+			"center": [30, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/5be7e00fe279ac927cb7616d82cf9fae.las",
+			"conditions": null,
+			"center": [30, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/5c0eaef35c2911ac1d7cf2c1f472233b.las",
+			"conditions": null,
+			"center": [30, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/5de5e9abd5f49ad7468bac13e007a6e9.las",
+			"conditions": null,
+			"center": [30, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/5df0478fd19f0c175af8505fd49bb4ca.las",
+			"conditions": null,
+			"center": [30, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/5e43289edf360d01e937abf44800029d.las",
+			"conditions": null,
+			"center": [30, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/5e4fe8a57130744dece0b0a75f5fc9f6.las",
+			"conditions": null,
+			"center": [30, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6046f323c82b280ea75120c0e0c5316.las",
+			"conditions": null,
+			"center": [30, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/61b17f12bec91d057395d58407f193ba.las",
+			"conditions": null,
+			"center": [30, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6309c20c1ad258efbb297232fe17fe77.las",
+			"conditions": null,
+			"center": [30, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/655b9dd9425cc3a12a45a87054fa7272.las",
+			"conditions": null,
+			"center": [30, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6611e5f5092d1ac1104831d5b063e54b.las",
+			"conditions": null,
+			"center": [30, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6683e13507dde030f6435254228a9d64.las",
+			"conditions": null,
+			"center": [35, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/66fb059b0102f4275a03ed6c9088ec08.las",
+			"conditions": null,
+			"center": [35, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/67bff6cc82b6565dfaa866ab8ff6f59.las",
+			"conditions": null,
+			"center": [35, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6819949f5625ca12d0f568c31c1cd62a.las",
+			"conditions": null,
+			"center": [35, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/68e8c73ec51aeaaeab548456bc75847f.las",
+			"conditions": null,
+			"center": [35, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6921ac96d7bedf7bd5dde04c96fd8146.las",
+			"conditions": null,
+			"center": [35, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6a05091b7b1bae0352fa4ad29a1236d7.las",
+			"conditions": null,
+			"center": [35, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6a9db96b3ed76f956dc3fd80522499a5.las",
+			"conditions": null,
+			"center": [35, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6ad8d3973ccf496370a48b7db120f9fc.las",
+			"conditions": null,
+			"center": [35, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6b6cf38ed305dc11ab13c10f92a32fc1.las",
+			"conditions": null,
+			"center": [35, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6b93d5f2e88326f91f80189578e6ea85.las",
+			"conditions": null,
+			"center": [35, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6bf1f988493dc23752ee90e577613070.las",
+			"conditions": null,
+			"center": [35, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6ce7a58297a6fa5c8249f134aca4c817.las",
+			"conditions": null,
+			"center": [35, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6d4ee0be5746095d7c088bd2a4124c69.las",
+			"conditions": null,
+			"center": [35, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6e1397773a4d15db429f1c522640e6f0.las",
+			"conditions": null,
+			"center": [35, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6e37615194e808d3b37378f3c85478b4.las",
+			"conditions": null,
+			"center": [35, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6ea0a49bd27fa58b2279b76b11a9a16c.las",
+			"conditions": null,
+			"center": [40, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/6ebb8ff387bc2510c17fa08d127e11f7.las",
+			"conditions": null,
+			"center": [40, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/707dfe4769f3e3c5ebe67d9b32c3ddf8.las",
+			"conditions": null,
+			"center": [40, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/70d9cc5115bfedeeab548456bc75847f.las",
+			"conditions": null,
+			"center": [40, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/733b75e867591d0fb37378f3c85478b4.las",
+			"conditions": null,
+			"center": [40, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/73fd19410ce60b83d5dde04c96fd8146.las",
+			"conditions": null,
+			"center": [40, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/744ab910c5fa999fa036c9ce469c98ce.las",
+			"conditions": null,
+			"center": [40, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/74a3df7e06713f4a48272812609617e2.las",
+			"conditions": null,
+			"center": [40, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/75f2dbb8204c01a4e1720743367d35c4.las",
+			"conditions": null,
+			"center": [40, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/766002ed9dc8556d390c1a9993716e73.las",
+			"conditions": null,
+			"center": [40, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/77e00aae33f3ecb4f5724931a8c2eb52.las",
+			"conditions": null,
+			"center": [40, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/780767b19b3201fc80ac3c28ee20beb9.las",
+			"conditions": null,
+			"center": [40, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/788d59c1aa057d8452ee90e577613070.las",
+			"conditions": null,
+			"center": [40, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/7b4eb8cbc470d0d6d5dde04c96fd8146.las",
+			"conditions": null,
+			"center": [40, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/7b58dca40a1e09dd393c2e9c64ac953.las",
+			"conditions": null,
+			"center": [40, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/7b6d89ff70831e71594057aa2102e240.las",
+			"conditions": null,
+			"center": [40, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/7c34fdccf25e4113d5dde04c96fd8146.las",
+			"conditions": null,
+			"center": [45, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/7c4fc3a05d5fc8b1d0f568c31c1cd62a.las",
+			"conditions": null,
+			"center": [45, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/7c989bfae27a958b615e82f53965c4cc.las",
+			"conditions": null,
+			"center": [45, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/7d75e8200565ffa7b37378f3c85478b4.las",
+			"conditions": null,
+			"center": [45, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/7fcee59a33976221a88e8cb97b773125.las",
+			"conditions": null,
+			"center": [45, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/80011e85cd42668ad373c34785838ee4.las",
+			"conditions": null,
+			"center": [45, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/8020984fc6e83ac1331b5e6778e27aa.las",
+			"conditions": null,
+			"center": [45, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/8032295bd3851d75468bac13e007a6e9.las",
+			"conditions": null,
+			"center": [45, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/803f90199731098552ee90e577613070.las",
+			"conditions": null,
+			"center": [45, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/80e717f07645a4a0b37378f3c85478b4.las",
+			"conditions": null,
+			"center": [45, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/8134a965cc0b134bb37378f3c85478b4.las",
+			"conditions": null,
+			"center": [45, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/818a641ccb945f6ecd03ad51b6badc3d.las",
+			"conditions": null,
+			"center": [45, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/81e1a6c5a4de9f8f7a1f4451e23d8e4d.las",
+			"conditions": null,
+			"center": [45, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/828210e9d0a307c0a9a5251e8f29bd8c.las",
+			"conditions": null,
+			"center": [45, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/82c8d89f0d15429a17bf584c2afe53e1.las",
+			"conditions": null,
+			"center": [45, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/832c4a316c419228b37378f3c85478b4.las",
+			"conditions": null,
+			"center": [45, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/837330924dba611df6572e2c76e2d78e.las",
+			"conditions": null,
+			"center": [50, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/83d3483c6c9edc39949b12cf3977a48b.las",
+			"conditions": null,
+			"center": [50, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/8521276f8a6df852c83b248a54afdeb1.las",
+			"conditions": null,
+			"center": [50, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/867e3e502de5cc0dd5dde04c96fd8146.las",
+			"conditions": null,
+			"center": [50, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/86a247b7f3be38957395d58407f193ba.las",
+			"conditions": null,
+			"center": [50, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/86b6dc954e1ca8e948272812609617e2.las",
+			"conditions": null,
+			"center": [50, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/86b8e4e5ed18fe082a45a87054fa7272.las",
+			"conditions": null,
+			"center": [50, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/88950eedce83a11ad4fea43a014cf734.las",
+			"conditions": null,
+			"center": [50, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/896f688e07909b9b893e67220bf9be7.las",
+			"conditions": null,
+			"center": [50, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/89aa8433ae3b9a197395d58407f193ba.las",
+			"conditions": null,
+			"center": [50, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/89c948e75d1c5cde27e168bcc3c092cb.las",
+			"conditions": null,
+			"center": [50, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/8a5175f5b9be6f34e91fe7b067344e07.las",
+			"conditions": null,
+			"center": [50, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/8a9586b8eff9f3a6932abeb6e2fd4072.las",
+			"conditions": null,
+			"center": [50, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/8b2e7ae8b0f0d451d97964d17de80d2c.las",
+			"conditions": null,
+			"center": [50, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/8bf620bd023c602b74f7bf9c15b075d9.las",
+			"conditions": null,
+			"center": [50, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/8cc21006e2d9f38fb4f2746c8140d6d6.las",
+			"conditions": null,
+			"center": [50, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/8cf5bd117e04da6d6a3456c0ab5674a9.las",
+			"conditions": null,
+			"center": [55, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/8da04b6c03068e6ae21ad659cc6e09ee.las",
+			"conditions": null,
+			"center": [55, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/8e956bae37beff87c2743f037f439af3.las",
+			"conditions": null,
+			"center": [55, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/8ed4bdaf0c8b88ea8b31e74d456742c7.las",
+			"conditions": null,
+			"center": [55, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/8f032c42d53b5c79aca88bdc785b0d2f.las",
+			"conditions": null,
+			"center": [55, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/8fd0238d882c6f45e3e8453287c65951.las",
+			"conditions": null,
+			"center": [55, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/90a521e0def2631fd5dde04c96fd8146.las",
+			"conditions": null,
+			"center": [55, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/90c209ff795be387afe1d4530f4c6e24.las",
+			"conditions": null,
+			"center": [55, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/90dd1c4d894653322cbca070ad1b4ac0.las",
+			"conditions": null,
+			"center": [55, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/9154fc120f53eaa8d42c4cee3f9bac47.las",
+			"conditions": null,
+			"center": [55, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/923ce819405ae29230c72ee872e188e1.las",
+			"conditions": null,
+			"center": [55, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/9324341a957733ff52ee90e577613070.las",
+			"conditions": null,
+			"center": [55, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/9453199691f58147429f1c522640e6f0.las",
+			"conditions": null,
+			"center": [55, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/94a021f2078cab18da3e5772fc0cd087.las",
+			"conditions": null,
+			"center": [55, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/966cc24ec5fb927b22b51f1a980f45bf.las",
+			"conditions": null,
+			"center": [55, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/973d75ed9c12836f3d033e6cf82ec72c.las",
+			"conditions": null,
+			"center": [55, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/97bb8c467f0efadaf2b5d20b1742ee75.las",
+			"conditions": null,
+			"center": [60, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/98ed7f86a65ed6ad4a6b6d001599a1e5.las",
+			"conditions": null,
+			"center": [60, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/992fbae5178edcbc4e31d0cb4d7568.las",
+			"conditions": null,
+			"center": [60, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/994dd337f39a32202f2c109faf1ee2c9.las",
+			"conditions": null,
+			"center": [60, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/9b9794dda0a6532215a11c390f7ca182.las",
+			"conditions": null,
+			"center": [60, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/9bc8441b3b70b7014a4c9ebcdcc46c40.las",
+			"conditions": null,
+			"center": [60, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/9cb038f61be71ed0cca5d7fbf4f17f56.las",
+			"conditions": null,
+			"center": [60, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/9d3b07f4475d501e8249f134aca4c817.las",
+			"conditions": null,
+			"center": [60, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/9dd4ae1c34af4766b4f2746c8140d6d6.las",
+			"conditions": null,
+			"center": [60, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/9e9300a6e1caec217395d58407f193ba.las",
+			"conditions": null,
+			"center": [60, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/9f9de88a95b56660b37378f3c85478b4.las",
+			"conditions": null,
+			"center": [60, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/9ff5b01d1aec18b2aae529ab4a75c4af.las",
+			"conditions": null,
+			"center": [60, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/a0a40a9d5aabd6a7d5dde04c96fd8146.las",
+			"conditions": null,
+			"center": [60, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/a1553e0bb7897a7ace0bf41e5f45753d.las",
+			"conditions": null,
+			"center": [60, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/a19d4bb8fe4e70b9d97964d17de80d2c.las",
+			"conditions": null,
+			"center": [60, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/a2af2d47ac7bd232c3b8d605d6b133fb.las",
+			"conditions": null,
+			"center": [60, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/a2ee365a26f7ec623228b702032404a6.las",
+			"conditions": null,
+			"center": [65, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/a3dfeae5bced3533b37378f3c85478b4.las",
+			"conditions": null,
+			"center": [65, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/a52bac9239f4382ea513de4eb79b310d.las",
+			"conditions": null,
+			"center": [65, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/a54e8fb64e5879161253ed5a61502f52.las",
+			"conditions": null,
+			"center": [65, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/a70eb1b6321022e260e00ef7af003fee.las",
+			"conditions": null,
+			"center": [65, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/a7554de7ada3163fbec38f8cdf3f0f2c.las",
+			"conditions": null,
+			"center": [65, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/a9399a50fcb25209429f1c522640e6f0.las",
+			"conditions": null,
+			"center": [65, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/a94060c97cfa0c6350bbf5cd198b144c.las",
+			"conditions": null,
+			"center": [65, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/a9c432d1dc4034762a45a87054fa7272.las",
+			"conditions": null,
+			"center": [65, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/a9e2a1de33b99d08b37378f3c85478b4.las",
+			"conditions": null,
+			"center": [65, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/aa619a9f4b2e200495ff232cd38210b4.las",
+			"conditions": null,
+			"center": [65, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/aae0037cd1dd489b468bac13e007a6e9.las",
+			"conditions": null,
+			"center": [65, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/abdfb5b2d82e555e3bd003e0bb7a3ed9.las",
+			"conditions": null,
+			"center": [65, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/acd49452b452cf2f3ab3dfa44f5fab01.las",
+			"conditions": null,
+			"center": [65, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/aea3c4f2687e97c92942fa3063963cb6.las",
+			"conditions": null,
+			"center": [65, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/af2648ef08812a0aa747c19778aa6cc0.las",
+			"conditions": null,
+			"center": [65, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/b179e7e416edc37086b7427eea4d0f22.las",
+			"conditions": null,
+			"center": [70, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/b1ad4777e9a8ad4e6e90540cf031a0dd.las",
+			"conditions": null,
+			"center": [70, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/b1bb49d472fa7a39e0dbf31b32c641d1.las",
+			"conditions": null,
+			"center": [70, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/b1f2ea1859ae2aabe4d4c489303b7b1c.las",
+			"conditions": null,
+			"center": [70, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/b3582e7abddb916c3722d6e4d79b71be.las",
+			"conditions": null,
+			"center": [70, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/b4112da294c1febf65c8f8f77b16f337.las",
+			"conditions": null,
+			"center": [70, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/b649be9c09e2b332429f1c522640e6f0.las",
+			"conditions": null,
+			"center": [70, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/b767982d38b5171e429f1c522640e6f0.las",
+			"conditions": null,
+			"center": [70, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/b91424e8cef60e3e1bcfe9129a6aea3a.las",
+			"conditions": null,
+			"center": [70, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/b91b7ff8ff1b59c6a88e8cb97b773125.las",
+			"conditions": null,
+			"center": [70, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/ba0f7f4b5756e8795ae200efe59d16d0.las",
+			"conditions": null,
+			"center": [70, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/ba9a5f13dcd8312f543a79ca976efea2.las",
+			"conditions": null,
+			"center": [70, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/bae59e64a50d3aa2f68f798d07e007b6.las",
+			"conditions": null,
+			"center": [70, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/bb1c9e1346c5262bedb66d5d04c0da43.las",
+			"conditions": null,
+			"center": [70, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/bc1a3e925e6da7a97bf525c97f9f490c.las",
+			"conditions": null,
+			"center": [70, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/bcabe20e46e5126ed5dde04c96fd8146.las",
+			"conditions": null,
+			"center": [70, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/bcbcfdad5e0e1d9ba88e8cb97b773125.las",
+			"conditions": null,
+			"center": [75, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/bf7794ea4ceb978bafc70af22a99299d.las",
+			"conditions": null,
+			"center": [75, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/c1acd4ce749a46a6dc2693ab94b1f3be.las",
+			"conditions": null,
+			"center": [75, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/c2d942244bae1557b37378f3c85478b4.las",
+			"conditions": null,
+			"center": [75, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/c2f26a9646369c6d373c34785838ee4.las",
+			"conditions": null,
+			"center": [75, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/c38b3d9be97383c2ebe67d9b32c3ddf8.las",
+			"conditions": null,
+			"center": [75, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/c43742bc6e7dd467e8e23c8de25a6ff4.las",
+			"conditions": null,
+			"center": [75, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/c4e0be3db8960e7799c206f2618a97af.las",
+			"conditions": null,
+			"center": [75, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/c52be51c1aa7cc9752fa4ad29a1236d7.las",
+			"conditions": null,
+			"center": [75, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/c62066c1ff268bcb9624f6cadda65407.las",
+			"conditions": null,
+			"center": [75, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/c6fbae9bbff2829db3a2525d53af0903.las",
+			"conditions": null,
+			"center": [75, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/c7c8d9406c1a93ab52a0573c504629a6.las",
+			"conditions": null,
+			"center": [75, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/c8a99ee61a2003308b543692e5ab59d9.las",
+			"conditions": null,
+			"center": [75, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/c8d62fbab07d49a7e398c671c3b93e96.las",
+			"conditions": null,
+			"center": [75, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/c90d74aa63043e5ad0f568c31c1cd62a.las",
+			"conditions": null,
+			"center": [75, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/c9c41d106fc36402b0f9875a6c9bf605.las",
+			"conditions": null,
+			"center": [75, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/c9e2437df080309baab0751e11299b9f.las",
+			"conditions": null,
+			"center": [80, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/cbf639979de64e14739936b7765e22ae.las",
+			"conditions": null,
+			"center": [80, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/cc213702fcec23677395d58407f193ba.las",
+			"conditions": null,
+			"center": [80, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/ccefa6fea8b7a57281eb6e0cf97c3b0b.las",
+			"conditions": null,
+			"center": [80, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/cdd1e5890e5a766a65397d05162306e.las",
+			"conditions": null,
+			"center": [80, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/ce46af9eb70d91e2b37378f3c85478b4.las",
+			"conditions": null,
+			"center": [80, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/cfb2cd4ed1ee0de56dacd34e70282fc3.las",
+			"conditions": null,
+			"center": [80, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/d08e47404f0fa3f6a05d44ba0445fced.las",
+			"conditions": null,
+			"center": [80, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/d165adb88d2e569552ee90e577613070.las",
+			"conditions": null,
+			"center": [80, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/d2f6dec6d70b111fda8b038dea29f4da.las",
+			"conditions": null,
+			"center": [80, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/d3e1ee410274fe4036abd307db1ff816.las",
+			"conditions": null,
+			"center": [80, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/d54e0f22d4604d741f24b86004bccc4d.las",
+			"conditions": null,
+			"center": [80, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Motorbike/train/d644ca9d10aed7cdcd4bec905df51d1d.las",
+			"conditions": null,
+			"center": [80, 60, 0]
+		}
+    ],
+	"out_pcloud": "/ext4/lidar_data/shapenet/vl3d/out/motorbike/fixed/hybrid/*",
+    "sequential_pipeline": [
+        {
+            "miner": "GeometricFeaturesPP",
+            "first_order_strategy": "pca",
+            "second_order_strategy": "taubin_bias",
+            "idw_p": 0,
+            "idw_eps": 0.006,
+            "foc_K": 0,
+            "foc_sigma": 3.14159265358979323846264338327950288419716939937510,
+            "neighborhood": {
+              "type": "sphere",
+              "radius": 0.03,
+              "k": 64,
+              "lower_bound": 0,
+              "upper_bound": 0
+            },
+            "fnames": [
+                "linearity", "planarity", "sphericity", "surface_variation", "anisotropy", "roughness"
+              ],
+            "frenames": [
+                "linearity_r0_03", "planarity_r0_03", "sphericity_r0_03", "surface_variation_r0_03", "anisotropy_r0_03", "roughness_r0_03"
+            ],
+            "non_degenerate_eigenthreshold": 0.00001,
+            "tikhonov_parameter": 0.0000001,
+            "nthreads": -1
+        },
+        {
+            "miner": "GeometricFeaturesPP",
+            "first_order_strategy": "pca",
+            "second_order_strategy": "taubin_bias",
+            "idw_p": 0,
+            "idw_eps": 0.012,
+            "foc_K": 0,
+            "foc_sigma": 3.14159265358979323846264338327950288419716939937510,
+            "neighborhood": {
+              "type": "sphere",
+              "radius": 0.06,
+              "k": 64,
+              "lower_bound": 0,
+              "upper_bound": 0
+            },
+            "fnames": [
+                "linearity", "planarity", "sphericity", "surface_variation", "anisotropy", "roughness",
+                "gauss_curv_full", "mean_curv_full", "full_quad_dev", "full_abs_algdist", "full_gradient_norm",
+                "full_laplacian", "full_rmsc", "full_gauss_umbilicality", "full_shape_index", "saddleness",
+                "full_normalized_gac"
+              ],
+            "frenames": [
+                "linearity_r0_06", "planarity_r0_06", "sphericity_r0_06", "surface_variation_r0_06", "anisotropy_r0_06", "roughness_r0_06",
+                "gauss_curv_full_r0_06", "mean_curv_full_r0_06", "full_quad_dev_r0_06", "full_abs_algdist_r0_06", "full_gradient_norm_r0_06",
+                "full_laplacian_r0_06", "full_rmsc_r0_06", "full_gauss_umbilicality_r0_06", "full_shape_index_r0_06", "saddleness_r0_06",
+                "full_normalized_gac_r0_06"
+            ],
+            "non_degenerate_eigenthreshold": 0.00001,
+            "tikhonov_parameter": 0.0000001,
+            "nthreads": -1
+        },
+        {
+            "miner": "GeometricFeaturesPP",
+            "first_order_strategy": "pca",
+            "second_order_strategy": "taubin_bias",
+            "idw_p": 0,
+            "idw_eps": 0.02,
+            "foc_K": 0,
+            "foc_sigma": 3.14159265358979323846264338327950288419716939937510,
+            "neighborhood": {
+              "type": "sphere",
+              "radius": 0.1,
+              "k": 64,
+              "lower_bound": 0,
+              "upper_bound": 0
+            },
+            "fnames": [
+                "linearity", "planarity", "sphericity", "surface_variation", "anisotropy", "roughness",
+                "gauss_curv_full", "mean_curv_full", "full_quad_dev", "full_abs_algdist", "full_gradient_norm",
+                "full_laplacian", "full_rmsc", "full_gauss_umbilicality", "full_shape_index", "saddleness",
+                "full_normalized_gac"
+              ],
+            "frenames": [
+                "linearity_r0_1", "planarity_r0_1", "sphericity_r0_1", "surface_variation_r0_1", "anisotropy_r0_1", "roughness_r0_1",
+                "gauss_curv_full_r0_1", "mean_curv_full_r0_1", "full_quad_dev_r0_1", "full_abs_algdist_r0_1", "full_gradient_norm_r0_1",
+                "full_laplacian_r0_1", "full_rmsc_r0_1", "full_gauss_umbilicality_r0_1", "full_shape_index_r0_1", "saddleness_r0_1",
+                "full_normalized_gac_r0_1"
+            ],
+            "non_degenerate_eigenthreshold": 0.00001,
+            "tikhonov_parameter": 0.0000001,
+            "nthreads": -1
+        },
+        {
+            "miner": "GeometricFeaturesPP",
+            "first_order_strategy": "pca",
+            "second_order_strategy": "taubin_bias",
+            "idw_p": 0,
+            "idw_eps": 0.06,
+            "foc_K": 0,
+            "foc_sigma": 3.14159265358979323846264338327950288419716939937510,
+            "neighborhood": {
+              "type": "sphere",
+              "radius": 0.3,
+              "k": 64,
+              "lower_bound": 0,
+              "upper_bound": 0
+            },
+            "fnames": [
+                "linearity", "planarity", "sphericity", "surface_variation", "anisotropy", "roughness",
+                "gauss_curv_full", "mean_curv_full", "full_quad_dev", "full_abs_algdist", "full_gradient_norm",
+                "full_laplacian", "full_rmsc", "full_gauss_umbilicality", "full_shape_index", "saddleness",
+                "full_normalized_gac"
+              ],
+            "frenames": [
+                "linearity_r0_3", "planarity_r0_3", "sphericity_r0_3", "surface_variation_r0_3", "anisotropy_r0_3", "roughness_r0_3",
+                "gauss_curv_full_r0_3", "mean_curv_full_r0_3", "full_quad_dev_r0_3", "full_abs_algdist_r0_3", "full_gradient_norm_r0_3",
+                "full_laplacian_r0_3", "full_rmsc_r0_3", "full_gauss_umbilicality_r0_3", "full_shape_index_r0_3", "saddleness_r0_3",
+                "full_normalized_gac_r0_3"
+            ],
+            "non_degenerate_eigenthreshold": 0.00001,
+            "tikhonov_parameter": 0.0000001,
+            "nthreads": -1
+        },
+        {
+            "miner": "GeometricFeaturesPP",
+            "first_order_strategy": "pca",
+            "second_order_strategy": "taubin_bias",
+            "idw_p": 0,
+            "idw_eps": 0.12,
+            "foc_K": 0,
+            "foc_sigma": 3.14159265358979323846264338327950288419716939937510,
+            "neighborhood": {
+              "type": "sphere",
+              "radius": 0.6,
+              "k": 64,
+              "lower_bound": 0,
+              "upper_bound": 0
+            },
+            "fnames": [
+                "linearity", "planarity", "sphericity", "surface_variation", "anisotropy", "roughness"
+              ],
+            "frenames": [
+                "linearity_r0_6", "planarity_r0_6", "sphericity_r0_6", "surface_variation_r0_6", "anisotropy_r0_6", "roughness_r0_6"
+            ],
+            "non_degenerate_eigenthreshold": 0.00001,
+            "tikhonov_parameter": 0.0000001,
+            "nthreads": -1
+        },
+        {
+            "writer": "Writer",
+            "out_pcloud": "*/training_motorbike.las"
+        },
+        {
+            "train": "RandomForestClassifier",
+            "fnames": ["AUTO"],
+            "training_type": "base",
+            "num_folds": 5,
+            "autoval_metrics": ["F1", "OA", "MCC"],
+            "random_seed": null,
+            "shuffle_points": false,
+            "model_args": {
+                "n_estimators": 100,
+                "criterion": "entropy",
+                "max_depth": 25,
+                "min_samples_split": 16,
+                "min_samples_leaf": 4,
+                "min_weight_fraction_leaf": 0.0,
+                "max_features": "sqrt",
+                "max_leaf_nodes": null,
+                "min_impurity_decrease": 0.0,
+                "bootstrap": true,
+                "oob_score": false,
+                "n_jobs": -1,
+                "warm_start": false,
+                "class_weight": null,
+                "ccp_alpha": 0.0,
+                "max_samples": 0.8
+            },
+            "hyperparameter_tuning": null,
+            "importance_report_path": "*/RF_importance.log",
+            "importance_report_permutation": false,
+            "decision_plot_path": null,
+            "decision_plot_trees": 0,
+            "decision_plot_max_depth": 0,
+            "stratkfold_report_path": "*stratkfold_report.log",
+            "stratkfold_plot_path": "*startkfold_plot.svg",
+            "training_data_pipeline": [
+                {
+                    "component": "ClasswiseSampler",
+                    "component_args": {
+                        "target_class_distribution": [2000000, 2000000, 2000000, 2000000, 2000000, 0],
+                        "replace": false
+                    }
+                }
+            ]
+        },
+		{
+		    "writer": "PredictivePipelineWriter",
+		    "out_pipeline": "*/model/rf.pipe",
+		    "include_writer": false,
+		    "include_imputer": true,
+		    "include_feature_transformer": true,
+		    "include_miner": true,
+		    "include_class_transformer": true,
+		    "include_clustering": false,
+		    "ignore_predictions": false
+		}
+    ]
+}

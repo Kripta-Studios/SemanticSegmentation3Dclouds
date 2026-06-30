@@ -1,0 +1,849 @@
+{
+    "in_pcloud_concat": [
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ce3e563f291d1b3311a3eda9aff2873.las",
+			"conditions": null,
+			"center": [125, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ce5aa7d561bd83122d1748032da3d7b6.las",
+			"conditions": null,
+			"center": [125, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/cebf1d6e25e40224eb86f11fe2a7a388.las",
+			"conditions": null,
+			"center": [125, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d05fcd42a07cd11dd57700c05b1862d8.las",
+			"conditions": null,
+			"center": [125, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d0f1b3ecae66a027b45664be560bdedc.las",
+			"conditions": null,
+			"center": [125, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d0fee35bc3efa83367a66e84fcbfe789.las",
+			"conditions": null,
+			"center": [125, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d155056f08e7bb10ace273aa67d227c6.las",
+			"conditions": null,
+			"center": [125, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d157227240617cac755f5f999c69a058.las",
+			"conditions": null,
+			"center": [125, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d2938be9fd0a6cd340c20797381ee39f.las",
+			"conditions": null,
+			"center": [125, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d2ad57f36e00c602baba3b7560fe62f4.las",
+			"conditions": null,
+			"center": [125, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d2cbbe7311f3699cfa3f3bbe4549e789.las",
+			"conditions": null,
+			"center": [125, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d3684d071dcb6bffd3193ed047bef161.las",
+			"conditions": null,
+			"center": [125, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d37d82695b935e59d57700c05b1862d8.las",
+			"conditions": null,
+			"center": [125, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d3972d599036251369da8e7f9a803d12.las",
+			"conditions": null,
+			"center": [130, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d3eba720791d85401e67b43145c3c515.las",
+			"conditions": null,
+			"center": [130, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d4b021a085d836dd2b996d5d44e09408.las",
+			"conditions": null,
+			"center": [130, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d4b2ddb52e8dcd3593f0194265a9746c.las",
+			"conditions": null,
+			"center": [130, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d4ec02d3ebae75249f4d0101328eae2.las",
+			"conditions": null,
+			"center": [130, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d50c76c0adf8b657f6ca74c754479291.las",
+			"conditions": null,
+			"center": [130, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d50d06b159363b1693f0194265a9746c.las",
+			"conditions": null,
+			"center": [130, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d528407fe43b5df193f0194265a9746c.las",
+			"conditions": null,
+			"center": [130, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d52f696ab86b354624933d5e1bb8057d.las",
+			"conditions": null,
+			"center": [130, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d546e034a6c659a425cd348738a8052a.las",
+			"conditions": null,
+			"center": [130, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d63a56ed4f0bb9aedb43638841a7895e.las",
+			"conditions": null,
+			"center": [130, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d685415d4fcd3205a24eeca91f583600.las",
+			"conditions": null,
+			"center": [130, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d71c17b4d1ffa131f10a27cbb87f3a5.las",
+			"conditions": null,
+			"center": [130, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d790ac3aecbdfdfdd4f4a255f121abfb.las",
+			"conditions": null,
+			"center": [130, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d7a9114b17fbacd376d05024fabfa1e5.las",
+			"conditions": null,
+			"center": [130, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d7e1b36ab46e2d9130f83c7e8a7d80c9.las",
+			"conditions": null,
+			"center": [130, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d82fc6db200cdf6ea24eeca91f583600.las",
+			"conditions": null,
+			"center": [130, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d84d2877bd385d9c69da8e7f9a803d12.las",
+			"conditions": null,
+			"center": [130, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d8fe40b706db9bedcfcd7283054963fe.las",
+			"conditions": null,
+			"center": [130, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d91b0745e57f6508dc6782957fd2f5d2.las",
+			"conditions": null,
+			"center": [130, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/d9cd03133da5c44940c9c81d87cadc01.las",
+			"conditions": null,
+			"center": [130, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/da8ee6c488a2f4e093f806b1ecaee483.las",
+			"conditions": null,
+			"center": [130, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/dab53ffe5ceafeb198e9e7d2e581bf6c.las",
+			"conditions": null,
+			"center": [130, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/dad399bf54b6186a40c20797381ee39f.las",
+			"conditions": null,
+			"center": [130, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/db5e01167c49c793d5d673747c0e3adb.las",
+			"conditions": null,
+			"center": [130, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/dbdf45cab0adbded1f260c1b356c52ce.las",
+			"conditions": null,
+			"center": [135, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/dc623742d6d1518e19959b248340fafd.las",
+			"conditions": null,
+			"center": [135, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/dc65ca08817cd673d0b89b8c97d1428.las",
+			"conditions": null,
+			"center": [135, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/dc7708c870000008a24eeca91f583600.las",
+			"conditions": null,
+			"center": [135, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/dcb51f940894768f4fc7398f5eb0c5e1.las",
+			"conditions": null,
+			"center": [135, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/dccaa9555afddd96a5c8e9fc8b2242fd.las",
+			"conditions": null,
+			"center": [135, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/dceb9450f6d9f0bc171b7dfa253c9cf2.las",
+			"conditions": null,
+			"center": [135, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/dd95faf803299254d57700c05b1862d8.las",
+			"conditions": null,
+			"center": [135, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/de424132b05e349793f0194265a9746c.las",
+			"conditions": null,
+			"center": [135, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/de630541c5d2a44e4bfcfdb26b8cb2c3.las",
+			"conditions": null,
+			"center": [135, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/de9ca0c3e32f907dcb61cf5d9c47c2c7.las",
+			"conditions": null,
+			"center": [135, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/deb865bdb628babd1ea49e67c45d0098.las",
+			"conditions": null,
+			"center": [135, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/defcf80fcef4b51b3f431ca2c1260d62.las",
+			"conditions": null,
+			"center": [135, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/df25fdb2b8ceac673b2deb8c31cb5d73.las",
+			"conditions": null,
+			"center": [135, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/df959f68bb22e402a24eeca91f583600.las",
+			"conditions": null,
+			"center": [135, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/dfa75192819d2b89d909dfebe054cd91.las",
+			"conditions": null,
+			"center": [135, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e0a4691bb3d3cb47e33462de7b4c569b.las",
+			"conditions": null,
+			"center": [135, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e0ca9ed192df5529e5e24299d76e4a78.las",
+			"conditions": null,
+			"center": [135, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e0d1720034ed6333542e93670cfd32f.las",
+			"conditions": null,
+			"center": [135, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e0d74618e316b0f16d9376f644442e99.las",
+			"conditions": null,
+			"center": [135, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e0d7fbacf037855393f0194265a9746c.las",
+			"conditions": null,
+			"center": [135, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e0e7905f91530fcc633c3142a206ef4b.las",
+			"conditions": null,
+			"center": [135, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e12d45cde8e886c463e148e250c0340d.las",
+			"conditions": null,
+			"center": [135, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e15f472709c535382c8ae424ae73c66.las",
+			"conditions": null,
+			"center": [135, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e175f500370eb8f9561dce3fe08634b7.las",
+			"conditions": null,
+			"center": [135, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e1c0fb24b0f16a9d5eec6d8d24f1fde1.las",
+			"conditions": null,
+			"center": [140, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e1d55b9cdd791c937fe275cdb56536f5.las",
+			"conditions": null,
+			"center": [140, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e22fb9fe7451af10afaf9bf875738c30.las",
+			"conditions": null,
+			"center": [140, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e25b244880bb40b9cc34b900bb2492e.las",
+			"conditions": null,
+			"center": [140, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e2dd8689a41a4eb7a62113f6bf783f69.las",
+			"conditions": null,
+			"center": [140, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e3378988d0aee759d48b953ad82bf595.las",
+			"conditions": null,
+			"center": [140, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e3f45b5945315a939526648647837830.las",
+			"conditions": null,
+			"center": [140, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e45f323ce7ecab8393f0194265a9746c.las",
+			"conditions": null,
+			"center": [140, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e4a2c2b16b5425825d90edd33668a4c2.las",
+			"conditions": null,
+			"center": [140, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e50dfe2b13d51ea1adb66be7b8c12fbc.las",
+			"conditions": null,
+			"center": [140, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e530bbce9716bf95bc4ac3caf16ef65.las",
+			"conditions": null,
+			"center": [140, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e54a1fb20957d39dae8a6b22091f0f0a.las",
+			"conditions": null,
+			"center": [140, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e585e31db7568c4cf0e1c0df18936d05.las",
+			"conditions": null,
+			"center": [140, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e59ccf98ad868a758b1a3513f58ebc5c.las",
+			"conditions": null,
+			"center": [140, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e5c64af35ff60ce069da8e7f9a803d12.las",
+			"conditions": null,
+			"center": [140, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e5fc7cde70b4d5dd63e148e250c0340d.las",
+			"conditions": null,
+			"center": [140, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e5ff4634ee6d00323f00d55155ebc541.las",
+			"conditions": null,
+			"center": [140, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e66d799f51f1558a2214be36f33a634a.las",
+			"conditions": null,
+			"center": [140, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e709e622fb4f54546d9376f644442e99.las",
+			"conditions": null,
+			"center": [140, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e70d5369f840577593f0194265a9746c.las",
+			"conditions": null,
+			"center": [140, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e7b57f47d2ff2093f0194265a9746c.las",
+			"conditions": null,
+			"center": [140, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e8ce159ab0250cdfb6e0a9d1e411d50c.las",
+			"conditions": null,
+			"center": [140, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/e90e8c13288718055216163257dea99c.las",
+			"conditions": null,
+			"center": [140, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ea0cccc085a8c4214f99643b5c4dd7ca.las",
+			"conditions": null,
+			"center": [140, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ea201ccc779eb93843a90475d48649b3.las",
+			"conditions": null,
+			"center": [140, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ea23bdf251c9be975c6a44a505804654.las",
+			"conditions": null,
+			"center": [145, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ea557b9733435d95e9317ebb79eeaf1a.las",
+			"conditions": null,
+			"center": [145, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/eaa2ff0101bbc4ac352b6518abcc1cc4.las",
+			"conditions": null,
+			"center": [145, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/eadc5e7826fa778939257bd6adf678.las",
+			"conditions": null,
+			"center": [145, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/eaf405d9ecd6a9df747506aa863f10e4.las",
+			"conditions": null,
+			"center": [145, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ebb111e59d33f36f792f3038a6b53389.las",
+			"conditions": null,
+			"center": [145, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ebf7994fd17b6331c64d0082475b0472.las",
+			"conditions": null,
+			"center": [145, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ec1149cc44edf89a6909632a947fc19b.las",
+			"conditions": null,
+			"center": [145, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ecb17b6917ba033bc39f53b4a75f9475.las",
+			"conditions": null,
+			"center": [145, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ecd53707110dbc208d8778ff441ce85d.las",
+			"conditions": null,
+			"center": [145, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ed1ca9a829715b78a71985b33d2601e3.las",
+			"conditions": null,
+			"center": [145, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ed2823c4896d692ed5ab54dd668fd99d.las",
+			"conditions": null,
+			"center": [145, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ed486c24321fcddaa3d3eb77b119df6d.las",
+			"conditions": null,
+			"center": [145, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ed68b19f2f34368bc029bcb600cee01.las",
+			"conditions": null,
+			"center": [145, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ed978355ce673ab01009233434be6ec0.las",
+			"conditions": null,
+			"center": [145, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ede91ce18b53368484d922f11bc5db6e.las",
+			"conditions": null,
+			"center": [145, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ee434f96e8398084a9edb43ba009e64a.las",
+			"conditions": null,
+			"center": [145, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ee7d5c8cd074b18992eedbdd14b936d.las",
+			"conditions": null,
+			"center": [145, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/eec9877379771abef4493a5b80949ad1.las",
+			"conditions": null,
+			"center": [145, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/eece2b501ee7563683ce694a1c6f6c51.las",
+			"conditions": null,
+			"center": [145, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ef1c22bd3b74953689f0379846507dd3.las",
+			"conditions": null,
+			"center": [145, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ef4fd97b0605d39d3f1082c2ac460e88.las",
+			"conditions": null,
+			"center": [145, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ef87e50f18f1407693f0194265a9746c.las",
+			"conditions": null,
+			"center": [145, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ef8874b3d10303c793f0194265a9746c.las",
+			"conditions": null,
+			"center": [145, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/efa4ceed4d7b25fbce1c7d24654787eb.las",
+			"conditions": null,
+			"center": [145, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f0ea12f645a1c541ce1a36e7d9d3bee.las",
+			"conditions": null,
+			"center": [150, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f11881e9363c00f6352e5d4d2615db5b.las",
+			"conditions": null,
+			"center": [150, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f146c58eaa06f5e4d57700c05b1862d8.las",
+			"conditions": null,
+			"center": [150, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f182545f81b6273f92d73a7cb82eabc7.las",
+			"conditions": null,
+			"center": [150, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f1a405948649acf919dabd0465d1d64c.las",
+			"conditions": null,
+			"center": [150, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f1fb45c857f52083a24eeca91f583600.las",
+			"conditions": null,
+			"center": [150, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f288cd2146b8f4c1f0e1c0df18936d05.las",
+			"conditions": null,
+			"center": [150, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f2b4f9d8f31d0dfcfffda81e9d316a1d.las",
+			"conditions": null,
+			"center": [150, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f3500593f65d37e5817f6c88302b2a8d.las",
+			"conditions": null,
+			"center": [150, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f37376f5089ad242561dce3fe08634b7.las",
+			"conditions": null,
+			"center": [150, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f411d80eb0dbc9158757b091804bc082.las",
+			"conditions": null,
+			"center": [150, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f430d1ecf9ebbf23d57700c05b1862d8.las",
+			"conditions": null,
+			"center": [150, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f440f59916c2ed897b076baeaedfec9b.las",
+			"conditions": null,
+			"center": [150, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f4dc2860ddfa244caee8866e459a90ea.las",
+			"conditions": null,
+			"center": [150, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f6146aa6171dd4f4828b9741c7dfc3ed.las",
+			"conditions": null,
+			"center": [150, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f6884341f0d6d2cd69a645978ae8c765.las",
+			"conditions": null,
+			"center": [150, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f7645b3c690d954682c2412261cb8600.las",
+			"conditions": null,
+			"center": [150, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f7938e387f8ee3f8f94083089dddc4d3.las",
+			"conditions": null,
+			"center": [150, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f7f1f2430ff969e9eb2f514f87188941.las",
+			"conditions": null,
+			"center": [150, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/f86c277a6e1f444293f0194265a9746c.las",
+			"conditions": null,
+			"center": [150, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fa6e4f4c21032d4befe0d4e1eba2e3af.las",
+			"conditions": null,
+			"center": [150, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fa82872eb8c9017f343b0b12983b9982.las",
+			"conditions": null,
+			"center": [150, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/faefd0da82f1606d9e0d303f663a5614.las",
+			"conditions": null,
+			"center": [150, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fb1a79f06ffbcaf540c20797381ee39f.las",
+			"conditions": null,
+			"center": [150, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fba2fc6f7ab8a62a93f0194265a9746c.las",
+			"conditions": null,
+			"center": [150, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fc003660554be7334dfe0ed95d7290cf.las",
+			"conditions": null,
+			"center": [155, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fc0dbc2ff44c860ed57700c05b1862d8.las",
+			"conditions": null,
+			"center": [155, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fc49acc3617915075756f5593365c94.las",
+			"conditions": null,
+			"center": [155, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fc7231fd95d1e4687a57dd3c9d98d88.las",
+			"conditions": null,
+			"center": [155, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fc76f63343050ee1d57700c05b1862d8.las",
+			"conditions": null,
+			"center": [155, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fc897eb93c621572ed724609df3eb104.las",
+			"conditions": null,
+			"center": [155, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fc8cc32bfeaca537c39ad9186be3fec9.las",
+			"conditions": null,
+			"center": [155, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fca53c92b6e4b3a1107cf6d75b4a137d.las",
+			"conditions": null,
+			"center": [155, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fcab134da044e5fc77f469126771fc30.las",
+			"conditions": null,
+			"center": [155, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fcc1d297e1c4be5d93f0194265a9746c.las",
+			"conditions": null,
+			"center": [155, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fcfa96b85ce4d6114e96698ef01e7360.las",
+			"conditions": null,
+			"center": [155, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fd277b425390a46ba059f9af4d1abb14.las",
+			"conditions": null,
+			"center": [155, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fdb74c27462dfd837c481698bd5233b4.las",
+			"conditions": null,
+			"center": [155, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/feaacb1b8c140e5ff962b6de585c4677.las",
+			"conditions": null,
+			"center": [155, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/feab270427cee00a24eeca91f583600.las",
+			"conditions": null,
+			"center": [155, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fecefd8313bb5bcdd86d4f3257dfa437.las",
+			"conditions": null,
+			"center": [155, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ff18697f9ce909311082f2ea630bf69e.las",
+			"conditions": null,
+			"center": [155, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ff3b5763b3dedda3241d076ab53023c1.las",
+			"conditions": null,
+			"center": [155, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ff82ee8b58b03dead5ba605b3c01b057.las",
+			"conditions": null,
+			"center": [155, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ff956097c2e0fd2cf66a9e192dbe265.las",
+			"conditions": null,
+			"center": [155, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/ffa8015ea7ab2e0b900fb9e135826c5e.las",
+			"conditions": null,
+			"center": [155, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Guitar/val/fffc2fc5a90254de9e317a6cc797b629.las",
+			"conditions": null,
+			"center": [155, 105, 0]
+		}
+    ],
+    "out_pcloud": "/ext4/lidar_data/shapenet/vl3d/out/guitar/fixed/hybrid/*",
+    "sequential_pipeline": [
+        {
+            "predict": "PredictivePipeline",
+            "model_path": "/ext4/lidar_data/shapenet/vl3d/out/guitar/fixed/hybrid/model/rf.pipe",
+            "nn_path": null
+        },
+        {
+			"writer": "ClassifiedPcloudWriter",
+			"out_pcloud": "*/predicted.las"
+		},
+        {
+            "eval": "ClassificationEvaluator",
+            "class_names": ["head", "body", "neck", "other"],
+            "ignore_classes": ["other"],
+            "ignore_predictions": true,
+            "metrics": ["OA", "P", "R", "F1", "IoU", "wP", "wR", "wF1", "wIoU", "MCC", "Kappa"],
+            "class_metrics": ["P", "R", "F1", "IoU"],
+            "report_path": "*/eval/report/global_eval.log",
+            "class_report_path": "*/eval/report/class_eval.log",
+            "confusion_matrix_report_path" : "*/eval/report/confusion_matrix.log",
+            "confusion_matrix_plot_path" : "*/eval/plot/confusion_matrix.svg",
+            "confusion_matrix_normalization_strategy": "row",
+            "class_distribution_report_path": "*/eval/report/class_distribution.log",
+            "class_distribution_plot_path": "*/eval/plot/class_distribution.svg",
+            "nthreads": -1
+        },
+		{
+		    "eval": "ClassificationUncertaintyEvaluator",
+		    "class_names": ["head", "body", "neck", "other"],
+		    "ignore_classes": ["other"],
+		    "include_probabilities": true,
+		    "include_weighted_entropy": false,
+		    "include_clusters": false,
+		    "weight_by_predictions": false,
+		    "num_clusters": 0,
+		    "clustering_max_iters": 0,
+		    "clustering_batch_size": 0,
+		    "clustering_entropy_weights": false,
+		    "clustering_reduce_function": null,
+		    "gaussian_kernel_points": 256,
+		    "report_path": "*/uncertainty/uncertainty.las",
+		    "plot_path": "*/uncertainty/"
+		}
+    ]
+}

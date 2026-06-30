@@ -1,0 +1,72 @@
+# Phase 6: Medium Benchmark Configuration
+# Objective: Test robustness of TW and JEPA features with larger data, multiple seeds, and class balancing
+
+data:
+  blocks_dir: "data/processed_blocks_tw"
+  train_split: "train_smoke"
+  val_split: "val_smoke"
+  test_split: "test_campaign"
+  
+  max_train_blocks: 2000
+  max_val_blocks: 300
+  max_test_blocks: 500
+  
+  # Ensure we sample enough points
+  points_per_block: 8192
+  
+  # To avoid issues with degenerate labels
+  ignore_index: 6
+  
+  # For Phase 6 we introduce balance strategies
+  # Possible values: "none", "class_weights", "focal_loss"
+  loss_type: "class_weights"
+  
+  # If true, uses a WeightedRandomSampler over blocks based on their rarest class
+  use_balanced_sampler: false
+
+training:
+  epochs: 50
+  batch_size: 8  # Reduced to prevent OOM with large block sizes
+  learning_rate: 0.001
+  weight_decay: 1e-4
+  patience: 10
+  num_workers: 0
+  
+  seeds: [42]
+
+models:
+  # Base MLP Baseline
+  E1:
+    type: "mlp"
+    use_tw: true
+    jepa_features: false
+    
+  # Base Backbone
+  E2:
+    type: "backbone"
+    use_tw: false
+    jepa_features: false
+    
+  # Backbone + TW
+  E3:
+    type: "backbone"
+    use_tw: true
+    jepa_features: false
+    
+  # Backbone + JEPA (Vanilla)
+  E4:
+    type: "backbone"
+    use_tw: false
+    jepa_features: true
+    jepa_path: "reports/jepa_features/jepa_features.csv" # Or whichever path is used
+    
+  # Backbone + TW-JEPA
+  E5:
+    type: "backbone"
+    use_tw: false
+    jepa_features: true
+    jepa_path: "reports/tw_jepa_features/tw_jepa_features.csv" # Or whichever path is used
+
+# Paths for outputs
+output:
+  reports_dir: "reports/phase6_medium_benchmark"

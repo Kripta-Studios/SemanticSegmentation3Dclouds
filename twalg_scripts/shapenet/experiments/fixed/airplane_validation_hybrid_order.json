@@ -1,0 +1,4090 @@
+{
+    "in_pcloud_concat": [
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d18592d9615b01bbbc0909d98a1ff2b4.las",
+			"conditions": null,
+			"center": [285, 220, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d18f2aeae4146464bd46d022fd7d80aa.las",
+			"conditions": null,
+			"center": [285, 225, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d199612c22fe9313f4fb6842b3610149.las",
+			"conditions": null,
+			"center": [285, 230, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d1a887a47991d1b3bc0909d98a1ff2b4.las",
+			"conditions": null,
+			"center": [285, 235, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d1a8e79eebf4a0b1579c3d4943e463ef.las",
+			"conditions": null,
+			"center": [285, 240, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d1b1c13fdec4d69ccfd264a25791a5e1.las",
+			"conditions": null,
+			"center": [285, 245, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d1b28579fde95f19e1873a3963e0d14.las",
+			"conditions": null,
+			"center": [285, 250, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d1b407350e61150942d79310bc7e47b3.las",
+			"conditions": null,
+			"center": [285, 255, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d1cdd239dcbfd018bbf3143b1cb6076a.las",
+			"conditions": null,
+			"center": [285, 260, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d1d308692cb4b6059a6e43b878d5b335.las",
+			"conditions": null,
+			"center": [285, 265, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d1df81e184c71e0f26360e1e29a956c7.las",
+			"conditions": null,
+			"center": [285, 270, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d1e3bba19cb9447dcf6c095014f481a4.las",
+			"conditions": null,
+			"center": [285, 275, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d1e78f6226a9ac76fb2fba771d8219ff.las",
+			"conditions": null,
+			"center": [290, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d1e81c9479eb1b7da9263338bcc7d067.las",
+			"conditions": null,
+			"center": [290, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d20e3ed9b3430672bbf3143b1cb6076a.las",
+			"conditions": null,
+			"center": [290, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d21c556af88582754c3a35cee92bb95b.las",
+			"conditions": null,
+			"center": [290, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d220ffb04a5ff31abd46d022fd7d80aa.las",
+			"conditions": null,
+			"center": [290, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d221f607d5b5c553faac198e88c3dbb7.las",
+			"conditions": null,
+			"center": [290, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d22521d217d89f8d5b1bb801ea1e2db7.las",
+			"conditions": null,
+			"center": [290, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d23eecb0437107756c63b8b48495261a.las",
+			"conditions": null,
+			"center": [290, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d2412f19d33572dc4c3a35cee92bb95b.las",
+			"conditions": null,
+			"center": [290, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d24e6c81b5261fe5ca2bd098b9203af.las",
+			"conditions": null,
+			"center": [290, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d24f2a1da14a00ce16b34c3751bc447d.las",
+			"conditions": null,
+			"center": [290, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d25572a7c7bd40a72d716a8ba99beff8.las",
+			"conditions": null,
+			"center": [290, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d276954441de1e878a3d2bbe7d58317e.las",
+			"conditions": null,
+			"center": [290, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d2815b419e61dbb0b87697d3904b168b.las",
+			"conditions": null,
+			"center": [290, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d281db2c631c0170991ade27bbcf967d.las",
+			"conditions": null,
+			"center": [290, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d2842bc324b3dac5bc0909d98a1ff2b4.las",
+			"conditions": null,
+			"center": [290, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d28a3cd771b2bf1e71d03b466c72ce41.las",
+			"conditions": null,
+			"center": [290, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d2bf5f39131584c0a8cba409c4409ba9.las",
+			"conditions": null,
+			"center": [290, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d2c7b95823938833339bd6b570381585.las",
+			"conditions": null,
+			"center": [290, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d2daef39d1cb8d027089ddd41f4af842.las",
+			"conditions": null,
+			"center": [290, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d2e2e23f5be557e2d1ab3b031c100cb1.las",
+			"conditions": null,
+			"center": [290, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d2e99eeecebf0c77bd46d022fd7d80aa.las",
+			"conditions": null,
+			"center": [290, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d2f8a99bbdc387c8c5552bebbfa48bd7.las",
+			"conditions": null,
+			"center": [290, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d2faf50d6d88dd0690baeef8ba5b93e5.las",
+			"conditions": null,
+			"center": [290, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d30689ca6cdf2601f551b6c3f174499e.las",
+			"conditions": null,
+			"center": [290, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d3198154076f49a86f0778e65d2e88ad.las",
+			"conditions": null,
+			"center": [290, 125, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d31a0f4f945775de5823df672991ed66.las",
+			"conditions": null,
+			"center": [290, 130, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d34eba7c2ce4db53adecb6fc00604132.las",
+			"conditions": null,
+			"center": [290, 135, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d353b227b279804190b1d6deb98feec6.las",
+			"conditions": null,
+			"center": [290, 140, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d3580448933d00fd90b1d6deb98feec6.las",
+			"conditions": null,
+			"center": [290, 145, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d37781e47470fa3d664a56105f5816ce.las",
+			"conditions": null,
+			"center": [290, 150, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d3856a35d1fb8536d8e727806889c9b0.las",
+			"conditions": null,
+			"center": [290, 155, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d38922599bc74f6da30fd8ce49679098.las",
+			"conditions": null,
+			"center": [290, 160, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d39075b8eb890a898deb28944f3f72ef.las",
+			"conditions": null,
+			"center": [290, 165, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d390f0246fd43cc8bd46d022fd7d80aa.las",
+			"conditions": null,
+			"center": [290, 170, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d3b39374c97d39da7dc01d89d8a05b74.las",
+			"conditions": null,
+			"center": [290, 175, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d3b9114df1d8a3388e415c6cf89025f0.las",
+			"conditions": null,
+			"center": [290, 180, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d3d788c1fb35227619ba010ddb4974fe.las",
+			"conditions": null,
+			"center": [290, 185, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d3dcf83f03c7ad2bbc0909d98a1ff2b4.las",
+			"conditions": null,
+			"center": [290, 190, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d3ecaf6bb9395131d563154e026c3490.las",
+			"conditions": null,
+			"center": [290, 195, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d3f2dcf27000283799d9d900afe054b8.las",
+			"conditions": null,
+			"center": [290, 200, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d3f93b6da62fae46a98ae8c73b190485.las",
+			"conditions": null,
+			"center": [290, 205, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d405b9e5f942fed5efe5d5ae25ee424e.las",
+			"conditions": null,
+			"center": [290, 210, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d438a4539d8068fd44601c64497858af.las",
+			"conditions": null,
+			"center": [290, 215, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d43b80dd95a2233a5ae839ffe09b9d31.las",
+			"conditions": null,
+			"center": [290, 220, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d441a12b217c26bc0d5f9d32d37453c.las",
+			"conditions": null,
+			"center": [290, 225, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d45772f938d14d52736e55e9ba083986.las",
+			"conditions": null,
+			"center": [290, 230, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d45809b73a371efd185b376619557c95.las",
+			"conditions": null,
+			"center": [290, 235, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d458335c758930c210b8e0008ef5faf6.las",
+			"conditions": null,
+			"center": [290, 240, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d47207e14e61db3f1436d436f198567c.las",
+			"conditions": null,
+			"center": [290, 245, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d48064100e793155f56a7ca118af1bd1.las",
+			"conditions": null,
+			"center": [290, 250, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d4849eddcd93569ac119f94203b4868c.las",
+			"conditions": null,
+			"center": [290, 255, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d4a8134b2463a8bca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [290, 260, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d4aec2680be68c813a116bc3efac4e3b.las",
+			"conditions": null,
+			"center": [290, 265, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d4cc520929730248642fa8402286a797.las",
+			"conditions": null,
+			"center": [290, 270, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d4d61a35e8b568fb7f1f82f6fc8747b8.las",
+			"conditions": null,
+			"center": [290, 275, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d4dac019726e980e203936772104a82d.las",
+			"conditions": null,
+			"center": [295, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d4ed7de4aa7799f066cf1b4a8fc3914e.las",
+			"conditions": null,
+			"center": [295, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d5189c00524f662c79f9bc8b647dba0.las",
+			"conditions": null,
+			"center": [295, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d51bd83c27fc3167ba4ae55719e5e195.las",
+			"conditions": null,
+			"center": [295, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d532217c7fabf1d44e8b48a4c01e36f8.las",
+			"conditions": null,
+			"center": [295, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d532a5abb756ebebcc14f1e6f4f4f49b.las",
+			"conditions": null,
+			"center": [295, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d54a694d514b1911844ac48bcfce34.las",
+			"conditions": null,
+			"center": [295, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d54ca25127a15d2b937ae00fead8910d.las",
+			"conditions": null,
+			"center": [295, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d56fba80d39bdff738decdbba236bc1d.las",
+			"conditions": null,
+			"center": [295, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d581b2e10f8bc6aecc1d733a19631a1.las",
+			"conditions": null,
+			"center": [295, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d583d6f23c590f3ec672ad25c77a396.las",
+			"conditions": null,
+			"center": [295, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d59bb0ad79371634f3d7c71ae132007d.las",
+			"conditions": null,
+			"center": [295, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d59cd5f2012a1ca1aae46a5cc955c766.las",
+			"conditions": null,
+			"center": [295, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d59d75f52ac9b241ae0d772a1c85134a.las",
+			"conditions": null,
+			"center": [295, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d5a94c9f09d238c4c3a35cee92bb95b.las",
+			"conditions": null,
+			"center": [295, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d5ad529ad399086e4e9a6f7cd468e49d.las",
+			"conditions": null,
+			"center": [295, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d5b08d1355502d325f83a2299c09f64.las",
+			"conditions": null,
+			"center": [295, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d5b78307fd9a0764bc97347c46fe15e1.las",
+			"conditions": null,
+			"center": [295, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d5e01850a9d1f3ac5fb48d488d5dfafd.las",
+			"conditions": null,
+			"center": [295, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d5f01e2aa54bbf28ca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [295, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d5f4e2228e3fadd2aa6a832b9db7452f.las",
+			"conditions": null,
+			"center": [295, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d605a53c0917acada80799ffaf21ea7d.las",
+			"conditions": null,
+			"center": [295, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d60ec60e091e9d7ade125dc914c4bb9c.las",
+			"conditions": null,
+			"center": [295, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d615a8217b70af06bc0909d98a1ff2b4.las",
+			"conditions": null,
+			"center": [295, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d617ffca7890b33eeb9d949e4b90f4af.las",
+			"conditions": null,
+			"center": [295, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d629589ee52d48ee4d210d9468aedaf2.las",
+			"conditions": null,
+			"center": [295, 125, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d639c8d2f55982558b96ae1a0a8b84ec.las",
+			"conditions": null,
+			"center": [295, 130, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d63bd140efa537dcf73e5bc170b7e2be.las",
+			"conditions": null,
+			"center": [295, 135, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d63daa9d1fd2ff5d575bf8a4b14be4f4.las",
+			"conditions": null,
+			"center": [295, 140, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d64caea6c332861bcc14f1e6f4f4f49b.las",
+			"conditions": null,
+			"center": [295, 145, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d64f391dee878277bd46d022fd7d80aa.las",
+			"conditions": null,
+			"center": [295, 150, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d6749fad86648a9719ba010ddb4974fe.las",
+			"conditions": null,
+			"center": [295, 155, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d696c3119cae40323ada73811bb576de.las",
+			"conditions": null,
+			"center": [295, 160, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d6b4ad58a49bb80cd13ef00338ba8c52.las",
+			"conditions": null,
+			"center": [295, 165, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d6bf9fb6149faabe36f3a2343a8221f2.las",
+			"conditions": null,
+			"center": [295, 170, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d6c1cb09e27c3fbce8b8a0b16211ba77.las",
+			"conditions": null,
+			"center": [295, 175, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d6c655a7c97cab8e9f5f802084bd1d73.las",
+			"conditions": null,
+			"center": [295, 180, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d6ca5966c5ed5b86da2b0f839aba40f9.las",
+			"conditions": null,
+			"center": [295, 185, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d6cc7ffd165de05e2e2de556c136fbc8.las",
+			"conditions": null,
+			"center": [295, 190, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d6d84d05892a4f492e7c68eb5d1b9123.las",
+			"conditions": null,
+			"center": [295, 195, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d6db0815d8fbaad621967ef97204d18.las",
+			"conditions": null,
+			"center": [295, 200, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d6edd8b0801a02baf7571913c73c0c78.las",
+			"conditions": null,
+			"center": [295, 205, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d708c311bcd60e61c9ac656f0c2edc4b.las",
+			"conditions": null,
+			"center": [295, 210, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d709b3afd41a578ba03df56f69a35fcc.las",
+			"conditions": null,
+			"center": [295, 215, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d70d648947c65b1eca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [295, 220, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d722973c75c85d93d0734afa0d357999.las",
+			"conditions": null,
+			"center": [295, 225, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d7287ce98d521db5ca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [295, 230, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d72a483cf8a0cf2bbbf3143b1cb6076a.las",
+			"conditions": null,
+			"center": [295, 235, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d7454b0e80d3236ff268234accd8cf4e.las",
+			"conditions": null,
+			"center": [295, 240, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d74767519393a937f73e5bc170b7e2be.las",
+			"conditions": null,
+			"center": [295, 245, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d75a4d4d25863f5062747c704d78d4f8.las",
+			"conditions": null,
+			"center": [295, 250, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d75ce9ee8a64adfd98459325335edae9.las",
+			"conditions": null,
+			"center": [295, 255, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d777b1e4ba72cebac5353b0f3cdec54.las",
+			"conditions": null,
+			"center": [295, 260, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d78a16856adad344670aaa01f77ae41a.las",
+			"conditions": null,
+			"center": [295, 265, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d7a2512d9d8ad4c8a18e0889038e4fb6.las",
+			"conditions": null,
+			"center": [295, 270, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d7e8b636d4a7dab67e697b0700f10b81.las",
+			"conditions": null,
+			"center": [295, 275, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d7f3d0503ee4ee1cc34b900bb2492e.las",
+			"conditions": null,
+			"center": [300, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d7f71651e6571ee2f63894cf4226f14.las",
+			"conditions": null,
+			"center": [300, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d80486b768083cd6ba0d990ae229b477.las",
+			"conditions": null,
+			"center": [300, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d80afa36aeb72c552b5147716975ed8a.las",
+			"conditions": null,
+			"center": [300, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d81042a53dd1cc5bd90bfc986bc4c94d.las",
+			"conditions": null,
+			"center": [300, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d83300deab42c100eb9db4e832a6dd82.las",
+			"conditions": null,
+			"center": [300, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d837b5228d9c010bbe584d85bf07b4ac.las",
+			"conditions": null,
+			"center": [300, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d844094b073a0452b04b2d1c5ce9783b.las",
+			"conditions": null,
+			"center": [300, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d8452d4fe51f2bab3554ccf8c30febe7.las",
+			"conditions": null,
+			"center": [300, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d84bb293898861ed9b2acbfd8323f804.las",
+			"conditions": null,
+			"center": [300, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d8719b491412ea0bb1cb87d703a74b6f.las",
+			"conditions": null,
+			"center": [300, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d883e6e5622a0cab72351dbf9e0687e0.las",
+			"conditions": null,
+			"center": [300, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d8a037897d5d5b108130971b27e95927.las",
+			"conditions": null,
+			"center": [300, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d8a43017132c210cc1006ed55bc1a3fc.las",
+			"conditions": null,
+			"center": [300, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d8a8e238987fed8dbc0909d98a1ff2b4.las",
+			"conditions": null,
+			"center": [300, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d8d9de967255b4c562b600da24e0965.las",
+			"conditions": null,
+			"center": [300, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d8e8540acddacf98c1006ed55bc1a3fc.las",
+			"conditions": null,
+			"center": [300, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d919249737749c36417568af9ae9577f.las",
+			"conditions": null,
+			"center": [300, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d940f33afc01ff036da97d9f744f7e97.las",
+			"conditions": null,
+			"center": [300, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d96f2b6990d0d79e247412be0e58d7d4.las",
+			"conditions": null,
+			"center": [300, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d984822941e7a768c231d70e1e0cc567.las",
+			"conditions": null,
+			"center": [300, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d99ddce71988c822475045ea78b20eb7.las",
+			"conditions": null,
+			"center": [300, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d9a263d86ae0fa599751c7a6f15617f4.las",
+			"conditions": null,
+			"center": [300, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d9a92927192e9755702736225b32125.las",
+			"conditions": null,
+			"center": [300, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d9c080cb6634a902ca9f0727e23831d9.las",
+			"conditions": null,
+			"center": [300, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d9d282f79262ebd4c3a35cee92bb95b.las",
+			"conditions": null,
+			"center": [300, 125, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d9d39f688eb9ba58b3f2b01de37c0b29.las",
+			"conditions": null,
+			"center": [300, 130, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d9dd8dd2c422dadaad70e50d5d7d02a5.las",
+			"conditions": null,
+			"center": [300, 135, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d9eaf9c7d58279dc9a6e43b878d5b335.las",
+			"conditions": null,
+			"center": [300, 140, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/d9f90f110ce30fbbadecb6fc00604132.las",
+			"conditions": null,
+			"center": [300, 145, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/da12fdb456d5fb588b96ae1a0a8b84ec.las",
+			"conditions": null,
+			"center": [300, 150, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/da1acb401541235be4d2773f0358b43b.las",
+			"conditions": null,
+			"center": [300, 155, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/da26509e7d1864a162b600da24e0965.las",
+			"conditions": null,
+			"center": [300, 160, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/da3ed25d281fc4c065fc5f76098aceb0.las",
+			"conditions": null,
+			"center": [300, 165, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/da58b3e055132c9f6afab9f956f15ea.las",
+			"conditions": null,
+			"center": [300, 170, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/da5fda29d2415fb09d92b4de623f5639.las",
+			"conditions": null,
+			"center": [300, 175, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/da67955425ffe66071d03b466c72ce41.las",
+			"conditions": null,
+			"center": [300, 180, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/da6faddc7079ce8ab6befd5df74fffa2.las",
+			"conditions": null,
+			"center": [300, 185, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/da7354a90e6596e6139336f03eb955d2.las",
+			"conditions": null,
+			"center": [300, 190, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/da9c541228a171b7ca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [300, 195, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/da9d111e1175d318bbf3143b1cb6076a.las",
+			"conditions": null,
+			"center": [300, 200, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dab7d624889233a863dc0bc8d259b20e.las",
+			"conditions": null,
+			"center": [300, 205, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dac25e0fbef7dabaf1692146d36a4a3d.las",
+			"conditions": null,
+			"center": [300, 210, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dacb447d7820e7f7ca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [300, 215, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dad83c903379cb9cfa585c96250561a9.las",
+			"conditions": null,
+			"center": [300, 220, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dadf41579d385b0aacf77e718d93f3e1.las",
+			"conditions": null,
+			"center": [300, 225, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dae59259ed2a2951d13ef00338ba8c52.las",
+			"conditions": null,
+			"center": [300, 230, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dae96d5eb7dd6fcd2863c6a2c8157d17.las",
+			"conditions": null,
+			"center": [300, 235, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/daeb27ada93505b1e24e4b657f0a298.las",
+			"conditions": null,
+			"center": [300, 240, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/daedff5e78136a8b507c9a5cb0f72e1e.las",
+			"conditions": null,
+			"center": [300, 245, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/daf0298bbe90dff19751c7a6f15617f4.las",
+			"conditions": null,
+			"center": [300, 250, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/db02eb57817e4b4d22362be7f5226e91.las",
+			"conditions": null,
+			"center": [300, 255, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/db0c0fc7ce05d372311e3590f044c241.las",
+			"conditions": null,
+			"center": [300, 260, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/db4079b8c7d3d674ca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [300, 265, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/db4e26b10e48f0202eb17a4a1756af76.las",
+			"conditions": null,
+			"center": [300, 270, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/db5146b7695fafba78d7c0e1adfe122c.las",
+			"conditions": null,
+			"center": [300, 275, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/db567b8afbaaa95060a762246a709d46.las",
+			"conditions": null,
+			"center": [305, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/db5fa6a73bbe6d35ca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [305, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/db628662ba1cac04b627754c4259e985.las",
+			"conditions": null,
+			"center": [305, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/db73a3c857949f469a6e43b878d5b335.las",
+			"conditions": null,
+			"center": [305, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/db758090dd739ee9ca68a659ecae961c.las",
+			"conditions": null,
+			"center": [305, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/db8ee29417ddae1bae6908c1ddfd8734.las",
+			"conditions": null,
+			"center": [305, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dba3ab64bab4ed3ed13ef00338ba8c52.las",
+			"conditions": null,
+			"center": [305, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dbab9feed7e936cfa87372b03d6dc78b.las",
+			"conditions": null,
+			"center": [305, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dbc521b1d4c2d308303d346f4be7d4f.las",
+			"conditions": null,
+			"center": [305, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dbd0efc89242cc9318de900bee20377.las",
+			"conditions": null,
+			"center": [305, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dbd589812bda0b1ebab624e35355496d.las",
+			"conditions": null,
+			"center": [305, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dbd74d18fa992eee7f1f82f6fc8747b8.las",
+			"conditions": null,
+			"center": [305, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dbdca81a0f9079096d511e9563e4bbe7.las",
+			"conditions": null,
+			"center": [305, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dbee200cebd464779b0ed23034a67f7f.las",
+			"conditions": null,
+			"center": [305, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dc03e743739c4f87c27f2d9f006d69eb.las",
+			"conditions": null,
+			"center": [305, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dc28756381ac019ac2912ef1a1302821.las",
+			"conditions": null,
+			"center": [305, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dc344ae06e26aa55615ba7bf3620290d.las",
+			"conditions": null,
+			"center": [305, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dc3bfc83bc2d1db643afdb9c81ff2967.las",
+			"conditions": null,
+			"center": [305, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dc6a2bdc4c3e630a43bc71474ad05fbf.las",
+			"conditions": null,
+			"center": [305, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dc74cd06430b61f478d9c09d692f9057.las",
+			"conditions": null,
+			"center": [305, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dc7a703f94b3b17667c5e3041553656b.las",
+			"conditions": null,
+			"center": [305, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dc7c5d12854b9467b96212c8f6cd06e.las",
+			"conditions": null,
+			"center": [305, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dc8d9003cde43b66c8727b27ee96a4b7.las",
+			"conditions": null,
+			"center": [305, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dca7f88e151f196b8179909e06795c03.las",
+			"conditions": null,
+			"center": [305, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dcb5bded8772135b4295343ee7255799.las",
+			"conditions": null,
+			"center": [305, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dcbd333ef51b76862b600da24e0965.las",
+			"conditions": null,
+			"center": [305, 125, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dcca40aae3eb0c8757bef59252fb18b5.las",
+			"conditions": null,
+			"center": [305, 130, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dcded0031a71305c52d6957c59c3d213.las",
+			"conditions": null,
+			"center": [305, 135, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dd465efdee6a57e966cf1b4a8fc3914e.las",
+			"conditions": null,
+			"center": [305, 140, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dd48aa92170bdde04c3a35cee92bb95b.las",
+			"conditions": null,
+			"center": [305, 145, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dd4da4309c12d47bc2c2c81e2232aa95.las",
+			"conditions": null,
+			"center": [305, 150, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dd5310819d4f16d7b9fc567905a4b292.las",
+			"conditions": null,
+			"center": [305, 155, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dd65065e6e2d31d62e350437b1fc5163.las",
+			"conditions": null,
+			"center": [305, 160, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dd949574a91719eb7ab25516d117381a.las",
+			"conditions": null,
+			"center": [305, 165, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dd9a7dd5e2ea3389938204d34a891739.las",
+			"conditions": null,
+			"center": [305, 170, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dd9c0622e873de43c752b66cc923fdb.las",
+			"conditions": null,
+			"center": [305, 175, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dd9e42969d34463aca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [305, 180, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dd9ece07d4bc696c2bafe808edd44356.las",
+			"conditions": null,
+			"center": [305, 185, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ddb96cc263869979f446f92b52bbd82a.las",
+			"conditions": null,
+			"center": [305, 190, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ddb9b552868e8c61334736c27ce16882.las",
+			"conditions": null,
+			"center": [305, 195, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ddc14c7e0a228663796843908eee8f7d.las",
+			"conditions": null,
+			"center": [305, 200, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ddd06628f3bfd0b64e1dedff94c67c76.las",
+			"conditions": null,
+			"center": [305, 205, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ddd6c2a51c25036c8a43cd65b179a1ff.las",
+			"conditions": null,
+			"center": [305, 210, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ddd729a8623bcb6e8699933784576e73.las",
+			"conditions": null,
+			"center": [305, 215, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ddec69970cbc4d29112a90660b187a10.las",
+			"conditions": null,
+			"center": [305, 220, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ddf0e3053cb1ca8f5e9e2656aff7dd5b.las",
+			"conditions": null,
+			"center": [305, 225, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ddf4aa5f68f89616bce962d6c4b37336.las",
+			"conditions": null,
+			"center": [305, 230, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ddfbeb997ef83cab884a857d19f7439f.las",
+			"conditions": null,
+			"center": [305, 235, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/de001f9e2311dffb7209009cfb89d4bd.las",
+			"conditions": null,
+			"center": [305, 240, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/de1a7b4e9911e48b48e8405d6c51a908.las",
+			"conditions": null,
+			"center": [305, 245, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/de1e70fefcabfb6f79be89de816ea2e6.las",
+			"conditions": null,
+			"center": [305, 250, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/de29a1335c332a5ef7bc9a344bb7bae5.las",
+			"conditions": null,
+			"center": [305, 255, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/de3a0bb3f0ca87a5674fc9582804ad0a.las",
+			"conditions": null,
+			"center": [305, 260, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/de45798ef57fe2d131b4f9e586a6d334.las",
+			"conditions": null,
+			"center": [305, 265, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/de519752147a225032387cdb9b2a84d5.las",
+			"conditions": null,
+			"center": [305, 270, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/de543fb92592aa48236a74f773a58aa.las",
+			"conditions": null,
+			"center": [305, 275, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/de5807cb73bcbbf18587e940b916a22f.las",
+			"conditions": null,
+			"center": [310, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/de5cade3966a1dad94946b454cd190d0.las",
+			"conditions": null,
+			"center": [310, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/de65da5cdc92b4aebc0909d98a1ff2b4.las",
+			"conditions": null,
+			"center": [310, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/de72864008c4db8bdeadc9ca0263db5a.las",
+			"conditions": null,
+			"center": [310, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/de776175878f17d1f4c1adce71073351.las",
+			"conditions": null,
+			"center": [310, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/de7cc3442b1775d46559a92f80e3672e.las",
+			"conditions": null,
+			"center": [310, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/de863b025e53c9a63554ccf8c30febe7.las",
+			"conditions": null,
+			"center": [310, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/de9564aeaa585a6ccbc790a63192d2ab.las",
+			"conditions": null,
+			"center": [310, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/de9e093bb17848c3b2bd4a92202f8700.las",
+			"conditions": null,
+			"center": [310, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dea43c46fdbe84511adbb4c4e06ad649.las",
+			"conditions": null,
+			"center": [310, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/deb196087108dfbdbe4df22b15a36e0b.las",
+			"conditions": null,
+			"center": [310, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/deb9d02cd1eda25270c4138179d9ed97.las",
+			"conditions": null,
+			"center": [310, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/debd942c5fcdc9c84c2c88971423d0be.las",
+			"conditions": null,
+			"center": [310, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ded529516b4362c9f019a51d1a3b2e07.las",
+			"conditions": null,
+			"center": [310, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/deefcd290f7f2f1a79201593c1eb4b0.las",
+			"conditions": null,
+			"center": [310, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/df0b14faa90bd4dce68b9e5f5c3d0eca.las",
+			"conditions": null,
+			"center": [310, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/df1c68e94259c6cf5c7319b71bdce6e.las",
+			"conditions": null,
+			"center": [310, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/df25be12ae47d2517ef7776b3bf5815c.las",
+			"conditions": null,
+			"center": [310, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/df411aa240fe48d5855eb7906a7a7a04.las",
+			"conditions": null,
+			"center": [310, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/df68b8fb9f4531b42e690fa6dfd5d610.las",
+			"conditions": null,
+			"center": [310, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/df6aae66a8c378ae9029a69fa5fc9ad.las",
+			"conditions": null,
+			"center": [310, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/df7313e87ef2905d37678474be485ca.las",
+			"conditions": null,
+			"center": [310, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/df8bb967a346ccc25e9e2656aff7dd5b.las",
+			"conditions": null,
+			"center": [310, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/df990580230f0254d21176457f0be3a.las",
+			"conditions": null,
+			"center": [310, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/df9d8ab5ab6f50ed4d4cb1c2a5e48b7a.las",
+			"conditions": null,
+			"center": [310, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dfa310706fad49d873ec74c119307b9.las",
+			"conditions": null,
+			"center": [310, 125, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dfa36bffe436a98ee0534173b9189765.las",
+			"conditions": null,
+			"center": [310, 130, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dfa5d6ed898152d34210bb5f1b1324bb.las",
+			"conditions": null,
+			"center": [310, 135, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dfdcc024d1043c73d5dc0e7cb9b4e7b6.las",
+			"conditions": null,
+			"center": [310, 140, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dfe65f8a20df11c5d1df55cbe0874aa.las",
+			"conditions": null,
+			"center": [310, 145, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/dfed744828fceb4d28cd0e56fe42c08.las",
+			"conditions": null,
+			"center": [310, 150, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e0058b4948f87d3b87697d3904b168b.las",
+			"conditions": null,
+			"center": [310, 155, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e005d8b297850d483a99ba0078ef7bd1.las",
+			"conditions": null,
+			"center": [310, 160, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e00b89bc338348caa42c49797afd1f5c.las",
+			"conditions": null,
+			"center": [310, 165, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e00d7bd590ac129bbc0909d98a1ff2b4.las",
+			"conditions": null,
+			"center": [310, 170, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e02485f093835f45c1b64d86df61366a.las",
+			"conditions": null,
+			"center": [310, 175, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e025a1fc1bd71c2aacf77e718d93f3e1.las",
+			"conditions": null,
+			"center": [310, 180, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e028fd73515465da5e9e2656aff7dd5b.las",
+			"conditions": null,
+			"center": [310, 185, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e033b6ad34586a86cc1c9e8218bfe7fc.las",
+			"conditions": null,
+			"center": [310, 190, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e037cb87e6cdcd76df39601c41fbe0ba.las",
+			"conditions": null,
+			"center": [310, 195, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e0385af10bddc6a0ca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [310, 200, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e039c9760ca026cc6aa3bf023a2b42a5.las",
+			"conditions": null,
+			"center": [310, 205, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e06c2333068e9bd0755d33896264181d.las",
+			"conditions": null,
+			"center": [310, 210, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e06d3e6c1fb4b208cb7c15fd62c3982e.las",
+			"conditions": null,
+			"center": [310, 215, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e08402fb1e5953a2a93f0f952e72609.las",
+			"conditions": null,
+			"center": [310, 220, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e08574959d2cb7c8f6cabb305f7d6d18.las",
+			"conditions": null,
+			"center": [310, 225, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e090eb003856ed12ffbd931fcaa69140.las",
+			"conditions": null,
+			"center": [310, 230, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e09c32b947e33f619ba010ddb4974fe.las",
+			"conditions": null,
+			"center": [310, 235, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e0a8ae255ed47518a847e990b54bf80c.las",
+			"conditions": null,
+			"center": [310, 240, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e0ad511aab31dfdb3e237dc81fd8be72.las",
+			"conditions": null,
+			"center": [310, 245, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e0aec5757f7a907d647cd52f13caf24b.las",
+			"conditions": null,
+			"center": [310, 250, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e0b5c450de6d7fe3d87c63d8b3018b58.las",
+			"conditions": null,
+			"center": [310, 255, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e0bb0ddf67462f4a8b686f76be476fe0.las",
+			"conditions": null,
+			"center": [310, 260, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e0cc4f538a8da2d65d3bbd70fc7759b7.las",
+			"conditions": null,
+			"center": [310, 265, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e0df54a0990000035dde10d3d9d6a06.las",
+			"conditions": null,
+			"center": [310, 270, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e0df97dfc068e3664bf88973bd147a26.las",
+			"conditions": null,
+			"center": [310, 275, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e0e0d713c8969b52ca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [315, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e110c699f2ed6511b53a02c8ab03ad65.las",
+			"conditions": null,
+			"center": [315, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e115f4f824e28246becc132ee053f2fa.las",
+			"conditions": null,
+			"center": [315, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e1225308d6c26c862b600da24e0965.las",
+			"conditions": null,
+			"center": [315, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e127b1f5ead603f9a5a118bd15e6e34f.las",
+			"conditions": null,
+			"center": [315, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e1324a093b45645c5a5672eede2b271f.las",
+			"conditions": null,
+			"center": [315, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e138a98d82f3aa692142bc26f72ae44c.las",
+			"conditions": null,
+			"center": [315, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e15f4c98857b67e41e287f9f679ab620.las",
+			"conditions": null,
+			"center": [315, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e160529ef50ae4dbb819cac660ba383c.las",
+			"conditions": null,
+			"center": [315, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e161df613fc808b0d7ec54df5db5828c.las",
+			"conditions": null,
+			"center": [315, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e16f9cc7dedcacdb9b0435532743fd43.las",
+			"conditions": null,
+			"center": [315, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e17a696c47d4292393db03f6b4e68f17.las",
+			"conditions": null,
+			"center": [315, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e18b6350437cfe0d727249e8d9a90100.las",
+			"conditions": null,
+			"center": [315, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e1a8e2f93abfc7d590baeef8ba5b93e5.las",
+			"conditions": null,
+			"center": [315, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e1be99a614c85c3e2016648502c798bf.las",
+			"conditions": null,
+			"center": [315, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e1e5cfcabcbe26a03087f84b199fd297.las",
+			"conditions": null,
+			"center": [315, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e1e7f3843b1fb876f5156bb441883fa.las",
+			"conditions": null,
+			"center": [315, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e1fbbf2ea1989b49fb2ad20449a93a60.las",
+			"conditions": null,
+			"center": [315, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e2116e0b34db656dfca1f1143bb6bc17.las",
+			"conditions": null,
+			"center": [315, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e216667457193c729a6e43b878d5b335.las",
+			"conditions": null,
+			"center": [315, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e218bb755f35da1bb4cdad9a5bf52dd5.las",
+			"conditions": null,
+			"center": [315, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e2275ee8d6b175f2f446f92b52bbd82a.las",
+			"conditions": null,
+			"center": [315, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e24be0487f6a3a92d4fd6e0556ecdd3d.las",
+			"conditions": null,
+			"center": [315, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e25794343ee37d6fa8eeb11153b68d81.las",
+			"conditions": null,
+			"center": [315, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e25e3dc95243a92c59bcb260e54d3785.las",
+			"conditions": null,
+			"center": [315, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e2612c366bd11e305e9e2656aff7dd5b.las",
+			"conditions": null,
+			"center": [315, 125, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e27229a5f83b0ac96ece6611a5309fa2.las",
+			"conditions": null,
+			"center": [315, 130, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e283e3825d66a985b87697d3904b168b.las",
+			"conditions": null,
+			"center": [315, 135, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e28e5714139535e7a9b2becd26dc2fc1.las",
+			"conditions": null,
+			"center": [315, 140, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e2a6bed8b8920586c7a2c209f9742f15.las",
+			"conditions": null,
+			"center": [315, 145, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e2ddbf9e63bbf9cc4e99bd46be8e610a.las",
+			"conditions": null,
+			"center": [315, 150, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e2f91794c302f5c03221f63172285740.las",
+			"conditions": null,
+			"center": [315, 155, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e30e25fe047ce1ea10b08ceced9a0113.las",
+			"conditions": null,
+			"center": [315, 160, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e31da3ac74fa3c0c23db3adbb2f1dce.las",
+			"conditions": null,
+			"center": [315, 165, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e332fb3eb2c4016ec1f9d235878ff0a9.las",
+			"conditions": null,
+			"center": [315, 170, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e33fbcf5b616d6f9f44f89e40af48618.las",
+			"conditions": null,
+			"center": [315, 175, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e3473fc8fffca7d4d972c9dd75ed77d4.las",
+			"conditions": null,
+			"center": [315, 180, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e36ce61195489a56c8da6d3458daff84.las",
+			"conditions": null,
+			"center": [315, 185, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e380f6fa720e1c15560a4691498bd2fc.las",
+			"conditions": null,
+			"center": [315, 190, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e387c8d826cbbdd68a8dc9dc46f918a8.las",
+			"conditions": null,
+			"center": [315, 195, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e3aff5ae3e8f2a7c4c2c88971423d0be.las",
+			"conditions": null,
+			"center": [315, 200, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e3b06cf8bea9a6a5c1006ed55bc1a3fc.las",
+			"conditions": null,
+			"center": [315, 205, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e3bdca8304aa6593c503a3776fc280fe.las",
+			"conditions": null,
+			"center": [315, 210, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e3c26c3920b93f36eb7fefaef8eada2b.las",
+			"conditions": null,
+			"center": [315, 215, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e3d197bfb47ec943c9d7d324d11034c9.las",
+			"conditions": null,
+			"center": [315, 220, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e3dd7fd80f9e53be6ec2a8147a044691.las",
+			"conditions": null,
+			"center": [315, 225, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e3de366a0cfb59ed38294c37c250d7cd.las",
+			"conditions": null,
+			"center": [315, 230, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e3e6cbc295806a47cf0420e0d05f48de.las",
+			"conditions": null,
+			"center": [315, 235, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e3f562bd552fbb14496e2f80fb255499.las",
+			"conditions": null,
+			"center": [315, 240, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e3f68fbd5d1629e238976998fb731b88.las",
+			"conditions": null,
+			"center": [315, 245, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e3fd510add7b1aa3c19eb6ab3736de88.las",
+			"conditions": null,
+			"center": [315, 250, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e409d714620161c132fa725d7a62a02a.las",
+			"conditions": null,
+			"center": [315, 255, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e413c15ded9ba57a23fc69eefd95e6d3.las",
+			"conditions": null,
+			"center": [315, 260, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e416ba617d5388401b0d75a1d7e2d58.las",
+			"conditions": null,
+			"center": [315, 265, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e41bbd12896cdc724d210d9468aedaf2.las",
+			"conditions": null,
+			"center": [315, 270, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e41c5719ad09055f1b880c747ee1f83.las",
+			"conditions": null,
+			"center": [315, 275, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e4237061106f5df1dc82b8fee1057b30.las",
+			"conditions": null,
+			"center": [320, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e42443669339a6c1a5a118bd15e6e34f.las",
+			"conditions": null,
+			"center": [320, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e430f24c3125997339cb1b92881e8e76.las",
+			"conditions": null,
+			"center": [320, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e431f79ac9f0266bca677733d59db4df.las",
+			"conditions": null,
+			"center": [320, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e452189bb7bd6617ef7cbef6334698fc.las",
+			"conditions": null,
+			"center": [320, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e45d71c7afb3cb1c67629418bd553f95.las",
+			"conditions": null,
+			"center": [320, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e4665d76bf8fc441536d5be52cb9d26a.las",
+			"conditions": null,
+			"center": [320, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e49d1e1d176ec1dfbc0909d98a1ff2b4.las",
+			"conditions": null,
+			"center": [320, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e4ac77fdf28116232fa725d7a62a02a.las",
+			"conditions": null,
+			"center": [320, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e4b0599a9d06f7ae39cb1b92881e8e76.las",
+			"conditions": null,
+			"center": [320, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e4bdcd6baad501ab2a8b9d468136b0a1.las",
+			"conditions": null,
+			"center": [320, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e4d902abdf9481558caa71b1fbf7fb98.las",
+			"conditions": null,
+			"center": [320, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e4e1b542f8732ae1c6768d9a3f27965.las",
+			"conditions": null,
+			"center": [320, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e4e98f8654d29536dc858dada15498d2.las",
+			"conditions": null,
+			"center": [320, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e501a0327ab3731d0f859db45b95a2d.las",
+			"conditions": null,
+			"center": [320, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e50f001069380884b87697d3904b168b.las",
+			"conditions": null,
+			"center": [320, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e511258df02edf1046ed10e8f7fe336e.las",
+			"conditions": null,
+			"center": [320, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e51b620853f2cc0137678474be485ca.las",
+			"conditions": null,
+			"center": [320, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e51bd7d434d1ee6622096c1bee7ddc7a.las",
+			"conditions": null,
+			"center": [320, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e521828113e1e0c45e28caa3b26a73fd.las",
+			"conditions": null,
+			"center": [320, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e523ba4e79a48d31bd46d022fd7d80aa.las",
+			"conditions": null,
+			"center": [320, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e52f08852429e6117dc01d89d8a05b74.las",
+			"conditions": null,
+			"center": [320, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e52f809111bb75692b5a1d128057b6a4.las",
+			"conditions": null,
+			"center": [320, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e533a1a758a1752b187ea8c086d9f2c.las",
+			"conditions": null,
+			"center": [320, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e53547a01129eef87eda1e12bd28fb7.las",
+			"conditions": null,
+			"center": [320, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e55224bb456066c618d508b491dafd46.las",
+			"conditions": null,
+			"center": [320, 125, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e557af9d5aa40f424d210d9468aedaf2.las",
+			"conditions": null,
+			"center": [320, 130, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e559a626d0ef8b4f982014dd9aabdeeb.las",
+			"conditions": null,
+			"center": [320, 135, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e5610bbacaf098508b96ae1a0a8b84ec.las",
+			"conditions": null,
+			"center": [320, 140, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e58010dd5766e0ce78f081615c34707c.las",
+			"conditions": null,
+			"center": [320, 145, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e594754cc2a264d63da2ae40e7681e7e.las",
+			"conditions": null,
+			"center": [320, 150, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e59c4f290d8585a862b600da24e0965.las",
+			"conditions": null,
+			"center": [320, 155, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e5a7a353d5fa8df844b2fa2cac0778f5.las",
+			"conditions": null,
+			"center": [320, 160, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e5abd988cb34ed9cdc82b8fee1057b30.las",
+			"conditions": null,
+			"center": [320, 165, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e5af05179ffeb8fcbd46d022fd7d80aa.las",
+			"conditions": null,
+			"center": [320, 170, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e5bb559c00276ad354eba1f1b35fb0c1.las",
+			"conditions": null,
+			"center": [320, 175, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e5c6ba3e7d4f2fde40acb87a6be88b3.las",
+			"conditions": null,
+			"center": [320, 180, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e5c98b67c146cd61e816c75152573ee0.las",
+			"conditions": null,
+			"center": [320, 185, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e5f08a5e3dad6cdff810506e9ae2dcc2.las",
+			"conditions": null,
+			"center": [320, 190, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e5fe5ed2cdc8b11d62b600da24e0965.las",
+			"conditions": null,
+			"center": [320, 195, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e60b86c7a4015490e5a760ec65004efd.las",
+			"conditions": null,
+			"center": [320, 200, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e6236c5ec784a48111dcece1819895c0.las",
+			"conditions": null,
+			"center": [320, 205, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e6363b1d63f6aad3c1006ed55bc1a3fc.las",
+			"conditions": null,
+			"center": [320, 210, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e66692f2ec8ea898874f1daffc45b57c.las",
+			"conditions": null,
+			"center": [320, 215, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e66996d97d9f553939e75b12f2e5480.las",
+			"conditions": null,
+			"center": [320, 220, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e6908f525ab8e6823a562128d0cdc8f1.las",
+			"conditions": null,
+			"center": [320, 225, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e69631d34410f99ac4f72bf08dc79a6.las",
+			"conditions": null,
+			"center": [320, 230, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e6d6e9544e353f9f75e49fe23848bbe5.las",
+			"conditions": null,
+			"center": [320, 235, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e6e8f0e244efac73da2b0f839aba40f9.las",
+			"conditions": null,
+			"center": [320, 240, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e6ed2c677e158daa1059f490634fcf62.las",
+			"conditions": null,
+			"center": [320, 245, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e6f0811f15286120cedbd07f4cf21a81.las",
+			"conditions": null,
+			"center": [320, 250, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e70bd95ab764bc1b3465be15e1aa6a0c.las",
+			"conditions": null,
+			"center": [320, 255, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e712867dc4c1a4a6d016d0153a25a372.las",
+			"conditions": null,
+			"center": [320, 260, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e7158ecb09050b03873ec74c119307b9.las",
+			"conditions": null,
+			"center": [320, 265, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e726c8e6897130439a6e43b878d5b335.las",
+			"conditions": null,
+			"center": [320, 270, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e74b8862468d887c6d9b5a419d9131.las",
+			"conditions": null,
+			"center": [320, 275, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e75ce21b914ba565b4c6d1a32dc4f554.las",
+			"conditions": null,
+			"center": [325, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e761cf88524cf8f24c3a35cee92bb95b.las",
+			"conditions": null,
+			"center": [325, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e777a6a46ae240a7bd46d022fd7d80aa.las",
+			"conditions": null,
+			"center": [325, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e79e9e1c8dae48888ee1ba57de3d34e0.las",
+			"conditions": null,
+			"center": [325, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e7c1bb596e9a1ce9ca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [325, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e7c6e2f7c5fd372e8e9091d822257500.las",
+			"conditions": null,
+			"center": [325, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e7e73007e0373933c4c280b3db0d6264.las",
+			"conditions": null,
+			"center": [325, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e7fed0e0dbd871ce35ae6d8873b772f2.las",
+			"conditions": null,
+			"center": [325, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e7ff46a15ae32ede7480441c35610069.las",
+			"conditions": null,
+			"center": [325, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e805054e6b9b3666fcfb100fed3ed97a.las",
+			"conditions": null,
+			"center": [325, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e805624480f632ebcc14f1e6f4f4f49b.las",
+			"conditions": null,
+			"center": [325, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e812f54386acd072d44f37c9e0fb10d0.las",
+			"conditions": null,
+			"center": [325, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e814190f683946b798b4e13cd6d24c30.las",
+			"conditions": null,
+			"center": [325, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e8289fd7e6ab0df4d37636af9c7bcc34.las",
+			"conditions": null,
+			"center": [325, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e8409b544c626028a9b2becd26dc2fc1.las",
+			"conditions": null,
+			"center": [325, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e841e17e3256acf38699933784576e73.las",
+			"conditions": null,
+			"center": [325, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e85cd06b4a14d3ffbc0909d98a1ff2b4.las",
+			"conditions": null,
+			"center": [325, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e86fd13a49f0ee0a62b600da24e0965.las",
+			"conditions": null,
+			"center": [325, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e87902d01d40c71521b1ceea9c93aa79.las",
+			"conditions": null,
+			"center": [325, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e88a8692a22d548e1ec438f11f5ea1c3.las",
+			"conditions": null,
+			"center": [325, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e88ce288726375ff87bf26680c510802.las",
+			"conditions": null,
+			"center": [325, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e88e090caa1ccc5d187bd96066d7269e.las",
+			"conditions": null,
+			"center": [325, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e899c19c87245ac94c3a35cee92bb95b.las",
+			"conditions": null,
+			"center": [325, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e8b4bac72559c097e8f5e45871fbc77c.las",
+			"conditions": null,
+			"center": [325, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e8bd07a978ac82baef40e4c1c2686cd3.las",
+			"conditions": null,
+			"center": [325, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e8c1e738997275799de8e648621673e1.las",
+			"conditions": null,
+			"center": [325, 125, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e8ceb64406509714e5dcd47593c60221.las",
+			"conditions": null,
+			"center": [325, 130, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e8d5a3e98c222583d972c9dd75ed77d4.las",
+			"conditions": null,
+			"center": [325, 135, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e8de6c58f4a772d771d03b466c72ce41.las",
+			"conditions": null,
+			"center": [325, 140, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e8e1b765fdf5edfa14c19f41d007670e.las",
+			"conditions": null,
+			"center": [325, 145, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e8ed294534ba18df4a29fef5d2b2f3d7.las",
+			"conditions": null,
+			"center": [325, 150, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e93a2143cbec37a173fac4529123dfb2.las",
+			"conditions": null,
+			"center": [325, 155, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e94ad5f8e53a255a8fc2d09ac4aa4e78.las",
+			"conditions": null,
+			"center": [325, 160, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e954dc13308e6756308fc4195afc19d3.las",
+			"conditions": null,
+			"center": [325, 165, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e96cd99f545a4d22b0a339fc52929deb.las",
+			"conditions": null,
+			"center": [325, 170, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e9704a563a5a0a3f5a4b8d382b9decda.las",
+			"conditions": null,
+			"center": [325, 175, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e9b29777e840e1fb63737f7c5d9fc39b.las",
+			"conditions": null,
+			"center": [325, 180, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e9bae38bc2083d0bb4d73e4449062b04.las",
+			"conditions": null,
+			"center": [325, 185, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e9bbeedf2681b8ad154c6bbaeb7d331f.las",
+			"conditions": null,
+			"center": [325, 190, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e9c78deefc2950be62b600da24e0965.las",
+			"conditions": null,
+			"center": [325, 195, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e9dcdcd8963ba18f42bc0eea174f82b.las",
+			"conditions": null,
+			"center": [325, 200, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e9ddadf335adac52e025e00c738da634.las",
+			"conditions": null,
+			"center": [325, 205, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e9df546c1e54af0733d72ae4e2c33411.las",
+			"conditions": null,
+			"center": [325, 210, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/e9f39176973edd33a8cba409c4409ba9.las",
+			"conditions": null,
+			"center": [325, 215, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ea06bef342fbfd4236f3a2343a8221f2.las",
+			"conditions": null,
+			"center": [325, 220, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ea1aa637a6cbe7b4fce29e20147f9d9e.las",
+			"conditions": null,
+			"center": [325, 225, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ea29b3af190b00367d3b11085e75c7ad.las",
+			"conditions": null,
+			"center": [325, 230, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ea527508bb74f476f64801ad2940cdd5.las",
+			"conditions": null,
+			"center": [325, 235, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ea58a51483e3604897dec65c2238cb8a.las",
+			"conditions": null,
+			"center": [325, 240, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ea6ccb2dfb61484caaa29616be3e223b.las",
+			"conditions": null,
+			"center": [325, 245, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ea9eece7f2c45a2a82e4c37374fbdce.las",
+			"conditions": null,
+			"center": [325, 250, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eaa0d465e9d0c16acfbf0f1430c86945.las",
+			"conditions": null,
+			"center": [325, 255, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eac05be6e7f3bfa99a6e43b878d5b335.las",
+			"conditions": null,
+			"center": [325, 260, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eac2573ef637a0dbf31cac033b2c0831.las",
+			"conditions": null,
+			"center": [325, 265, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eaccb2ca303223afc503a3776fc280fe.las",
+			"conditions": null,
+			"center": [325, 270, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eae54f8d47cf07c0aeec93871310e650.las",
+			"conditions": null,
+			"center": [325, 275, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eae845d4a7945ecaf2e466e56cb8c63f.las",
+			"conditions": null,
+			"center": [330, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eae958f99bad7dcb18b14db3b83de9ff.las",
+			"conditions": null,
+			"center": [330, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eb110db9bdd0463e5b7003ff580606fa.las",
+			"conditions": null,
+			"center": [330, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eb2ac022b65f827e5e0925f0d15a8f74.las",
+			"conditions": null,
+			"center": [330, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eb2fbd46563e23635fc197bbabcd5bd.las",
+			"conditions": null,
+			"center": [330, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eb4396ab17012b3c9a6e43b878d5b335.las",
+			"conditions": null,
+			"center": [330, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eb43db95d804f40d66cf1b4a8fc3914e.las",
+			"conditions": null,
+			"center": [330, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eb5baf7bb88c1499873ec74c119307b9.las",
+			"conditions": null,
+			"center": [330, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eb60d49fd5cdb809e6a2524c335c48f9.las",
+			"conditions": null,
+			"center": [330, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eb658ff31f0becea1d0f8853f6d023e3.las",
+			"conditions": null,
+			"center": [330, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eb7bf553e500b9b544bf3710e93f8cf7.las",
+			"conditions": null,
+			"center": [330, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eb85e7d86e2ef861e7cb9c477e2b7be.las",
+			"conditions": null,
+			"center": [330, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eb8fe6d82d195ab5bc8feea465aa74f2.las",
+			"conditions": null,
+			"center": [330, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ebb5a048015c13cd35fc197bbabcd5bd.las",
+			"conditions": null,
+			"center": [330, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ebd96d07a7d68cf2fc7b6f7beb3a27ff.las",
+			"conditions": null,
+			"center": [330, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ebd991666f177f8f575bf8a4b14be4f4.las",
+			"conditions": null,
+			"center": [330, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ebda573deda43034f2b0736dd4d8afe0.las",
+			"conditions": null,
+			"center": [330, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ebe0d0bfa6ec36edd88eab18f1be033b.las",
+			"conditions": null,
+			"center": [330, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ebedcd06f1770cd4bbf3143b1cb6076a.las",
+			"conditions": null,
+			"center": [330, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ebf8011ea1f4b4190b1d6deb98feec6.las",
+			"conditions": null,
+			"center": [330, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ec03d76cbd50314f5c7319b71bdce6e.las",
+			"conditions": null,
+			"center": [330, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ec2ceb5d65007bacfbb51ecfb25331aa.las",
+			"conditions": null,
+			"center": [330, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ec4a2a47f601397ea01e5c9f53f20fd4.las",
+			"conditions": null,
+			"center": [330, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ec4cd947eb2ee3103554ccf8c30febe7.las",
+			"conditions": null,
+			"center": [330, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ec4f0bfd77978a1cca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [330, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ec531add757ad0fa9a51282fb89c35c1.las",
+			"conditions": null,
+			"center": [330, 125, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ec879d7360572a5db65bd29086fc2a67.las",
+			"conditions": null,
+			"center": [330, 130, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ec8ba88cdead53f336dafa9b6763ef3f.las",
+			"conditions": null,
+			"center": [330, 135, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ec9bfc810a015c3a446cb1ee5d43f75f.las",
+			"conditions": null,
+			"center": [330, 140, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ecb0d8d1c592bcc11bee3078a673c2ae.las",
+			"conditions": null,
+			"center": [330, 145, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ecb4ae05d7dd135a619550d2af0b6117.las",
+			"conditions": null,
+			"center": [330, 150, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ecbb6df185a7b260760d31bf9510e4b7.las",
+			"conditions": null,
+			"center": [330, 155, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ecc50d702133b1531e9da99095f71c63.las",
+			"conditions": null,
+			"center": [330, 160, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ecd19c1f74064962c6603e997b54421a.las",
+			"conditions": null,
+			"center": [330, 165, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ecd761d36abc0fb5250e498b1554a6f.las",
+			"conditions": null,
+			"center": [330, 170, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ece25d89898c7d9090b1d6deb98feec6.las",
+			"conditions": null,
+			"center": [330, 175, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ed0a9a32a8e35f21ca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [330, 180, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ed1a5c9fac829d17a6766282ea8c438f.las",
+			"conditions": null,
+			"center": [330, 185, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ed1d51ac367d0fa5f830b2dc9bf63133.las",
+			"conditions": null,
+			"center": [330, 190, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ed2aaca045fb1714cd4229f38ad0d015.las",
+			"conditions": null,
+			"center": [330, 195, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ed35478403ae873943cf31d2bcc8f4.las",
+			"conditions": null,
+			"center": [330, 200, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ed4aab2d41d62b49895ae53d16ed9e39.las",
+			"conditions": null,
+			"center": [330, 205, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ed4aaf81dc577bedac4f72bf08dc79a6.las",
+			"conditions": null,
+			"center": [330, 210, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ed50758d8792491314777db9411e4949.las",
+			"conditions": null,
+			"center": [330, 215, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ed57671fc0252e15b95e9a91dc6bad16.las",
+			"conditions": null,
+			"center": [330, 220, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ed709305e61acf6a9b017c80f62649a0.las",
+			"conditions": null,
+			"center": [330, 225, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ed738ba28cd73714bb0f4bdf8821663a.las",
+			"conditions": null,
+			"center": [330, 230, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ed73e946a138f3cfbc0909d98a1ff2b4.las",
+			"conditions": null,
+			"center": [330, 235, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ed7e1a38fe33830b87697d3904b168b.las",
+			"conditions": null,
+			"center": [330, 240, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ed7eb0caa75661addc82b8fee1057b30.las",
+			"conditions": null,
+			"center": [330, 245, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ed95d9219432bbdbbf3143b1cb6076a.las",
+			"conditions": null,
+			"center": [330, 250, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/edb916c2cdc2d3b9ce2cec85ea6ae00d.las",
+			"conditions": null,
+			"center": [330, 255, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/edc185566c1df89c35fc197bbabcd5bd.las",
+			"conditions": null,
+			"center": [330, 260, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/edc9fefa5fb82a0443a0c73d98327de8.las",
+			"conditions": null,
+			"center": [330, 265, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/edd9583988b62c90328f15e6c60d0e90.las",
+			"conditions": null,
+			"center": [330, 270, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/edd9f45c7c927032db5e5b1ef1010d8b.las",
+			"conditions": null,
+			"center": [330, 275, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ede14aa589c68280216b327569dd806e.las",
+			"conditions": null,
+			"center": [335, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ee0105d05a5007ab827afb33b6d5eec6.las",
+			"conditions": null,
+			"center": [335, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ee30cf94a209a45b91d43bb96e1bb0b1.las",
+			"conditions": null,
+			"center": [335, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ee461612837ce39eedd03f781ec3ebcf.las",
+			"conditions": null,
+			"center": [335, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ee562cc82d73ab212135f3a0e614f115.las",
+			"conditions": null,
+			"center": [335, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ee672fc1455b9fc43523242fdf9b75a7.las",
+			"conditions": null,
+			"center": [335, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ee92bc35ee989f59271b3fb2659dec56.las",
+			"conditions": null,
+			"center": [335, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eed299b690be51ffbd931fcaa69140.las",
+			"conditions": null,
+			"center": [335, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eee96e21bf51ee6ce719b5362fe06bbb.las",
+			"conditions": null,
+			"center": [335, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eeeb30213be73bd14c3a35cee92bb95b.las",
+			"conditions": null,
+			"center": [335, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eefb4a1fcc2ca4d8894e22af7ae821f8.las",
+			"conditions": null,
+			"center": [335, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ef0d51f895cee0e04485f82d9fa383bf.las",
+			"conditions": null,
+			"center": [335, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ef20d432f2a7b1752c164e0c5ea74611.las",
+			"conditions": null,
+			"center": [335, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ef26ad836cd29010f2acf00738ce9d0d.las",
+			"conditions": null,
+			"center": [335, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ef6db5bcb6bb96ddd2f0cc036969ee4f.las",
+			"conditions": null,
+			"center": [335, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/efbb9337b9bd3cab56ed1d365b05390d.las",
+			"conditions": null,
+			"center": [335, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/efbf3d4c8877e7dc7ce8c809505eca2f.las",
+			"conditions": null,
+			"center": [335, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/efc2f4eb92871bb2b7a641946dd77b16.las",
+			"conditions": null,
+			"center": [335, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/efc7d4fb87937413dc13452e3008005b.las",
+			"conditions": null,
+			"center": [335, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/efc9cda06afcd8c2354ab1decf4fe605.las",
+			"conditions": null,
+			"center": [335, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/eff5216d782684aa3c7aa3e4b8926c27.las",
+			"conditions": null,
+			"center": [335, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/effbe2683574dca2b37a6cf3f07b9ff4.las",
+			"conditions": null,
+			"center": [335, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f0065f4f9e20d604521546825315c695.las",
+			"conditions": null,
+			"center": [335, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f009f3112625ee00b8cf782e8c539948.las",
+			"conditions": null,
+			"center": [335, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f0137228f926dd464f8327dbe71ce85c.las",
+			"conditions": null,
+			"center": [335, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f016679500a76fbd8badc4a9f1acc937.las",
+			"conditions": null,
+			"center": [335, 125, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f04b62deb7737c86d37636af9c7bcc34.las",
+			"conditions": null,
+			"center": [335, 130, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f04fbc2423b13da170832200321e72bc.las",
+			"conditions": null,
+			"center": [335, 135, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f067fb1b12badf2b732bda87f2718525.las",
+			"conditions": null,
+			"center": [335, 140, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f07028f2080aaf4e75b90b083ed202b.las",
+			"conditions": null,
+			"center": [335, 145, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f087be2dec869154acb63dc32be3cb01.las",
+			"conditions": null,
+			"center": [335, 150, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f0b22be59432dc8bca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [335, 155, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f0bd0660d9cec23cf2b0736dd4d8afe0.las",
+			"conditions": null,
+			"center": [335, 160, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f0d6c53d21ae5b5cd0c57f18e8d8830d.las",
+			"conditions": null,
+			"center": [335, 165, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f0e7808ee55510be1a7dd57f67482196.las",
+			"conditions": null,
+			"center": [335, 170, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f0fb27f3a597838feb1a0518c224975f.las",
+			"conditions": null,
+			"center": [335, 175, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f110a2ce31dee1b3c16ef5c633c71b56.las",
+			"conditions": null,
+			"center": [335, 180, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f1111840bde23096ee2723567c7709e6.las",
+			"conditions": null,
+			"center": [335, 185, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f11d14402a759a1465f50257ecdfa5c7.las",
+			"conditions": null,
+			"center": [335, 190, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f1210d8f895e40b663c15773e7567372.las",
+			"conditions": null,
+			"center": [335, 195, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f1295a30fd857249224c86fc0bbbbedc.las",
+			"conditions": null,
+			"center": [335, 200, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f12b45a38f012a78ac4f72bf08dc79a6.las",
+			"conditions": null,
+			"center": [335, 205, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f12eefbbefabe566ca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [335, 210, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f134306ace70df3ac1006ed55bc1a3fc.las",
+			"conditions": null,
+			"center": [335, 215, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f13827d156628467b4cdad9a5bf52dd5.las",
+			"conditions": null,
+			"center": [335, 220, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f1384d3fd2d59e63f4d6518603e8629.las",
+			"conditions": null,
+			"center": [335, 225, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f144e93fe2a11c1f4c3a35cee92bb95b.las",
+			"conditions": null,
+			"center": [335, 230, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f16381a160f20bc4a3b534252984039.las",
+			"conditions": null,
+			"center": [335, 235, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f186d2998485c6ed5e9e2656aff7dd5b.las",
+			"conditions": null,
+			"center": [335, 240, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f1a4a370f9e50890686c25eb09ee7de5.las",
+			"conditions": null,
+			"center": [335, 245, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f1a917846d46b61f71d03b466c72ce41.las",
+			"conditions": null,
+			"center": [335, 250, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f1b3408a3ba452d0c1ccec171a275967.las",
+			"conditions": null,
+			"center": [335, 255, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f1b407dd7f610bb1a266a0298675ed53.las",
+			"conditions": null,
+			"center": [335, 260, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f1b9ff223b5a13719a6e43b878d5b335.las",
+			"conditions": null,
+			"center": [335, 265, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f1df46c588524ee76aa3bf023a2b42a5.las",
+			"conditions": null,
+			"center": [335, 270, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f1ef7546cc85a1815823df672991ed66.las",
+			"conditions": null,
+			"center": [335, 275, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f1f12c4408b0b4ee445d150719ce97db.las",
+			"conditions": null,
+			"center": [340, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f214cf57d5d5634960e1e93111ad3e76.las",
+			"conditions": null,
+			"center": [340, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f2171bb2d715140c8b96ae1a0a8b84ec.las",
+			"conditions": null,
+			"center": [340, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f21a375ca5fd26994fb6540b6bb872e9.las",
+			"conditions": null,
+			"center": [340, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f222d51d7c6fedc2db73445864b72015.las",
+			"conditions": null,
+			"center": [340, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f24daae76836e249f0878b58b4e887bf.las",
+			"conditions": null,
+			"center": [340, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f258c40371334a4e90b1d6deb98feec6.las",
+			"conditions": null,
+			"center": [340, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f25da5eca572f01bd8d90babf3c5509a.las",
+			"conditions": null,
+			"center": [340, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f25ffb9cf92236fb9671f5163e7f6535.las",
+			"conditions": null,
+			"center": [340, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f26ea1a00455f44fb88e2a19106395c2.las",
+			"conditions": null,
+			"center": [340, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f277fd1032f615ec2268dda5c324173f.las",
+			"conditions": null,
+			"center": [340, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f27927b066b0696d1f95d2b537942ba5.las",
+			"conditions": null,
+			"center": [340, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f2975fde05d9d63eeea0c0561850e04e.las",
+			"conditions": null,
+			"center": [340, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f2d4b8440d4bde5330afbcb38d77d0c3.las",
+			"conditions": null,
+			"center": [340, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f2f6684e930651df3dffb45955223d25.las",
+			"conditions": null,
+			"center": [340, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f2f779b4f12ea6d67209009cfb89d4bd.las",
+			"conditions": null,
+			"center": [340, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f2fda88e9688fd81d972c9dd75ed77d4.las",
+			"conditions": null,
+			"center": [340, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f31be358cb57dffffe198fc7b510f52f.las",
+			"conditions": null,
+			"center": [340, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f337580024e8c36da5cec7cc83604181.las",
+			"conditions": null,
+			"center": [340, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f3463eac7325b600d01b5600c06c528d.las",
+			"conditions": null,
+			"center": [340, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f34a66147493f0633d5158710d6fb8.las",
+			"conditions": null,
+			"center": [340, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f350f4836dcd13541b1cc145b0144991.las",
+			"conditions": null,
+			"center": [340, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f3660119189d3eca4c3a35cee92bb95b.las",
+			"conditions": null,
+			"center": [340, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f36ac9cdcf15ac8497492c4542407e32.las",
+			"conditions": null,
+			"center": [340, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f390b1b28b6dda03dc57b3e43c28d486.las",
+			"conditions": null,
+			"center": [340, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f39985959d394f8c863ab010b80d9ed.las",
+			"conditions": null,
+			"center": [340, 125, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f39e0412290bcc714917e69390d054d0.las",
+			"conditions": null,
+			"center": [340, 130, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f3cbfb52ea1c907a850e00840470903a.las",
+			"conditions": null,
+			"center": [340, 135, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f3cc7d5c4089b842df6e254b0245ddcb.las",
+			"conditions": null,
+			"center": [340, 140, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f3e2df468c15795872517bb0a6b4d3ef.las",
+			"conditions": null,
+			"center": [340, 145, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f3f3805b0f1c81e6f1218670339368db.las",
+			"conditions": null,
+			"center": [340, 150, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f40467cbad9ca466eb7d375d58cb985e.las",
+			"conditions": null,
+			"center": [340, 155, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f405858991b190173af8c56bd4352c9.las",
+			"conditions": null,
+			"center": [340, 160, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f40fe7461dc4e3396b7bd17e458d0dcb.las",
+			"conditions": null,
+			"center": [340, 165, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f4453381943f6039eba96cf317eae721.las",
+			"conditions": null,
+			"center": [340, 170, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f44c0e1e55a3469494f3355d9c061b5a.las",
+			"conditions": null,
+			"center": [340, 175, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f46df635ac669a9818b14db3b83de9ff.las",
+			"conditions": null,
+			"center": [340, 180, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f47c5c54c4e49f62e0a768dae1badf69.las",
+			"conditions": null,
+			"center": [340, 185, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f4818cd7c0701fbe752556d244bfb42b.las",
+			"conditions": null,
+			"center": [340, 190, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f485dcbd466f217286774cad40dd456a.las",
+			"conditions": null,
+			"center": [340, 195, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f4a5b28233523a4e588ed1d0f708d42f.las",
+			"conditions": null,
+			"center": [340, 200, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f4b734236ec678d269e10d525d6df27.las",
+			"conditions": null,
+			"center": [340, 205, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f50eba69a3be1a1e536cfc00d8c31ac5.las",
+			"conditions": null,
+			"center": [340, 210, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f533dc37778c6f004c949161e83c47b5.las",
+			"conditions": null,
+			"center": [340, 215, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f5403d3ffcc6bb17adce4f2283adbdbd.las",
+			"conditions": null,
+			"center": [340, 220, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f55390ed02c0b2b36aa3bf023a2b42a5.las",
+			"conditions": null,
+			"center": [340, 225, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f562ff06e51e573e42979ff355194f16.las",
+			"conditions": null,
+			"center": [340, 230, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f56cde19efc8d428b03f97f6dc2a21fd.las",
+			"conditions": null,
+			"center": [340, 235, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f57c74e194cd2b2bc8727b27ee96a4b7.las",
+			"conditions": null,
+			"center": [340, 240, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f57caba2eed21f2998459325335edae9.las",
+			"conditions": null,
+			"center": [340, 245, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f58a26c915e7a1dceae7a0fa074b4a2a.las",
+			"conditions": null,
+			"center": [340, 250, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f58b4ed02fc2fd1d4e7648015fd29a1c.las",
+			"conditions": null,
+			"center": [340, 255, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f592e88114a240cc61a8d3163a0a75a7.las",
+			"conditions": null,
+			"center": [340, 260, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f59470cae839ba0e9b2acbfd8323f804.las",
+			"conditions": null,
+			"center": [340, 265, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f59a2be8fd084418bbf3143b1cb6076a.las",
+			"conditions": null,
+			"center": [340, 270, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f5a667f5796b9a0b9a6e43b878d5b335.las",
+			"conditions": null,
+			"center": [340, 275, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f5a8cae96024e709c1ccec171a275967.las",
+			"conditions": null,
+			"center": [345, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f5bb02c0df184488e0b6c670e0e97766.las",
+			"conditions": null,
+			"center": [345, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f5cc091bacb338c6951971f8370d9050.las",
+			"conditions": null,
+			"center": [345, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f5e271c3cb2edc1681209be1a5e8b10d.las",
+			"conditions": null,
+			"center": [345, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f613ace665da5e3e8b96ae1a0a8b84ec.las",
+			"conditions": null,
+			"center": [345, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f62ad267cdd1a00a34b1f3550986bd42.las",
+			"conditions": null,
+			"center": [345, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f6373cc88634e8ddaf781741e31f0df4.las",
+			"conditions": null,
+			"center": [345, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f66bf1a9b6d2d109a34fb3db6a11a22d.las",
+			"conditions": null,
+			"center": [345, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f680ee392bad2dca29348d14ca881f7d.las",
+			"conditions": null,
+			"center": [345, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f691f2409e006d33f412783097373bdc.las",
+			"conditions": null,
+			"center": [345, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f6a09cbb6d08feeec9d7d324d11034c9.las",
+			"conditions": null,
+			"center": [345, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f6b7f7695d091b9bc0909d98a1ff2b4.las",
+			"conditions": null,
+			"center": [345, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f6b96f56212f55363023a5c0cae3fffe.las",
+			"conditions": null,
+			"center": [345, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f6e6bab105ab890080be894a49cc4571.las",
+			"conditions": null,
+			"center": [345, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f6e6fd724a9eab24ba8e93696257b3fc.las",
+			"conditions": null,
+			"center": [345, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f6ea6663b48bf78261f1ef59130c405d.las",
+			"conditions": null,
+			"center": [345, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f6ec20afe98e37ef6e2a24768a2fccc.las",
+			"conditions": null,
+			"center": [345, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f6f2905883c49d179e0d0faf84afc607.las",
+			"conditions": null,
+			"center": [345, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f6f5efa1554038ce2154ead1f7ab03aa.las",
+			"conditions": null,
+			"center": [345, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f70e5f2568e927147d755f57c8fea340.las",
+			"conditions": null,
+			"center": [345, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f71028dac9b396fe80288501d9901d7b.las",
+			"conditions": null,
+			"center": [345, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f7110ecac70994a83820d8f180caa23a.las",
+			"conditions": null,
+			"center": [345, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f7160900b6ce7bc4e63e266a803d9270.las",
+			"conditions": null,
+			"center": [345, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f7298a13f6d1644472a4466eb772f128.las",
+			"conditions": null,
+			"center": [345, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f73a8fa9c2859211f2b0736dd4d8afe0.las",
+			"conditions": null,
+			"center": [345, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f74cbd91e6fb40dfce5965228d7e8c9f.las",
+			"conditions": null,
+			"center": [345, 125, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f771c5a1b9bbac21f4fb6842b3610149.las",
+			"conditions": null,
+			"center": [345, 130, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f7739764eb1c78a053f370d353cea84.las",
+			"conditions": null,
+			"center": [345, 135, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f79fce6480d9276facf77e718d93f3e1.las",
+			"conditions": null,
+			"center": [345, 140, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f7bf32d3aecd197360c9b6e4c75a092a.las",
+			"conditions": null,
+			"center": [345, 145, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f7c11b5e07e9ccab3a116bc3efac4e3b.las",
+			"conditions": null,
+			"center": [345, 150, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f7c2edc1beeedd006e68e46a69a2d96d.las",
+			"conditions": null,
+			"center": [345, 155, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f7f69ecc4ff199ec5e9e2656aff7dd5b.las",
+			"conditions": null,
+			"center": [345, 160, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f7f915160c0e1f6f42bc0eea174f82b.las",
+			"conditions": null,
+			"center": [345, 165, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f80343ac3064e74862347b4731688b0f.las",
+			"conditions": null,
+			"center": [345, 170, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f8038d33c212f81fe99ea3c41458bc01.las",
+			"conditions": null,
+			"center": [345, 175, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f858fdc6841407e6d4bf37afb4832e7b.las",
+			"conditions": null,
+			"center": [345, 180, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f8647af0b1ad01445de04aad18bd94c3.las",
+			"conditions": null,
+			"center": [345, 185, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f88906b677e97695f4126163bc622a34.las",
+			"conditions": null,
+			"center": [345, 190, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f88be1c8e93fbfecba0d990ae229b477.las",
+			"conditions": null,
+			"center": [345, 195, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f894972de285088da0896c4491cb3db6.las",
+			"conditions": null,
+			"center": [345, 200, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f89b085c37779a5997517c313146c4ab.las",
+			"conditions": null,
+			"center": [345, 205, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f8bc6483dd3c87085df50a69f2f8e096.las",
+			"conditions": null,
+			"center": [345, 210, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f8ceed6c984895079a6e43b878d5b335.las",
+			"conditions": null,
+			"center": [345, 215, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f8d7d8331fe29f247209009cfb89d4bd.las",
+			"conditions": null,
+			"center": [345, 220, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f8d8b590a0dcd399718ac2a6ddb54499.las",
+			"conditions": null,
+			"center": [345, 225, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f8f4cccabf7ac33b199dff268d0aba38.las",
+			"conditions": null,
+			"center": [345, 230, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f8fa93d7b17fe6126bded4fd00661977.las",
+			"conditions": null,
+			"center": [345, 235, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f8fb835bdc55ffffdc82b8fee1057b30.las",
+			"conditions": null,
+			"center": [345, 240, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f9209166fc259d8885e96081cfe0563b.las",
+			"conditions": null,
+			"center": [345, 245, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f944c570191885e8ca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [345, 250, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f9505b01e3ea959cf9700e397b8b4e4d.las",
+			"conditions": null,
+			"center": [345, 255, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f9589c9b900fd33ef23c3116d040903f.las",
+			"conditions": null,
+			"center": [345, 260, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f95d8e86feb79b17cbebff57eecf0a64.las",
+			"conditions": null,
+			"center": [345, 265, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f963bac7f45473cdb33bc7516e53285e.las",
+			"conditions": null,
+			"center": [345, 270, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f96426f2392abb1d8d58389384d9812e.las",
+			"conditions": null,
+			"center": [345, 275, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f97a48680d63a78a9751e413d5325f7d.las",
+			"conditions": null,
+			"center": [350, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f97fa7329969bcd0ebf1d9fd44798b9b.las",
+			"conditions": null,
+			"center": [350, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f986604528abe35554eefcdc602d4520.las",
+			"conditions": null,
+			"center": [350, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f98964dc88c44a2c863ab010b80d9ed.las",
+			"conditions": null,
+			"center": [350, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f998bb1b62da4d06d3a1a47fb9b678.las",
+			"conditions": null,
+			"center": [350, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f9a8c5ae39362284d538ebc793e748b2.las",
+			"conditions": null,
+			"center": [350, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f9c93ddc9b921d88a72ae0d8b7f98590.las",
+			"conditions": null,
+			"center": [350, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f9cd8293c30f1aaab87697d3904b168b.las",
+			"conditions": null,
+			"center": [350, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f9d30b24d9651ee476c772fd813166d.las",
+			"conditions": null,
+			"center": [350, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f9db62e6a88f0d7129343faf3bbffb15.las",
+			"conditions": null,
+			"center": [350, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f9e80ce23d9536623fddedb0bf24c68a.las",
+			"conditions": null,
+			"center": [350, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f9f4daf3015b5ece5e9e2656aff7dd5b.las",
+			"conditions": null,
+			"center": [350, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f9fb41a3b1f59bb027745e9b6b461e93.las",
+			"conditions": null,
+			"center": [350, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/f9fc7fc23e62986fef6c510e24348d3b.las",
+			"conditions": null,
+			"center": [350, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fa27e66018f82cf6e549ab640f51dca9.las",
+			"conditions": null,
+			"center": [350, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fa4e8f24d7f0ae1cc1ccec171a275967.las",
+			"conditions": null,
+			"center": [350, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fa5c740ca9192b708e8131a047a07ce1.las",
+			"conditions": null,
+			"center": [350, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fa7cf8d11d1340ff9a6e43b878d5b335.las",
+			"conditions": null,
+			"center": [350, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fa9d933674352c3711a50c43722a30cb.las",
+			"conditions": null,
+			"center": [350, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/faa361f642620bb72def37e9c0b35d0e.las",
+			"conditions": null,
+			"center": [350, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fabe8fdc617e3aca2bd098b9203af.las",
+			"conditions": null,
+			"center": [350, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fac4af109beb0108b4f192eea1889928.las",
+			"conditions": null,
+			"center": [350, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fac9c4f0d5f239e4f2b0736dd4d8afe0.las",
+			"conditions": null,
+			"center": [350, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fad346b02d91348bbbf3143b1cb6076a.las",
+			"conditions": null,
+			"center": [350, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fae6ae6ef62cfa107b164268a44f7712.las",
+			"conditions": null,
+			"center": [350, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fb01b45a0659af80c1006ed55bc1a3fc.las",
+			"conditions": null,
+			"center": [350, 125, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fb01f6b428d094ad3ec83bd6bef75c92.las",
+			"conditions": null,
+			"center": [350, 130, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fb06b00775efdc8e21b85e5214b0d6a7.las",
+			"conditions": null,
+			"center": [350, 135, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fb0f2907b977e7cb67c5e3041553656b.las",
+			"conditions": null,
+			"center": [350, 140, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fb110c5d01f1b3fc59dcf12563d8fce3.las",
+			"conditions": null,
+			"center": [350, 145, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fb2204e98090448ebbf3143b1cb6076a.las",
+			"conditions": null,
+			"center": [350, 150, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fb2e4eb19ba19bde5fe6cff21a9e8496.las",
+			"conditions": null,
+			"center": [350, 155, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fb402a36e91ab1b44e7761521d3c6953.las",
+			"conditions": null,
+			"center": [350, 160, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fb48754430b17846e3375a6b96a1d765.las",
+			"conditions": null,
+			"center": [350, 165, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fb5e00c769fa06e7c277130bc8102991.las",
+			"conditions": null,
+			"center": [350, 170, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fb62efc64c58d1e5e0d07a8ce78b9182.las",
+			"conditions": null,
+			"center": [350, 175, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fb68077d405c233ef879f4163a3ec7b.las",
+			"conditions": null,
+			"center": [350, 180, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fb92c2e96fdf6c37595dc3191c718398.las",
+			"conditions": null,
+			"center": [350, 185, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fb9deec3a422b06b609e2d916fa0da27.las",
+			"conditions": null,
+			"center": [350, 190, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fbb2e9c15888afcaca504cdc40c452de.las",
+			"conditions": null,
+			"center": [350, 195, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fbc429365ab7136be1a9c234926c21e2.las",
+			"conditions": null,
+			"center": [350, 200, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fbc7afa847c30a4c183bb3a05fac486f.las",
+			"conditions": null,
+			"center": [350, 205, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fbcc12c5530ab67cad659a74e36b6387.las",
+			"conditions": null,
+			"center": [350, 210, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fbd800d43c5f0d74250cb4f7fcd9ec03.las",
+			"conditions": null,
+			"center": [350, 215, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fbe213adb802384db443c685f436f80e.las",
+			"conditions": null,
+			"center": [350, 220, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fbe788465e564e46bc0909d98a1ff2b4.las",
+			"conditions": null,
+			"center": [350, 225, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fbebcde2d8fbf81ee7cf320ab5761d45.las",
+			"conditions": null,
+			"center": [350, 230, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fbee89bee5338798d4837a4534bf020b.las",
+			"conditions": null,
+			"center": [350, 235, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fbf6917bdd86d5862df404314e891e08.las",
+			"conditions": null,
+			"center": [350, 240, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fc0097a6ad81e5cc1c2daaaceea98731.las",
+			"conditions": null,
+			"center": [350, 245, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fc0dbd045c9391ce4a29fef5d2b2f3d7.las",
+			"conditions": null,
+			"center": [350, 250, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fc16704314dc71ee9a6e43b878d5b335.las",
+			"conditions": null,
+			"center": [350, 255, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fc25e0cdcb2ecf1ca2bd098b9203af.las",
+			"conditions": null,
+			"center": [350, 260, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fc2c9fd0bbd77dac4d210d9468aedaf2.las",
+			"conditions": null,
+			"center": [350, 265, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fc2d2df18182df8c82a2a8a82be86fd6.las",
+			"conditions": null,
+			"center": [350, 270, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fc44636ad5fd9754927b6179bcc6e892.las",
+			"conditions": null,
+			"center": [350, 275, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fc5ca618ae253663d13ef00338ba8c52.las",
+			"conditions": null,
+			"center": [355, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fc5d7c28e254a0d84c3a35cee92bb95b.las",
+			"conditions": null,
+			"center": [355, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fc5dade8622f686b4aba1f0cb15b1439.las",
+			"conditions": null,
+			"center": [355, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fc6decc887f6d8a0bbf3143b1cb6076a.las",
+			"conditions": null,
+			"center": [355, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fc7387d630c84bb9c863ab010b80d9ed.las",
+			"conditions": null,
+			"center": [355, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fc76d0a9da7cde0bef5ebf5f74916182.las",
+			"conditions": null,
+			"center": [355, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fc7c3ccb57f65337209009cfb89d4bd.las",
+			"conditions": null,
+			"center": [355, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fc7fda7232bedd84bbf3143b1cb6076a.las",
+			"conditions": null,
+			"center": [355, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fc9b408aee84f46d70c4138179d9ed97.las",
+			"conditions": null,
+			"center": [355, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fc9f6bc1ba1cb7c1c3fe7930fce05ded.las",
+			"conditions": null,
+			"center": [355, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fca40e8cba1e5fd75bba9363f40680af.las",
+			"conditions": null,
+			"center": [355, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fca4c82b2c488d329554e5818acd6e12.las",
+			"conditions": null,
+			"center": [355, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fcbdaf6100aad67d5abb92fce0f1ced2.las",
+			"conditions": null,
+			"center": [355, 60, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fcc2023fd98e157f2d99c69702933ca4.las",
+			"conditions": null,
+			"center": [355, 65, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fcc94cf74fb886b7bbf3143b1cb6076a.las",
+			"conditions": null,
+			"center": [355, 70, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fcd7a8834a7f26f15069db69b8c1c70.las",
+			"conditions": null,
+			"center": [355, 75, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fcfa1a67f34e7f2fbb3974ea29d1d642.las",
+			"conditions": null,
+			"center": [355, 80, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fd0262e95283727d7b02bf6205401969.las",
+			"conditions": null,
+			"center": [355, 85, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fd0e59013a16eb5184306f3bf0a1f2d7.las",
+			"conditions": null,
+			"center": [355, 90, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fd3a9743e16d35e51fc210a07910eb2.las",
+			"conditions": null,
+			"center": [355, 95, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fd41d04f1aabbaea3fddedb0bf24c68a.las",
+			"conditions": null,
+			"center": [355, 100, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fd425567d79a43d14f8a08a5e6b028e7.las",
+			"conditions": null,
+			"center": [355, 105, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fd528602cbde6f11bbf3143b1cb6076a.las",
+			"conditions": null,
+			"center": [355, 110, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fd6210721415e4bb51a9048f9848535d.las",
+			"conditions": null,
+			"center": [355, 115, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fd67c89ff247f9e7442ed26ceeb35a60.las",
+			"conditions": null,
+			"center": [355, 120, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fd7c74a05072d3befef192e05c55dcd3.las",
+			"conditions": null,
+			"center": [355, 125, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fd8d7742ee03905df446f92b52bbd82a.las",
+			"conditions": null,
+			"center": [355, 130, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fd95b99d4699430a7395d58407f193ba.las",
+			"conditions": null,
+			"center": [355, 135, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fd9f1cdaa381599bca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [355, 140, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fdb107ea7a600f5fe3f3aec01b086ba.las",
+			"conditions": null,
+			"center": [355, 145, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fdb87fe46a2dd5ae148cecac5cfe1090.las",
+			"conditions": null,
+			"center": [355, 150, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fdc1a422b48a16f67341d39902b9e2e1.las",
+			"conditions": null,
+			"center": [355, 155, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fdcb11fa39661f0fb08f81d66e854bfa.las",
+			"conditions": null,
+			"center": [355, 160, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fddcb2b3d45ce98e641c309f1fd7e183.las",
+			"conditions": null,
+			"center": [355, 165, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fe00bf68a2cd32b6dd455eb19d4d269e.las",
+			"conditions": null,
+			"center": [355, 170, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fe0b8ab916cd568d749f4ec7f5556c32.las",
+			"conditions": null,
+			"center": [355, 175, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fe0c4db38fb6399990b1d6deb98feec6.las",
+			"conditions": null,
+			"center": [355, 180, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fe0eb72a9fb21dd62b600da24e0965.las",
+			"conditions": null,
+			"center": [355, 185, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fe1d825ce462c3e7b96212c8f6cd06e.las",
+			"conditions": null,
+			"center": [355, 190, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fe23572aac36c84761cfaa00f7177470.las",
+			"conditions": null,
+			"center": [355, 195, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fe266c740580c102ff9ce0c50c2cd25a.las",
+			"conditions": null,
+			"center": [355, 200, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fe3aa0ec747c12c0ca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [355, 205, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fe4ad5664773074cb536c73c7d134340.las",
+			"conditions": null,
+			"center": [355, 210, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fe58e1c34a7fc8ac7f6b2c9a3874dfdf.las",
+			"conditions": null,
+			"center": [355, 215, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fe82a9934a38997866cf1b4a8fc3914e.las",
+			"conditions": null,
+			"center": [355, 220, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/feb0bd0dcd155af4cc34b900bb2492e.las",
+			"conditions": null,
+			"center": [355, 225, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fef1c15a5db21b00a67cc8f661e7890a.las",
+			"conditions": null,
+			"center": [355, 230, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fef935c1f862f4aa31309643a94d8a5f.las",
+			"conditions": null,
+			"center": [355, 235, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ff12c3a1d388b03044eedf822e07b7e4.las",
+			"conditions": null,
+			"center": [355, 240, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ff13be97bdfa45f8254dc1d04198881.las",
+			"conditions": null,
+			"center": [355, 245, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ff28d340bf0b5d9387b2a887422ab97.las",
+			"conditions": null,
+			"center": [355, 250, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ff2f975a23b78bc78caa71b1fbf7fb98.las",
+			"conditions": null,
+			"center": [355, 255, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ff52c059efaca3c1ca8607f540cc62ba.las",
+			"conditions": null,
+			"center": [355, 260, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ff554f038a338ef322031be9b666aa96.las",
+			"conditions": null,
+			"center": [355, 265, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ff569b4018fc2640cea77fac5d58428e.las",
+			"conditions": null,
+			"center": [355, 270, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ff6ab0fe13f58e22962a5697e98a94be.las",
+			"conditions": null,
+			"center": [355, 275, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ff6e377e8e5b3757cc34b900bb2492e.las",
+			"conditions": null,
+			"center": [360, 0, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ff6f81eba664481126360e1e29a956c7.las",
+			"conditions": null,
+			"center": [360, 5, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ff725af6df1b76207b164268a44f7712.las",
+			"conditions": null,
+			"center": [360, 10, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ff77ea82fb4a5f92da9afa637af35064.las",
+			"conditions": null,
+			"center": [360, 15, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ff7c22a964a5a54e3bb4b8f3758b3c41.las",
+			"conditions": null,
+			"center": [360, 20, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ffbc31352a34c3e1ffb94dfdd6ddfaf0.las",
+			"conditions": null,
+			"center": [360, 25, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ffc1b82bec23a50995b8d6bdd18d56e8.las",
+			"conditions": null,
+			"center": [360, 30, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ffccda82ecc0d0f71740529c616cd4c7.las",
+			"conditions": null,
+			"center": [360, 35, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ffce3c994052ffea339b6c8cc24f619d.las",
+			"conditions": null,
+			"center": [360, 40, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ffd13ca14b85fec66cf1b4a8fc3914e.las",
+			"conditions": null,
+			"center": [360, 45, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ffdaed95c3063cdf3ce4891c7dcdfb1c.las",
+			"conditions": null,
+			"center": [360, 50, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/ffef991d85e3136a9a6e43b878d5b335.las",
+			"conditions": null,
+			"center": [360, 55, 0]
+		},
+		{
+			"in_pcloud": "/ext4/lidar_data/shapenet/pcloud_split//Airplane/val/fff513f407e00e85a9ced22d91ad7027.las",
+			"conditions": null,
+			"center": [360, 60, 0]
+		}
+    ],
+    "out_pcloud": "/ext4/lidar_data/shapenet/vl3d/out/airplane/fixed/hybrid/*",
+    "sequential_pipeline": [
+        {
+            "predict": "PredictivePipeline",
+            "model_path": "/ext4/lidar_data/shapenet/vl3d/out/airplane/fixed/hybrid/model/rf.pipe",
+            "nn_path": null
+        },
+        {
+            "eval": "ClassificationEvaluator",
+            "class_names": ["wing", "body", "tail" ,"engine", "other"],
+            "ignore_classes": ["other"],
+            "ignore_predictions": true,
+            "metrics": ["OA", "P", "R", "F1", "IoU", "wP", "wR", "wF1", "wIoU", "MCC", "Kappa"],
+            "class_metrics": ["P", "R", "F1", "IoU"],
+            "report_path": "*/eval/report/global_eval.log",
+            "class_report_path": "*/eval/report/class_eval.log",
+            "confusion_matrix_report_path" : "*/eval/report/confusion_matrix.log",
+            "confusion_matrix_plot_path" : "*/eval/plot/confusion_matrix.svg",
+            "confusion_matrix_normalization_strategy": "row",
+            "class_distribution_report_path": "*/eval/report/class_distribution.log",
+            "class_distribution_plot_path": "*/eval/plot/class_distribution.svg",
+            "nthreads": -1
+        },
+    {
+        "eval": "ClassificationUncertaintyEvaluator",
+        "class_names": ["wing", "body", "tail" ,"engine", "other"],
+        "ignore_classes": ["other"],
+        "include_probabilities": true,
+        "include_weighted_entropy": false,
+        "include_clusters": false,
+        "weight_by_predictions": false,
+        "num_clusters": 0,
+        "clustering_max_iters": 0,
+        "clustering_batch_size": 0,
+        "clustering_entropy_weights": false,
+        "clustering_reduce_function": null,
+        "gaussian_kernel_points": 256,
+        "report_path": "*/uncertainty/uncertainty.las",
+        "plot_path": "*/uncertainty/"
+    }
+    ]
+}

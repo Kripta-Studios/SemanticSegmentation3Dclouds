@@ -1,0 +1,63 @@
+{
+  "in_pcloud": [  	
+	"/ext4/lidar_data/math/geomfeats2nd/cat_h1_3_a1_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/elc_h1_5_a0_6_b0_5_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/ell_a1_3_b1_1_c0_9_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/hpa_h1_a0_6_b0_9_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/osh_a0_5_b0_75_c1_25_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/sph_r1_vl3d.las",
+	"/ext4/lidar_data/math/geomfeats2nd/tor_r0_5_R1_0_vl3d.las"
+  ],
+  "out_pcloud": [  	
+    "/ext4/lidar_data/math/geomfeats2nd/cat_h1_3_a0_6_eval/*",
+	"/ext4/lidar_data/math/geomfeats2nd/elc_h1_5_a0_6_b0_5_eval/*",
+	"/ext4/lidar_data/math/geomfeats2nd/ell_a1_3_b1_1_c0_9_eval/*",
+	"/ext4/lidar_data/math/geomfeats2nd/hpa_h1_a0_6_b0_9_eval/*",
+	"/ext4/lidar_data/math/geomfeats2nd/osh_a0_5_b0_75_c1_25_eval/*",
+	"/ext4/lidar_data/math/geomfeats2nd/sph_r1_eval/*",
+	"/ext4/lidar_data/math/geomfeats2nd/tor_r0_5_R1_0_eval/*"
+  ],
+  "sequential_pipeline": [
+    {
+		"eval": "RegressionEvaluator",
+		"metrics": [
+			"RMSE", "MAE",
+			"MeSE", "RMeSE", "MeAE",
+			"DevSE", "RDevSE", "DevAE",
+			"Pearson", "Spearman"
+		],
+		"cases": [
+			["sage_gauss_curv", "gauss_curv_tw", "gauss_curv_cc", "gauss_curv_pca", "gauss_curv_svd"],
+			["sage_mean_curv", "mean_curv_tw", "mean_curv_cc", "mean_curv_pca", "mean_curv_svd"],
+			["sage_shape_index", "shpidx_tw", "shpidx_pca", "shpidx_svd"],
+			["sage_umbildev", "umbilic_dev_tw", "umbilic_dev_pca", "umbilic_dev_svd"],
+			["sage_minabscurv", "minabscurv_tw", "minabscurv_pca", "minabscurv_svd"],
+			["sage_maxabscurv", "maxabscurv_tw", "maxabscurv_pca", "maxabscurv_svd"]
+		],
+		"cases_renames":[
+			["twGaussC", "ccGaussC", "pcaGaussC", "svdGaussC"],
+			["twMeanC", "ccMeanC", "pcaMeanC", "svdMeanC"],
+			["twShpidx", "pcaShpidx", "svdShpidx"],
+			["twUmbdev", "pcaUmbdev", "svdUmbdev"],
+			["twMinAbsC", "pcaMinAbsC", "svdMinAbsC"],
+			["twMaxAbsC", "pcaMaxAbsC", "svdMaxAbsC"]
+		],
+		"outer_correlations": null,
+		"outlier_filter": null,
+		"outlier_param": 0,
+		"regression_report_path": "*/report/regression_eval.log",
+		"outer_report_path": "*/report/outer_eval.log",
+		"distribution_report_path": "*/report/regression_distrb.log",
+		"regression_pcloud_path": "*/report/regression_eval.las",
+		"regression_plot_path": "*/plot/regression_plot.png",
+		"regression_hist2d_path": "*/plot/regression_hist2d.png",
+		"residual_plot_path": "*/plot/residual_plot.png",
+		"residual_hist2d_path": "*/plot/residual_hist2d.png",
+		"scatter_plot_path": "*/plot/scatter_plot.png",
+		"scatter_hist2d_path": "*/plot/scatter_hist2d.png",
+		"qq_plot_path": "*/plot/qq_plot.png",
+		"summary_plot_path": "*/plot/summary_plot.png",
+		"nthreads": -1
+	}
+  ]
+}

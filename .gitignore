@@ -1,0 +1,60 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local test scratch
+.pytest_basetemp*/
+.tmp_pytest/
+pytest-cache-files-*/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Build and packaging
+build/
+dist/
+*.egg-info/
+site/
+doc/build/
+
+# Generated outputs
+/out/
+/outputs/
+/reports/
+/logs/
+/models/
+vl3d_galicia/out/
+vl3d_galicia/outputs/
+vl3d_galicia/reports/
+vl3d_galicia/logs/
+vl3d_galicia/models/
+*.log
+*.log.*
+
+# Local data and ML artifacts
+data/raw/
+data/processed/
+data/processed*/
+data/manifests/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
