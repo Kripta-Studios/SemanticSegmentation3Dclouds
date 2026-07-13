@@ -1,0 +1,15 @@
+python==3.14.2
+implementation==CPython
+platform==Windows-amd64
+affine==2.4.0
+attrs==26.1.0
+certifi==2026.6.17
+click==8.4.2
+cligj==0.7.2
+colorama==0.4.6
+numpy==2.5.1
+pyparsing==3.3.2
+rasterio==1.5.0
+system-site-packages: torch==2.10.0+cu128; scikit-learn==1.8.0
+venv-command: uv venv .venv --python "C:\Program Files\Python314\python.exe" --system-site-packages
+install-command: uv pip install --python .venv\Scripts\python.exe "rasterio>=1.4.4"

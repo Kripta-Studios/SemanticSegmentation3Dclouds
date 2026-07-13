@@ -3,6 +3,7 @@ from __future__ import annotations
 import glob
 import os
 import csv
+import json
 from pathlib import Path
 
 import numpy as np
@@ -138,6 +139,12 @@ class SegmentationBlockDataset(Dataset):
         self.external_feature_dir = Path(external_feature_dir) if external_feature_dir else None
         self.external_feature_key = external_feature_key
         self.require_external_features = require_external_features
+        self.external_feature_schema_sha256: str | None = None
+        if self.external_feature_dir is not None:
+            config_path = self.external_feature_dir / "feature_config.json"
+            if config_path.exists():
+                feature_config = json.loads(config_path.read_text(encoding="utf-8"))
+                self.external_feature_schema_sha256 = feature_config.get("feature_schema_sha256")
         self.selection_mode = selection_mode
         self.selection_seed = int(selection_seed)
         if coordinate_normalization not in {"none", "xy_unit_z_robust"}:
@@ -277,6 +284,13 @@ class SegmentationBlockDataset(Dataset):
                 payload = torch.load(candidate, weights_only=False, map_location="cpu")
                 if self.external_feature_key not in payload:
                     raise KeyError(f"{candidate} does not contain '{self.external_feature_key}'")
+                if self.external_feature_schema_sha256 is not None:
+                    actual_hash = payload.get("feature_schema_sha256")
+                    if actual_hash != self.external_feature_schema_sha256:
+                        raise ValueError(
+                            f"External feature schema mismatch for {candidate}: manifest expects "
+                            f"{self.external_feature_schema_sha256}, cache contains {actual_hash}. Rebuild the cache."
+                        )
                 names = payload.get("feature_names")
                 return self._normalize_external_features(payload[self.external_feature_key].float(), names)
         if self.require_external_features:

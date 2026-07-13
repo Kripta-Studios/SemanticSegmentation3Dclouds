@@ -8,6 +8,8 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 
+from src.data.pnoa import PNOA_FEATURE_SCHEMA
+
 
 IMAGENET_MEAN = torch.tensor([0.485, 0.456, 0.406], dtype=torch.float32).view(1, 3, 1, 1)
 IMAGENET_STD = torch.tensor([0.229, 0.224, 0.225], dtype=torch.float32).view(1, 3, 1, 1)
@@ -50,6 +52,28 @@ def _safe_feature_column(features: torch.Tensor, idx: int, default: torch.Tensor
     return default.float()
 
 
+def _named_feature_columns(block: dict[str, Any], features: torch.Tensor) -> dict[str, torch.Tensor]:
+    names = block.get("feature_names")
+    if names is None and isinstance(block.get("feature_schema"), dict):
+        names = block["feature_schema"].get("names")
+    if names is None:
+        raise ValueError(
+            "Block has no feature_names/feature_schema. Rebuild the PNOA block cache with "
+            f"schema {PNOA_FEATURE_SCHEMA.version}; positional spectral columns are ambiguous."
+        )
+    names = [str(name) for name in names]
+    if features.ndim != 2 or features.shape[1] != len(names):
+        raise ValueError(
+            f"Feature schema has {len(names)} names but tensor shape is {tuple(features.shape)}"
+        )
+    if len(set(names)) != len(names):
+        raise ValueError(f"Feature names must be unique, got {names}")
+    missing = [name for name in PNOA_FEATURE_SCHEMA.names if name not in names]
+    if missing:
+        raise ValueError(f"Feature schema is missing required PNOA channels: {missing}")
+    return {name: features[:, idx].float() for idx, name in enumerate(names)}
+
+
 def _cell_indices(coords: torch.Tensor, grid_size: int) -> torch.Tensor:
     xy = coords[:, :2].float()
     mins = xy.min(dim=0).values
@@ -87,17 +111,15 @@ def make_multichannel_raster(
 ) -> RasterizedBlock:
     coords = _as_float_tensor(block["coords"])
     base = _as_float_tensor(block.get("features_original", block["features"]))
+    by_name = _named_feature_columns(block, base)
     z = coords[:, 2].float()
     z_norm = _normalize_01(z)
-    intensity_default = torch.zeros_like(z_norm)
-    nir_default = _safe_feature_column(base, 1, intensity_default)
-
     columns = [
-        _safe_feature_column(base, 0, intensity_default),
-        _safe_feature_column(base, 1, intensity_default),
-        _safe_feature_column(base, 2, intensity_default),
-        _safe_feature_column(base, 3, intensity_default),
-        _safe_feature_column(base, 4, nir_default),
+        by_name["red"],
+        by_name["green"],
+        by_name["blue"],
+        by_name["intensity"],
+        by_name["nir"],
         z_norm,
     ]
     names = ["red", "green", "blue", "intensity", "nir", "z_norm"]
@@ -186,6 +208,7 @@ class DinoDenseExtractor:
         normalize: str = "imagenet",
     ):
         self.backend = backend
+        self.requested_model_name = model_name
         self.model_name = model_name
         self.repo_dir = repo_dir
         self.weights = weights
@@ -201,12 +224,26 @@ class DinoDenseExtractor:
     def uses_real_dino(self) -> bool:
         return self.real_backend != "stat"
 
+    def _backend_candidates(self) -> list[str]:
+        if self.backend != "auto":
+            return [self.backend]
+        requested = self.requested_model_name.lower()
+        if requested.startswith("dinov2_"):
+            return ["dinov2"]
+        if "/" in self.requested_model_name:
+            return ["hf"]
+        if self.repo_dir:
+            return ["torchhub"]
+        return ["timm"]
+
     def _load_model(self) -> None:
         errors = []
-        for candidate in ([self.backend] if self.backend != "auto" else ["hf", "timm", "dinov2", "torchhub"]):
+        for candidate in self._backend_candidates():
             try:
                 if candidate == "dinov2":
-                    name = self.model_name if self.model_name.startswith("dinov2_") else "dinov2_vits14"
+                    if not self.model_name.startswith("dinov2_"):
+                        raise ValueError("backend=dinov2 requires an explicit dinov2_* model; family substitution is forbidden")
+                    name = self.model_name
                     self.model = torch.hub.load("facebookresearch/dinov2", name).to(self.device).eval()
                     self.real_backend = "dinov2"
                     self.model_name = name

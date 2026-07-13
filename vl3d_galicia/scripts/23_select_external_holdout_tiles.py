@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 import math
 import sys
@@ -124,6 +125,17 @@ def select_tiles(rows: list[dict], target_tiles: int) -> list[dict]:
     return selected
 
 
+def select_tiles_label_blind(rows: list[dict], target_tiles: int, seed: int) -> list[dict]:
+    """Select tiles using identifiers only; class counts never affect membership."""
+    if target_tiles <= 0 or target_tiles >= len(rows):
+        return list(rows)
+
+    def score(row: dict) -> str:
+        return hashlib.sha256(f"{seed}:{row['tile_id']}".encode("utf-8")).hexdigest()
+
+    return sorted(rows, key=score)[:target_tiles]
+
+
 def distribution(rows: list[dict]) -> list[dict]:
     counts = Counter()
     total_all = 0
@@ -167,6 +179,13 @@ def main() -> None:
     parser.add_argument("--include-campaign-prefix", action="append", default=[])
     parser.add_argument("--exclude-campaign-prefix", action="append", default=["GAL"])
     parser.add_argument("--target-tiles", type=int, default=32)
+    parser.add_argument(
+        "--selection-mode",
+        choices=["label_blind_hash", "class_stratified_dev"],
+        default="label_blind_hash",
+        help="Use label_blind_hash for a final frozen test; class_stratified_dev is development-only.",
+    )
+    parser.add_argument("--selection-seed", type=int, default=20260713)
     parser.add_argument("--chunk-size", type=int, default=1_000_000)
     parser.add_argument("--num-workers", type=int, default=8)
     parser.add_argument(
@@ -233,13 +252,20 @@ def main() -> None:
         if not rows:
             raise SystemExit("No candidate rows remain after applying --exclude-tile-list.")
 
-    selected = select_tiles(rows, target_tiles=args.target_tiles)
+    if args.selection_mode == "label_blind_hash":
+        selected = select_tiles_label_blind(rows, target_tiles=args.target_tiles, seed=args.selection_seed)
+    else:
+        selected = select_tiles(rows, target_tiles=args.target_tiles)
     selected = sorted(selected, key=lambda row: row["tile_id"])
     selected_ids = [row["tile_id"] for row in selected]
     (reports / "selected_tiles.txt").write_text("\n".join(selected_ids) + "\n", encoding="utf-8")
     selection_payload = {
         "raw": str(Path(args.raw).resolve()),
         "target_tiles": args.target_tiles,
+        "selection_mode": args.selection_mode,
+        "selection_seed": args.selection_seed,
+        "label_blind_membership": args.selection_mode == "label_blind_hash",
+        "protocol_role": "final_test" if args.selection_mode == "label_blind_hash" else "external_development",
         "manifest_in": str(Path(args.manifest_in).resolve()) if args.manifest_in else "",
         "exclude_tile_list": str(Path(args.exclude_tile_list).resolve()) if args.exclude_tile_list else "",
         "excluded_tile_count": len(excluded_tile_ids),

@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import hashlib
+import json
 
 import numpy as np
 import torch
 
 
 EPS = 1e-6
+GEOM_CONTEXT_SCHEMA_VERSION = "geom-context-v2"
 
 
 @dataclass(frozen=True)
@@ -14,6 +17,96 @@ class GeomContextConfig:
     cell_sizes: tuple[float, ...] = (2.5, 5.0, 10.0)
     include_tw_summary: bool = True
     include_metric_height: bool = True
+
+
+@dataclass(frozen=True)
+class GeomFeatureSchema:
+    version: str
+    names: tuple[str, ...]
+    config: dict[str, object]
+
+    @property
+    def sha256(self) -> str:
+        payload = {"version": self.version, "names": list(self.names), "config": self.config}
+        raw = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        return hashlib.sha256(raw).hexdigest()
+
+    @property
+    def dimension(self) -> int:
+        return len(self.names)
+
+    def as_dict(self) -> dict[str, object]:
+        return {
+            "version": self.version,
+            "names": list(self.names),
+            "dimension": self.dimension,
+            "sha256": self.sha256,
+            "config": self.config,
+        }
+
+
+def geom_context_schema(config: GeomContextConfig, tw_feature_count: int = 0) -> GeomFeatureSchema:
+    names = [
+        "z_norm_p05_p95",
+        "z_standard_block",
+        "height_above_block_p05",
+        "height_below_block_p95",
+        "ndvi",
+        "ndwi",
+        "brightness",
+        "exg",
+        "nir_minus_red",
+    ]
+    if config.include_metric_height:
+        names.extend(["height_above_block_p05_m2", "height_below_block_p95_m2"])
+    for cell_size in config.cell_sizes:
+        prefix = f"cell_{cell_size:g}m"
+        names.extend(
+            [
+                f"{prefix}_density_norm",
+                f"{prefix}_log_density_scaled",
+                f"{prefix}_height_above_min",
+                f"{prefix}_height_from_mean",
+                f"{prefix}_height_below_max",
+                f"{prefix}_height_range",
+                f"{prefix}_z_std",
+                f"{prefix}_z_norm_mean",
+                f"{prefix}_z_norm_std",
+                f"{prefix}_intensity_mean",
+                f"{prefix}_nir_mean",
+                f"{prefix}_ndvi_mean",
+                f"{prefix}_brightness_mean",
+            ]
+        )
+        if config.include_metric_height:
+            names.extend(
+                [
+                    f"{prefix}_height_above_min_m2",
+                    f"{prefix}_height_from_mean_m2",
+                    f"{prefix}_height_below_max_m2",
+                    f"{prefix}_height_range_m10",
+                    f"{prefix}_z_std_m2",
+                ]
+            )
+    keep_tw = min(8, max(int(tw_feature_count), 0)) if config.include_tw_summary else 0
+    names.extend([f"tw_context_norm_{idx:02d}" for idx in range(keep_tw)])
+    schema_config = {
+        "cell_sizes": [float(value) for value in config.cell_sizes],
+        "include_tw_summary": bool(config.include_tw_summary),
+        "include_metric_height": bool(config.include_metric_height),
+        "tw_summary_channels": keep_tw,
+    }
+    return GeomFeatureSchema(GEOM_CONTEXT_SCHEMA_VERSION, tuple(names), schema_config)
+
+
+def validate_feature_schema(expected_sha256: str, actual_sha256: str | None, context: str = "features") -> None:
+    if not actual_sha256:
+        raise ValueError(f"{context} has no schema hash; rebuild the feature cache")
+    if actual_sha256 != expected_sha256:
+        raise ValueError(
+            f"{context} schema mismatch: expected {expected_sha256}, got {actual_sha256}. "
+            "A 56-dimensional checkpoint/cache must not be used with the 73-dimensional schema (or vice versa)."
+        )
 
 
 def _to_numpy(value) -> np.ndarray:
@@ -234,4 +327,8 @@ def build_geom_context_features(block: dict, config: GeomContextConfig | None = 
             names.extend([f"tw_context_norm_{idx:02d}" for idx in range(keep)])
     features = np.concatenate(chunks, axis=1).astype(np.float32, copy=False)
     features = np.nan_to_num(features, nan=0.0, posinf=0.0, neginf=0.0)
+    tw_count = int(_to_numpy(block["tw_features"]).shape[1]) if "tw_features" in block else 0
+    schema = geom_context_schema(config, tw_feature_count=tw_count)
+    if names != list(schema.names) or features.shape[1] != schema.dimension:
+        raise RuntimeError("Internal geometric-context schema does not match generated features")
     return torch.from_numpy(features), names

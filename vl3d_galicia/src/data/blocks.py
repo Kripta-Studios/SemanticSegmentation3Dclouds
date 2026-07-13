@@ -9,7 +9,10 @@ import numpy as np
 import torch
 
 from src.data.classes import IGNORE_INDEX
-from src.data.pnoa import read_col_cir_pair
+from src.data.pnoa import PNOA_FEATURE_SCHEMA, read_col_cir_pair
+
+
+BLOCK_SCHEMA_VERSION = "pnoa-block-v2-label-blind-eval"
 
 
 def torch_save_atomic(payload: dict, path: str | Path) -> None:
@@ -58,10 +61,19 @@ def iter_block_masks(coords: np.ndarray, tile_size: float, stride: float):
                 yield float(x0), float(y0), float(x1), float(y1), mask
 
 
-def sample_block_indices(labels: np.ndarray, max_points: int, rng: np.random.Generator) -> np.ndarray:
+def sample_block_indices(
+    labels: np.ndarray,
+    max_points: int,
+    rng: np.random.Generator,
+    mode: str = "class_balanced",
+) -> np.ndarray:
     n_points = labels.shape[0]
     if n_points <= max_points:
         return np.arange(n_points)
+    if mode == "uniform":
+        return rng.choice(n_points, max_points, replace=False)
+    if mode != "class_balanced":
+        raise ValueError(f"Unknown point sampling mode: {mode}")
     reliable = np.flatnonzero(labels != IGNORE_INDEX)
     if reliable.size == 0:
         return rng.choice(n_points, max_points, replace=False)
@@ -123,12 +135,13 @@ def make_blocks_from_pair(
     labels = tile["labels"]
     features = tile["features"]
     missing_nir = tile["missing_nir_mask"]
+    sampling_policy = "class_balanced" if split == "train" else "uniform"
     for block_idx, (x0, y0, x1, y1, mask) in enumerate(iter_block_masks(coords, tile_size, stride)):
         point_count = int(mask.sum())
         if point_count < min_points:
             continue
         idx = np.flatnonzero(mask)
-        sampled = idx[sample_block_indices(labels[idx], points_per_block, rng)]
+        sampled = idx[sample_block_indices(labels[idx], points_per_block, rng, mode=sampling_policy)]
         block_coords = coords[sampled].astype(np.float32, copy=True)
         local = block_coords.copy()
         local[:, 0] -= (x0 + x1) * 0.5
@@ -139,6 +152,12 @@ def make_blocks_from_pair(
         if skip_existing and out_path.exists():
             try:
                 existing = torch.load(out_path, weights_only=False, map_location="cpu")
+                if (
+                    existing.get("block_schema_version") != BLOCK_SCHEMA_VERSION
+                    or existing.get("feature_schema_sha256") != PNOA_FEATURE_SCHEMA.sha256
+                    or existing.get("sampling_policy") != sampling_policy
+                ):
+                    raise ValueError("stale block cache schema")
                 existing_labels = existing["labels"].numpy()
                 counts = np.bincount(existing_labels, minlength=7)
                 for cls, count in enumerate(counts):
@@ -161,6 +180,12 @@ def make_blocks_from_pair(
                 "coords": torch.from_numpy(local),
                 "global_coords": torch.from_numpy(block_coords),
                 "features": torch.from_numpy(features[sampled].astype(np.float32, copy=False)),
+                "feature_names": list(PNOA_FEATURE_SCHEMA.names),
+                "feature_schema": PNOA_FEATURE_SCHEMA.as_dict(),
+                "feature_schema_version": PNOA_FEATURE_SCHEMA.version,
+                "feature_schema_sha256": PNOA_FEATURE_SCHEMA.sha256,
+                "block_schema_version": BLOCK_SCHEMA_VERSION,
+                "sampling_policy": sampling_policy,
                 "labels": torch.from_numpy(block_labels.astype(np.int64, copy=False)),
                 "reliable_mask": torch.from_numpy(block_labels != IGNORE_INDEX),
                 "missing_nir_mask": torch.from_numpy(missing_nir[sampled]),

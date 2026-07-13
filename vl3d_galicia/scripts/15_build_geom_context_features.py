@@ -10,7 +10,7 @@ from pathlib import Path
 import torch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from src.features.geom_context import GeomContextConfig, build_geom_context_features
+from src.features.geom_context import GeomContextConfig, build_geom_context_features, geom_context_schema
 from src.training.segmentation_trainer import torch_save_atomic
 from src.utils.progress import eta_line
 
@@ -34,16 +34,29 @@ def build_one(payload: dict) -> dict:
     include_tw_summary = bool(payload["include_tw_summary"])
     include_metric_height = bool(payload["include_metric_height"])
     feature_key = payload["feature_key"]
-    if out_path.exists() and not force:
-        return {"split": split, "path": str(path), "out": str(out_path), "written": False, "points": 0, "feature_dim": 0}
     block = torch.load(path, weights_only=False, map_location="cpu")
+    config = GeomContextConfig(
+        cell_sizes=cell_sizes,
+        include_tw_summary=include_tw_summary,
+        include_metric_height=include_metric_height,
+    )
+    tw_count = int(block["tw_features"].shape[1]) if "tw_features" in block else 0
+    schema = geom_context_schema(config, tw_feature_count=tw_count)
+    if out_path.exists() and not force:
+        cached = torch.load(out_path, weights_only=False, map_location="cpu")
+        if cached.get("feature_schema_sha256") == schema.sha256:
+            return {
+                "split": split,
+                "path": str(path),
+                "out": str(out_path),
+                "written": False,
+                "points": 0,
+                "feature_dim": schema.dimension,
+                "feature_schema_sha256": schema.sha256,
+            }
     features, names = build_geom_context_features(
         block,
-        GeomContextConfig(
-            cell_sizes=cell_sizes,
-            include_tw_summary=include_tw_summary,
-            include_metric_height=include_metric_height,
-        ),
+        config,
     )
     torch_save_atomic(
         {
@@ -55,6 +68,9 @@ def build_one(payload: dict) -> dict:
             "cell_sizes": list(cell_sizes),
             "include_tw_summary": include_tw_summary,
             "include_metric_height": include_metric_height,
+            "feature_schema": schema.as_dict(),
+            "feature_schema_version": schema.version,
+            "feature_schema_sha256": schema.sha256,
             "uses_labels": False,
         },
         out_path,
@@ -66,6 +82,7 @@ def build_one(payload: dict) -> dict:
         "written": True,
         "points": int(features.shape[0]),
         "feature_dim": int(features.shape[1]),
+        "feature_schema_sha256": schema.sha256,
     }
 
 
@@ -126,6 +143,7 @@ def main() -> None:
     skipped = 0
     total_points = 0
     feature_dim = 0
+    schema_hashes: set[str] = set()
     if args.num_workers <= 1:
         iterator = enumerate((build_one(job) for job in jobs), 1)
         for done, info in iterator:
@@ -133,6 +151,7 @@ def main() -> None:
             skipped += int(not info["written"])
             total_points += int(info["points"])
             feature_dim = max(feature_dim, int(info["feature_dim"]))
+            schema_hashes.add(str(info["feature_schema_sha256"]))
             if done % 100 == 0 or done == len(jobs):
                 print(eta_line("geom context feature cache", start, done, len(jobs)))
     else:
@@ -144,6 +163,7 @@ def main() -> None:
                 skipped += int(not info["written"])
                 total_points += int(info["points"])
                 feature_dim = max(feature_dim, int(info["feature_dim"]))
+                schema_hashes.add(str(info["feature_schema_sha256"]))
                 if done % 100 == 0 or done == len(jobs):
                     print(eta_line("geom context feature cache", start, done, len(jobs)))
 
@@ -155,6 +175,8 @@ def main() -> None:
             "blocks_skipped": skipped,
             "points_written": total_points,
             "feature_dim": feature_dim,
+            "feature_schema_sha256": next(iter(schema_hashes)) if len(schema_hashes) == 1 else None,
+            "feature_schema_hashes": sorted(schema_hashes),
         }
     )
     (out_root / "feature_config.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")

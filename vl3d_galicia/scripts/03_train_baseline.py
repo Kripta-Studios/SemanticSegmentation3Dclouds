@@ -14,6 +14,8 @@ from src.data.segmentation_dataset import SegmentationBlockDataset, segmentation
 from src.models.segmentation.heads import GatedExternalPointSegmentationNet, PointSegmentationNet
 from src.models.segmentation.pointnet2_lite import PointNet2LiteSegmentationNet
 from src.training.segmentation_trainer import SegmentationTrainer
+from src.data.classes import IGNORE_INDEX
+from src.eval.segmentation_metrics import METRIC_PROTOCOL_VERSION
 
 
 def main() -> None:
@@ -36,6 +38,11 @@ def main() -> None:
     parser.add_argument("--use-tw-input", action="store_true")
     parser.add_argument("--external-feature-dir", default=None)
     parser.add_argument("--external-feature-key", default="dino_features")
+    parser.add_argument(
+        "--allow-stat-baseline",
+        action="store_true",
+        help="Explicitly allow stat-raster external features for smoke/diagnostics; never promotes as DINO.",
+    )
     parser.add_argument("--fusion-type", choices=["concat", "gated"], default="concat")
     parser.add_argument("--coordinate-normalization", choices=["none", "xy_unit_z_robust"], default="none")
     parser.add_argument("--spectral-normalization", choices=["none", "block_robust"], default="none")
@@ -64,6 +71,7 @@ def main() -> None:
     parser.add_argument("--sampler-class-boost", default="")
     parser.add_argument("--save-test-arrays", action="store_true")
     parser.add_argument("--no-resume", action="store_true")
+    parser.add_argument("--num-output-classes", type=int, default=IGNORE_INDEX)
     args = parser.parse_args()
     cfg = load_config(args.config)
     data_root = args.data or cfg.get("data", {}).get("blocks_dir", "data/processed/galicia_blocks")
@@ -85,6 +93,15 @@ def main() -> None:
         feature_config_path = Path(args.external_feature_dir) / "feature_config.json"
         if feature_config_path.exists():
             external_feature_config = json.loads(feature_config_path.read_text(encoding="utf-8"))
+        elif args.external_feature_key == "dino_features":
+            raise ValueError(f"DINO external features require a manifest: {feature_config_path}")
+    if args.external_feature_key == "dino_features" and args.external_feature_dir:
+        used_real_dino = bool(external_feature_config.get("used_real_dino", False))
+        if not used_real_dino and not args.allow_stat_baseline:
+            raise ValueError(
+                "External cache is not backed by a real DINO model. Use --allow-stat-baseline only for "
+                "explicit smoke/diagnostic runs; it is not promotion-eligible."
+            )
     generator = set_global_seed(args.seed)
 
     complete_path = out / "training_complete.json"
@@ -93,6 +110,22 @@ def main() -> None:
     if complete_path.exists() and best_model_path.exists() and not args.no_resume:
         complete = json.loads(complete_path.read_text(encoding="utf-8"))
         if int(complete.get("epochs_completed", 0)) >= epochs or bool(complete.get("early_stopped", False)):
+            run_config_path = out / "run_config.json"
+            if not run_config_path.exists():
+                raise ValueError(
+                    f"Cannot reuse completed run without {run_config_path}; use a new --out directory "
+                    "or --no-resume to regenerate it under the corrected metric/output schema."
+                )
+            previous_run = json.loads(run_config_path.read_text(encoding="utf-8"))
+            compatible = (
+                int(previous_run.get("num_output_classes", -1)) == int(args.num_output_classes)
+                and previous_run.get("metric_protocol_version") == METRIC_PROTOCOL_VERSION
+            )
+            if not compatible:
+                raise ValueError(
+                    f"Completed run at {out} predates the corrected output/metric protocol; "
+                    "use a new --out directory or --no-resume to retrain."
+                )
             print(f"Baseline already complete at {complete_path}; skipping training.")
             return
 
@@ -169,6 +202,12 @@ def main() -> None:
     val_loader = DataLoader(val_ds, batch_size=batch_size, shuffle=False, num_workers=workers, collate_fn=segmentation_collate_fn, pin_memory=True)
     test_loader = DataLoader(test_ds, batch_size=batch_size, shuffle=False, num_workers=workers, collate_fn=segmentation_collate_fn) if test_ds else None
     weights = class_weights_from_files(train_ds.files, mode=args.class_weight_mode, max_weight=args.max_class_weight)
+    if args.num_output_classes != IGNORE_INDEX:
+        raise ValueError(
+            f"The current target schema has {IGNORE_INDEX} trainable classes; "
+            "ignore is target-only and must not be an output logit."
+        )
+    weights = weights[: args.num_output_classes] if weights is not None else None
     if args.model_type == "pointnet2_lite" and args.fusion_type == "gated":
         raise ValueError("pointnet2_lite currently supports concat/no external fusion only")
     if args.model_type == "pointnet2_lite":
@@ -180,6 +219,7 @@ def main() -> None:
             anchor_count=args.anchor_count,
             neighbors=args.local_neighbors,
             interp_neighbors=args.interp_neighbors,
+            num_classes=args.num_output_classes,
         )
     elif args.fusion_type == "gated":
         if not args.external_feature_dir:
@@ -191,6 +231,7 @@ def main() -> None:
             hidden_dim=hidden_dim,
             embed_dim=embed_dim,
             dropout=dropout,
+            num_classes=args.num_output_classes,
         )
     else:
         model = PointSegmentationNet(
@@ -199,6 +240,7 @@ def main() -> None:
             hidden_dim=hidden_dim,
             embed_dim=embed_dim,
             dropout=dropout,
+            num_classes=args.num_output_classes,
         )
     device = "cuda" if torch.cuda.is_available() else "cpu"
     optimizer_groups, lr_info = segmentation_optimizer_groups(model, lr=lr, encoder_lr_scale=1.0)
@@ -213,6 +255,10 @@ def main() -> None:
         "external_feature_backend": external_feature_config.get("backend_used", ""),
         "external_feature_model": external_feature_config.get("model", ""),
         "used_real_dino": bool(external_feature_config.get("used_real_dino", False)),
+        "artifact_kind": external_feature_config.get("artifact_kind", "point_baseline"),
+        "promotion_eligible": bool(
+            not args.external_feature_dir or external_feature_config.get("promotion_eligible", False)
+        ),
         "fusion_mode": f"point_tw_external_{args.fusion_type}" if args.external_feature_dir else "point_tw" if use_tw else "point",
         "fusion_type": args.fusion_type,
         "coordinate_normalization": args.coordinate_normalization,
@@ -228,6 +274,9 @@ def main() -> None:
         "interp_neighbors": args.interp_neighbors,
         **channel_layout,
         "in_channels": in_channels,
+        "num_output_classes": int(args.num_output_classes),
+        "target_ignore_index": int(IGNORE_INDEX),
+        "metric_protocol_version": METRIC_PROTOCOL_VERSION,
         "probe_type": args.probe_type,
         "frozen_encoder": False,
         "encoder_lr_scale": 1.0,

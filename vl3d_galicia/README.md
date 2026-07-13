@@ -1,5 +1,11 @@
 # VirtuaLearn3D Galicia (VL3D-GAL)
 
+> **Metric/data protocol (2026-07-13):** current PNOA blocks use the named
+> `pnoa-spectral-v2` schema (`intensity, red, green, blue, nir`), evaluation
+> uses `segmentation-metrics-v2-pred-ignore-is-fn`, and geometric-context
+> caches carry a 56/73-dimensional schema hash. Earlier DINO caches and metric
+> tables are legacy artifacts and require regeneration before comparison.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 

@@ -1,0 +1,5 @@
+Command: .venv\Scripts\python.exe -m pytest -q -rs tests
+Environment: CPython 3.14.2; rasterio 1.5.0; torch 2.10.0+cu128
+Result before final schema/holdout gates: 49 passed, 1 skipped in 10.87s
+Skip: tests\test_prepare_tiles.py:12: No processed .pt files found. Run 01_prepare_tiles.py first.
+Final result: recorded after final gate tests in STATUS.md and registry.jsonl.

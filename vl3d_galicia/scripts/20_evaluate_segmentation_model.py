@@ -44,6 +44,8 @@ def build_model(config: dict, channel_layout: dict) -> torch.nn.Module:
     embed_dim = int(config.get("embed_dim", 256))
     dropout = float(config.get("dropout", 0.2))
     probe_type = config.get("probe_type", "mlp")
+    # Old run configs predate the target-only ignore contract and have 7 logits.
+    num_output_classes = int(config.get("num_output_classes", 7))
     if model_type == "pointnet2_lite":
         return PointNet2LiteSegmentationNet(
             in_channels=channel_layout["in_channels"],
@@ -53,6 +55,7 @@ def build_model(config: dict, channel_layout: dict) -> torch.nn.Module:
             anchor_count=int(config.get("anchor_count", 384)),
             neighbors=int(config.get("local_neighbors", 16)),
             interp_neighbors=int(config.get("interp_neighbors", 3)),
+            num_classes=num_output_classes,
         )
     if config.get("fusion_type") == "gated":
         return GatedExternalPointSegmentationNet(
@@ -62,6 +65,7 @@ def build_model(config: dict, channel_layout: dict) -> torch.nn.Module:
             hidden_dim=hidden_dim,
             embed_dim=embed_dim,
             dropout=dropout,
+            num_classes=num_output_classes,
         )
     return PointSegmentationNet(
         in_channels=channel_layout["in_channels"],
@@ -69,6 +73,7 @@ def build_model(config: dict, channel_layout: dict) -> torch.nn.Module:
         hidden_dim=hidden_dim,
         embed_dim=embed_dim,
         dropout=dropout,
+        num_classes=num_output_classes,
     )
 
 
@@ -124,6 +129,20 @@ def write_reports(out: Path, metrics: dict, run_config: dict) -> None:
     plt.close()
 
 
+def validate_external_feature_manifest(external_dir: str | Path, expected_hash: str) -> dict:
+    actual_config_path = Path(external_dir) / "feature_config.json"
+    if not actual_config_path.exists():
+        raise ValueError(f"External feature cache has no manifest: {actual_config_path}")
+    manifest = json.loads(actual_config_path.read_text(encoding="utf-8"))
+    actual_hash = manifest.get("feature_schema_sha256")
+    if actual_hash != expected_hash:
+        raise ValueError(
+            "External feature schema differs from the training checkpoint config: "
+            f"expected {expected_hash}, got {actual_hash}."
+        )
+    return manifest
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Evaluate a trained segmentation model on a separate data root.")
     parser.add_argument("--model-dir", required=True)
@@ -152,6 +171,13 @@ def main() -> None:
     coordinate_normalization = args.coordinate_normalization or train_config.get("coordinate_normalization", "none")
     spectral_normalization = args.spectral_normalization or train_config.get("spectral_normalization", "none")
     external_feature_normalization = args.external_feature_normalization or train_config.get("external_feature_normalization", "none")
+    expected_external_hash = (
+        train_config.get("external_feature_config", {}).get("feature_schema_sha256")
+        if isinstance(train_config.get("external_feature_config"), dict)
+        else None
+    )
+    if external_dir and expected_external_hash:
+        validate_external_feature_manifest(external_dir, expected_external_hash)
     split_dir = str(Path(args.data) / args.split)
     channel_layout = infer_channel_layout(
         split_dir,

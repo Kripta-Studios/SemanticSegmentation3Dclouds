@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import hashlib
+import json
 from pathlib import Path
 import re
 from typing import Iterable
@@ -17,6 +19,29 @@ class TilePair:
     col_path: Path
     cir_path: Path
     campaign: str
+
+
+@dataclass(frozen=True)
+class FeatureSchema:
+    """Versioned semantic contract for columns stored in ``features``."""
+
+    version: str
+    names: tuple[str, ...]
+
+    @property
+    def sha256(self) -> str:
+        payload = {"version": self.version, "names": list(self.names)}
+        raw = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        return hashlib.sha256(raw).hexdigest()
+
+    def as_dict(self) -> dict[str, object]:
+        return {"version": self.version, "names": list(self.names), "sha256": self.sha256}
+
+
+PNOA_FEATURE_SCHEMA = FeatureSchema(
+    version="pnoa-spectral-v2",
+    names=("intensity", "red", "green", "blue", "nir"),
+)
 
 
 def tile_id_from_col(path: Path) -> str:
@@ -127,6 +152,10 @@ def read_col_cir_pair(
     return {
         "coords": coords.astype(np.float32),
         "features": features,
+        "feature_names": list(PNOA_FEATURE_SCHEMA.names),
+        "feature_schema": PNOA_FEATURE_SCHEMA.as_dict(),
+        "feature_schema_version": PNOA_FEATURE_SCHEMA.version,
+        "feature_schema_sha256": PNOA_FEATURE_SCHEMA.sha256,
         "labels": labels,
         "classification": classification,
         "missing_nir_mask": missing_nir,

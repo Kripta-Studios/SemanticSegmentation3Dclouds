@@ -2,7 +2,14 @@ from __future__ import annotations
 
 import torch
 
-from src.features.geom_context import GeomContextConfig, build_geom_context_features
+import pytest
+
+from src.features.geom_context import (
+    GeomContextConfig,
+    build_geom_context_features,
+    geom_context_schema,
+    validate_feature_schema,
+)
 
 
 def test_geom_context_features_are_label_free_and_finite():
@@ -27,3 +34,19 @@ def test_geom_context_features_are_label_free_and_finite():
     assert features_a.shape[1] == len(names)
     assert torch.isfinite(features_a).all()
     assert torch.allclose(features_a, features_b)
+
+
+def test_56_and_73_schemas_are_deterministic_and_incompatible():
+    cfg_56 = GeomContextConfig(include_metric_height=False)
+    cfg_73 = GeomContextConfig(include_metric_height=True)
+    schema_56_a = geom_context_schema(cfg_56, tw_feature_count=25)
+    schema_56_b = geom_context_schema(cfg_56, tw_feature_count=25)
+    schema_73 = geom_context_schema(cfg_73, tw_feature_count=25)
+
+    assert schema_56_a.dimension == 56
+    assert schema_73.dimension == 73
+    assert schema_56_a.names == schema_56_b.names
+    assert schema_56_a.sha256 == schema_56_b.sha256
+    assert schema_56_a.sha256 != schema_73.sha256
+    with pytest.raises(ValueError, match="56-dimensional"):
+        validate_feature_schema(schema_56_a.sha256, schema_73.sha256, context="checkpoint")

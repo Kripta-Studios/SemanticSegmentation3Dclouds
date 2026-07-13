@@ -65,10 +65,21 @@
 \date{June 2026}
 
 \begin{document}
+
 \maketitle
 
+\begin{center}
+\fcolorbox{evowarn}{evogray}{\parbox{0.94\textwidth}{\textbf{Protocol correction (2026-07-13).}
+All DINO/DINOv2 results and all reported mIoU values in this document are
+historical pre-fix figures. The DINO input channel contract was incorrect and
+the former IoU implementation could omit predictions of the ignore class.
+These figures are invalid for current comparison until caches are rebuilt and
+inference is repeated with \texttt{pnoa-spectral-v2} and
+\texttt{segmentation-metrics-v2-pred-ignore-is-fn}.}}
+\end{center}
+
 \begin{abstract}
-This report describes the updated technical state of an airborne LiDAR semantic-segmentation and forest-intelligence minimum viable product. The deployable core is a supervised point-wise model enhanced with label-free multi-scale geometric context, Taubin--Weingarten-inspired descriptors, robust coordinate and spectral normalization, focal loss, and class-balanced training. Two models are retained for different objectives. The original local-context model remains the internal macro-F1 and mean-IoU leader, reaching 86.49\% overall accuracy, 82.60\% macro-F1, and 72.63\% mean IoU. A robustness-oriented model trained on 20,000 balanced blocks reaches 86.71\% overall accuracy, 82.48\% macro-F1, and 72.50\% mean IoU internally while generalizing substantially better to geographically separate data. On a fresh, tile-disjoint external holdout, the robust model reaches 83.27\% overall accuracy, 61.80\% macro-F1, and 50.98\% mean IoU, improving a strong TW baseline by 5.94, 10.42, and 10.35 percentage points respectively. The model improves all six class IoUs against that baseline. Water and building support are sparse in the fresh holdout, so absolute external claims for those classes require a more representative dataset. Geo-JEPA and TW-JEPA remain implemented research tracks rather than the source of the strongest current downstream result. The product currently delivers GIS-ready semantic layers, point-cloud exports, forest proxies, anomaly candidates, and auditable evaluation reports.
+This report describes the technical state of an airborne LiDAR semantic-segmentation and forest-intelligence minimum viable product before the 2026-07-13 protocol correction. The deployable core is a supervised point-wise model enhanced with label-free multi-scale geometric context, Taubin--Weingarten-inspired descriptors, robust coordinate and spectral normalization, focal loss, and class-balanced training. Historical artifacts retained two models for different objectives and reported overall accuracy, macro-F1, and mean-IoU figures throughout this document. Those figures are preserved only as pre-fix provenance: the mIoU values and every comparison involving DINO must be regenerated under the corrected feature and metric schemas before they can support a current ranking or deployment claim. Water and building support were also sparse in the fresh holdout, so absolute external claims for those classes require a more representative dataset. Geo-JEPA and TW-JEPA remain implemented research tracks rather than demonstrated sources of the strongest downstream result. The product code delivers GIS-ready semantic layers, point-cloud exports, forest proxies, anomaly candidates, and auditable evaluation reports; corrected benchmark results remain pending.
 \end{abstract}
 
 \tableofcontents

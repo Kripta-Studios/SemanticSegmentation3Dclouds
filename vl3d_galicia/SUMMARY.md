@@ -1,6 +1,28 @@
 # SUMMARY.md
 
-Estado actualizado: 2026-06-13 noche Europe/Madrid.
+Estado actualizado: 2026-07-13 Europe/Madrid.
+
+## Correccion de protocolo 2026-07-13
+
+La auditoria detecto que los bloques PNOA guardaban las features como
+`[intensity, red, green, blue, nir]`, mientras la ruta raster DINO las leia
+posicionalmente como `[red, green, blue, intensity, nir]`. Por ello, **todas
+las cifras DINO/DINOv2 anteriores a `pnoa-spectral-v2` quedan invalidadas** y
+no deben compararse con nuevas corridas. Los caches nuevos guardan nombres,
+version y hash de schema; los caches antiguos se reconstruyen.
+
+Tambien se corrigio el protocolo de mIoU: una prediccion `ignore=6` sobre un
+target valido ahora cuenta como falso negativo mediante una matriz 6x7. Las
+tablas historicas calculadas con el protocolo anterior son resultados legacy
+y deben recalcularse desde predicciones guardadas o mediante nueva inferencia.
+Los entrenamientos nuevos emiten seis logits; `ignore` existe solo en target.
+
+El contexto geometrico queda identificado por nombres y hash: la variante
+sin alturas metricas tiene 56 dimensiones y la variante con alturas metricas
+73. Un checkpoint/cache 56 no es compatible silenciosamente con 73. Train
+mantiene muestreo balanceado por clase; val/test usan muestreo uniforme ciego
+a etiquetas. Los holdouts seleccionados antes por clases/rareza son desarrollo
+externo, no tests finales label-blind.
 
 ## Actualizacion 2026-06-14: holdout externo estratificado CCAA
 

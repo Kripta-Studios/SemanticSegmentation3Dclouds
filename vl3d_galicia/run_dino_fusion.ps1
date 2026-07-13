@@ -25,6 +25,7 @@ param(
     [int]$MaxTestBlocks = 0,
     [int]$MaxFeatureBlocksPerSplit = 0,
     [int]$Seed = 42,
+    [string]$FeatureSchemaVersion = "pnoa-spectral-v2",
     [switch]$ForceFeatures,
     [switch]$ForceTrain
 )
@@ -48,7 +49,9 @@ function Invoke-Step {
 }
 
 New-Item -ItemType Directory -Force -Path $OutRoot | Out-Null
-$ExperimentName = if ($FusionType -eq "gated") { "dino_tw_gated" } else { "dino_tw_fusion" }
+$ExperimentName = if ($Backend -eq "stat") {
+    if ($FusionType -eq "gated") { "stat_tw_gated_smoke" } else { "stat_tw_fusion_smoke" }
+} elseif ($FusionType -eq "gated") { "dino_tw_gated" } else { "dino_tw_fusion" }
 
 $FeatureArgs = @(
     "scripts/14_build_dino_features.py",
@@ -61,6 +64,7 @@ $FeatureArgs = @(
     "--image-mode", $ImageMode,
     "--out-dim", "$DinoOutDim",
     "--projection-seed", "$Seed",
+    "--feature-schema-version", $FeatureSchemaVersion,
     "--max-blocks-per-split", "$MaxFeatureBlocksPerSplit",
     "--max-train-blocks", "$MaxTrainBlocks",
     "--max-val-blocks", "$MaxValBlocks",
@@ -100,6 +104,7 @@ $TrainArgs = @(
     "--seed", "$Seed"
 )
 if ($ForceTrain) { $TrainArgs += @("--no-resume") }
+if ($Backend -eq "stat") { $TrainArgs += @("--allow-stat-baseline") }
 Invoke-Step "train DINO/TW point fusion" ($TrainArgs + $ClassArgs + $FocusArgs + $LimitArgs)
 
 Invoke-Step "compare DINO fusion against medium_plus" @(
