@@ -39,7 +39,11 @@ def baseline_cmd(args, name: str, seed: int, extra: list[str]) -> list[str]:
         "--train-block-selection",
         args.block_selection,
         "--val-block-selection",
-        args.block_selection,
+        "random",
+        "--test-block-selection",
+        "random",
+        "--data-selection-seed",
+        str(args.data_selection_seed),
         "--early-stopping-patience",
         str(args.early_stopping_patience),
         "--early-stopping-min-delta",
@@ -62,7 +66,8 @@ def main() -> None:
     parser.add_argument("--jepa-checkpoint", default="outputs/medium/tw_jepa_pretrain/best_jepa.pt")
     parser.add_argument("--out-root", default="outputs/sota_ablation")
     parser.add_argument("--compare-root", action="append", default=["outputs/medium_plus"])
-    parser.add_argument("--seeds", type=parse_seeds, default=parse_seeds("42,1337,2026"))
+    parser.add_argument("--seeds", type=parse_seeds, default=parse_seeds("7,13,21"))
+    parser.add_argument("--data-selection-seed", type=int, default=20260714)
     parser.add_argument("--epochs", type=int, default=45)
     parser.add_argument("--batch-size", type=int, default=24)
     parser.add_argument("--num-workers", type=int, default=8)

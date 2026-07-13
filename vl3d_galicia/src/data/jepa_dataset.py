@@ -8,18 +8,19 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset
 
+from src.data.pnoa import canonical_pnoa_features
+
 
 def block_features(data: dict, use_tw_input: bool = False) -> torch.Tensor:
     coords = data["coords"].float()
+    base = canonical_pnoa_features(data)
     if use_tw_input:
-        if "features_with_tw" in data:
-            feats = data["features_with_tw"].float()
-        elif "tw_features" in data:
-            feats = torch.cat([data.get("features_original", data["features"]).float(), data["tw_features"].float()], dim=1)
+        if "tw_features" in data:
+            feats = torch.cat([base, data["tw_features"].float()], dim=1)
         else:
-            feats = data.get("features_original", data["features"]).float()
+            feats = base
     else:
-        feats = data.get("features_original", data["features"]).float()
+        feats = base
     return torch.cat([coords, feats], dim=1)
 
 
@@ -171,4 +172,3 @@ def jepa_collate_fn(batch: list[dict]) -> dict:
         out["tw_target"] = tw_tgt
         out["tw_valid_target"] = tw_valid
     return out
-

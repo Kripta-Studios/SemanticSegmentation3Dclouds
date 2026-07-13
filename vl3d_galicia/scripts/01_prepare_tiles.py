@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import shlex
+import subprocess
 import sys
 import time
 from collections import Counter, defaultdict
@@ -11,6 +13,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from src.data.classes import CLASS_NAMES, IGNORE_INDEX
 from src.data.blocks import assign_split, make_blocks_from_pair
+from src.data.geographic_split import OFFICIAL_SPLITS, load_split_manifest
 from src.data.pnoa import find_tile_pairs
 from src.utils.progress import eta_line
 
@@ -26,6 +29,8 @@ def tile_signature(args: dict) -> dict:
         "split_mode": args["split_mode"],
         "seed": args["seed"],
         "force_split": args.get("force_split") or "",
+        "assigned_split": args.get("assigned_split") or "",
+        "split_hash": args.get("split_hash") or "",
     }
 
 
@@ -62,28 +67,34 @@ def write_done_marker(out_root: str, stats: dict, signature: dict) -> None:
 def process_pair(payload: dict) -> dict:
     pair = payload["pair"]
     args = payload["args"]
-    signature = tile_signature(args)
+    split_row = payload.get("split_row") or {}
+    local_args = dict(args)
+    local_args["assigned_split"] = split_row.get("split") or args.get("force_split") or ""
+    signature = tile_signature(local_args)
     if not args["no_skip_existing"]:
-        marker = load_done_marker(args["out"], pair.tile_id, signature)
+        marker = load_done_marker(local_args["out"], pair.tile_id, signature)
         if marker is not None:
             return marker
     stats = make_blocks_from_pair(
         pair.col_path,
         pair.cir_path,
-        args["out"],
-        tile_size=args["tile_size"],
-        stride=args["stride"],
-        points_per_block=args["points_per_block"],
-        min_points=args["min_points"],
-        val_ratio=args["val_ratio"],
-        test_ratio=args["test_ratio"],
-        split_mode=args["split_mode"],
-        seed=args["seed"],
-        skip_existing=not args["no_skip_existing"],
-        force_split=args.get("force_split") or None,
+        local_args["out"],
+        tile_size=local_args["tile_size"],
+        stride=local_args["stride"],
+        points_per_block=local_args["points_per_block"],
+        min_points=local_args["min_points"],
+        val_ratio=local_args["val_ratio"],
+        test_ratio=local_args["test_ratio"],
+        split_mode=local_args["split_mode"],
+        seed=local_args["seed"],
+        skip_existing=not local_args["no_skip_existing"],
+        force_split=local_args.get("assigned_split") or None,
+        split_hash=local_args.get("split_hash") or None,
+        source_metadata=split_row,
+        git_commit=local_args.get("git_commit") or None,
     )
     if not args["no_skip_existing"]:
-        write_done_marker(args["out"], stats, signature)
+        write_done_marker(local_args["out"], stats, signature)
     return stats
 
 
@@ -142,12 +153,23 @@ def split_balance_warnings(class_counts_by_split: dict) -> list[str]:
     return warnings
 
 
-def select_balanced_pairs(pairs: list, max_tiles: int, split_mode: str, val_ratio: float, test_ratio: float) -> list:
+def select_balanced_pairs(
+    pairs: list,
+    max_tiles: int,
+    split_mode: str,
+    val_ratio: float,
+    test_ratio: float,
+    split_by_tile: dict[str, str] | None = None,
+) -> list:
     if max_tiles <= 0 or len(pairs) <= max_tiles:
         return pairs
     groups = defaultdict(list)
     for pair in pairs:
-        split = assign_split(pair.tile_id, pair.campaign, val_ratio=val_ratio, test_ratio=test_ratio, split_mode=split_mode)
+        split = (
+            split_by_tile[pair.tile_id]
+            if split_by_tile is not None
+            else assign_split(pair.tile_id, pair.campaign, val_ratio=val_ratio, test_ratio=test_ratio, split_mode=split_mode)
+        )
         groups[(pair.campaign, split)].append(pair)
     selected = []
     keys = sorted(groups)
@@ -179,6 +201,11 @@ def main() -> None:
     parser.add_argument("--val-ratio", type=float, default=0.1)
     parser.add_argument("--test-ratio", type=float, default=0.1)
     parser.add_argument("--split-mode", choices=["mixed", "campaign", "hash"], default="mixed")
+    parser.add_argument(
+        "--split-manifest",
+        default="",
+        help="Frozen geographic split JSON. When set, manifest membership overrides --split-mode/ratios.",
+    )
     parser.add_argument("--force-split", choices=["train", "val", "test"], default="")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--num-workers", type=int, default=1)
@@ -188,10 +215,24 @@ def main() -> None:
     args = parser.parse_args()
 
     pairs = find_tile_pairs(args.raw)
+    split_manifest = load_split_manifest(args.split_manifest) if args.split_manifest else None
+    split_rows = {row["tile_id"]: row for row in split_manifest["tiles"]} if split_manifest else {}
+    if split_manifest:
+        missing = sorted(pair.tile_id for pair in pairs if pair.tile_id not in split_rows)
+        if missing:
+            raise ValueError(f"Raw tiles missing from split manifest: {missing[:5]}")
+        pairs = [pair for pair in pairs if split_rows[pair.tile_id].get("split") in OFFICIAL_SPLITS]
     if args.tile_contains:
         pairs = [pair for pair in pairs if args.tile_contains in pair.tile_id]
     if args.max_tiles > 0:
-        pairs = select_balanced_pairs(pairs, args.max_tiles, args.split_mode, args.val_ratio, args.test_ratio)
+        pairs = select_balanced_pairs(
+            pairs,
+            args.max_tiles,
+            args.split_mode,
+            args.val_ratio,
+            args.test_ratio,
+            split_by_tile={tile_id: row["split"] for tile_id, row in split_rows.items()} if split_manifest else None,
+        )
     if not pairs:
         raise SystemExit(f"No COL/CIR pairs found in {args.raw}")
 
@@ -199,6 +240,27 @@ def main() -> None:
     reports = Path(args.reports)
     reports.mkdir(parents=True, exist_ok=True)
     summary = {
+        "run": {
+            "raw": args.raw,
+            "out": args.out,
+            "reports": args.reports,
+            "tile_size": args.tile_size,
+            "stride": args.stride,
+            "points_per_block": args.points_per_block,
+            "min_points": args.min_points,
+            "val_ratio": args.val_ratio,
+            "test_ratio": args.test_ratio,
+            "split_mode": args.split_mode,
+            "split_manifest": args.split_manifest,
+            "split_hash": split_manifest.get("split_hash") if split_manifest else None,
+            "seed": args.seed,
+            "num_workers": args.num_workers,
+            "max_tiles": args.max_tiles,
+            "tile_contains": args.tile_contains,
+            "git_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
+            "command": " ".join(shlex.quote(item) for item in sys.argv),
+            "started_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+        },
         "tiles_requested": len(pairs),
         "tiles_ok": 0,
         "tiles_skipped_by_marker": 0,
@@ -225,6 +287,8 @@ def main() -> None:
         "force_split": args.force_split,
         "seed": args.seed,
         "no_skip_existing": args.no_skip_existing,
+        "split_hash": split_manifest.get("split_hash") if split_manifest else "",
+        "git_commit": summary["run"]["git_commit"],
     }
     start_time = time.perf_counter()
     if args.num_workers <= 1:
@@ -232,7 +296,7 @@ def main() -> None:
             print(f"[{i}/{len(pairs)}] {pair.tile_id}")
             status = "ok"
             try:
-                update_summary(summary, process_pair({"pair": pair, "args": worker_args}))
+                update_summary(summary, process_pair({"pair": pair, "args": worker_args, "split_row": split_rows.get(pair.tile_id)}))
             except Exception as exc:
                 summary["tiles_error"] += 1
                 summary["errors"].append({"tile_id": pair.tile_id, "error": f"{type(exc).__name__}: {exc}"})
@@ -241,7 +305,13 @@ def main() -> None:
             print(f"{eta_line('prepare blocks', start_time, i, len(pairs))} | {status} {pair.tile_id}")
     else:
         with ProcessPoolExecutor(max_workers=args.num_workers) as executor:
-            futures = {executor.submit(process_pair, {"pair": pair, "args": worker_args}): pair for pair in pairs}
+            futures = {
+                executor.submit(
+                    process_pair,
+                    {"pair": pair, "args": worker_args, "split_row": split_rows.get(pair.tile_id)},
+                ): pair
+                for pair in pairs
+            }
             for i, future in enumerate(as_completed(futures), 1):
                 pair = futures[future]
                 status = "ok"
@@ -275,6 +345,7 @@ def main() -> None:
         for split, counts in payload["class_counts_by_split"].items()
     }
     payload["balance_warnings"] = split_balance_warnings(payload["class_counts_by_split"])
+    payload["run"]["finished_at"] = time.strftime("%Y-%m-%dT%H:%M:%S%z")
     (reports / "prepare_blocks.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
     (Path(args.out) / "_prepare_complete.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
     print(json.dumps({k: payload[k] for k in ["tiles_ok", "tiles_skipped_by_marker", "tiles_error", "written_blocks", "skipped_blocks", "tiles_by_split", "blocks_by_split", "points_by_split", "split_percentages", "balance_warnings"]}, indent=2))

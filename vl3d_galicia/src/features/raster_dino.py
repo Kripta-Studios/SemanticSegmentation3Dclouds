@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import os
 from pathlib import Path
 from typing import Any
 
@@ -23,6 +24,7 @@ class RasterizedBlock:
     raster: torch.Tensor
     point_cells: torch.Tensor
     channel_names: list[str]
+    projection_view: str = "top_xy"
 
 
 def _as_float_tensor(value: Any) -> torch.Tensor:
@@ -61,6 +63,14 @@ def _named_feature_columns(block: dict[str, Any], features: torch.Tensor) -> dic
             "Block has no feature_names/feature_schema. Rebuild the PNOA block cache with "
             f"schema {PNOA_FEATURE_SCHEMA.version}; positional spectral columns are ambiguous."
         )
+    version = block.get("feature_schema_version")
+    if version is None and isinstance(block.get("feature_schema"), dict):
+        version = block["feature_schema"].get("version")
+    if version != PNOA_FEATURE_SCHEMA.version:
+        raise ValueError(
+            f"Unknown PNOA feature schema version {version!r}; expected {PNOA_FEATURE_SCHEMA.version!r}. "
+            "Rebuild the block cache."
+        )
     names = [str(name) for name in names]
     if features.ndim != 2 or features.shape[1] != len(names):
         raise ValueError(
@@ -74,12 +84,22 @@ def _named_feature_columns(block: dict[str, Any], features: torch.Tensor) -> dic
     return {name: features[:, idx].float() for idx, name in enumerate(names)}
 
 
-def _cell_indices(coords: torch.Tensor, grid_size: int) -> torch.Tensor:
-    xy = coords[:, :2].float()
-    mins = xy.min(dim=0).values
-    maxs = xy.max(dim=0).values
+PROJECTION_AXES = {
+    "top_xy": (0, 1),
+    "side_xz": (0, 2),
+    "side_yz": (1, 2),
+}
+
+
+def _cell_indices(coords: torch.Tensor, grid_size: int, projection_view: str = "top_xy") -> torch.Tensor:
+    if projection_view not in PROJECTION_AXES:
+        raise ValueError(f"Unknown projection view: {projection_view}")
+    axes = PROJECTION_AXES[projection_view]
+    plane = coords[:, list(axes)].float()
+    mins = plane.min(dim=0).values
+    maxs = plane.max(dim=0).values
     span = (maxs - mins).clamp_min(1e-6)
-    norm = (xy - mins) / span
+    norm = (plane - mins) / span
     x = torch.clamp((norm[:, 0] * (grid_size - 1)).long(), 0, grid_size - 1)
     y = torch.clamp((norm[:, 1] * (grid_size - 1)).long(), 0, grid_size - 1)
     return torch.stack([y, x], dim=1)
@@ -108,6 +128,7 @@ def make_multichannel_raster(
     block: dict[str, Any],
     grid_size: int = 128,
     tw_channels: int = 8,
+    projection_view: str = "top_xy",
 ) -> RasterizedBlock:
     coords = _as_float_tensor(block["coords"])
     base = _as_float_tensor(block.get("features_original", block["features"]))
@@ -132,11 +153,17 @@ def make_multichannel_raster(
             names.append(f"tw_{idx:02d}")
 
     values = torch.stack(columns, dim=1)
-    cells = _cell_indices(coords, int(grid_size))
+    cells = _cell_indices(coords, int(grid_size), projection_view=projection_view)
     raster = aggregate_points_to_raster(values, cells, int(grid_size))
     names = [*names, "density"]
     image = raster_to_image(raster, names, mode="rgb_nir_height")
-    return RasterizedBlock(image=image, raster=raster, point_cells=cells, channel_names=names)
+    return RasterizedBlock(
+        image=image,
+        raster=raster,
+        point_cells=cells,
+        channel_names=names,
+        projection_view=projection_view,
+    )
 
 
 def raster_to_image(raster: torch.Tensor, channel_names: list[str], mode: str = "rgb_nir_height") -> torch.Tensor:
@@ -206,14 +233,24 @@ class DinoDenseExtractor:
         weights: str | None = None,
         device: str = "cuda",
         normalize: str = "imagenet",
+        hf_repo_id: str | None = None,
+        hf_revision: str | None = None,
+        dtype: str = "float16",
     ):
         self.backend = backend
-        self.requested_model_name = model_name
-        self.model_name = model_name
+        self.hf_repo_id = hf_repo_id
+        self.hf_revision = hf_revision
+        self.requested_model_name = hf_repo_id or model_name
+        self.model_name = self.requested_model_name
+        env_model_path = os.environ.get("DINOV3_MODEL_PATH")
+        self.model_source = env_model_path if env_model_path and "dinov3" in self.requested_model_name.lower() else model_name
         self.repo_dir = repo_dir
         self.weights = weights
         self.device = torch.device(device if torch.cuda.is_available() and device == "cuda" else "cpu")
         self.normalize = normalize
+        if dtype not in {"float32", "float16", "bfloat16"}:
+            raise ValueError(f"Unknown DINO dtype: {dtype}")
+        self.dtype = dtype
         self.model = None
         self.processor = None
         self.real_backend = "stat"
@@ -244,14 +281,28 @@ class DinoDenseExtractor:
                     if not self.model_name.startswith("dinov2_"):
                         raise ValueError("backend=dinov2 requires an explicit dinov2_* model; family substitution is forbidden")
                     name = self.model_name
-                    self.model = torch.hub.load("facebookresearch/dinov2", name).to(self.device).eval()
+                    source = str(Path(self.repo_dir)) if self.repo_dir else "facebookresearch/dinov2"
+                    kwargs = {"source": "local"} if self.repo_dir else {}
+                    self.model = torch.hub.load(source, name, **kwargs).to(self.device).eval()
                     self.real_backend = "dinov2"
                     self.model_name = name
                     return
                 if candidate == "hf":
                     from transformers import AutoModel
 
-                    self.model = AutoModel.from_pretrained(self.model_name).to(self.device).eval()
+                    torch_dtype = {
+                        "float32": torch.float32,
+                        "float16": torch.float16,
+                        "bfloat16": torch.bfloat16,
+                    }[self.dtype]
+                    local_only = Path(str(self.model_source)).exists() or os.environ.get("HF_HUB_OFFLINE") == "1"
+                    self.model = AutoModel.from_pretrained(
+                        self.model_source,
+                        revision=self.hf_revision,
+                        local_files_only=local_only,
+                        dtype=torch_dtype,
+                        low_cpu_mem_usage=True,
+                    ).to(self.device).eval()
                     self.real_backend = "hf"
                     return
                 if candidate == "timm":
@@ -279,7 +330,25 @@ class DinoDenseExtractor:
             mean, std = SAT493M_MEAN.to(self.device), SAT493M_STD.to(self.device)
         else:
             mean, std = IMAGENET_MEAN.to(self.device), IMAGENET_STD.to(self.device)
-        return (batch - mean) / std
+        normalized = (batch - mean) / std
+        if self.model is not None:
+            model_dtype = next(self.model.parameters()).dtype
+            normalized = normalized.to(dtype=model_dtype)
+        return normalized
+
+    @property
+    def checkpoint_path(self) -> Path | None:
+        if self.weights and Path(self.weights).is_file():
+            return Path(self.weights)
+        source = Path(str(self.model_source))
+        candidate = source / "model.safetensors"
+        return candidate if candidate.is_file() else None
+
+    @property
+    def config_path(self) -> Path | None:
+        source = Path(str(self.model_source))
+        candidate = source / "config.json"
+        return candidate if candidate.is_file() else None
 
     @staticmethod
     def _first_tensor(mapping: dict, keys: tuple[str, ...]) -> torch.Tensor | None:
@@ -295,18 +364,25 @@ class DinoDenseExtractor:
             raise RuntimeError("Stat backend does not expose DINO image features")
         pixels = self._normalize_image(image)
         if self.real_backend == "hf":
-            outputs = self.model(pixel_values=pixels, output_hidden_states=False)
+            outputs = self.model(
+                pixel_values=pixels,
+                output_hidden_states=False,
+                interpolate_pos_encoding=True,
+            )
             tokens = outputs.last_hidden_state
-            if tokens.shape[1] > 1:
-                tokens = tokens[:, 1:, :]
             patch = int(getattr(self.model.config, "patch_size", 16) or 16)
+            register_tokens = int(getattr(self.model.config, "num_register_tokens", 0) or 0)
             h = max(int(image.shape[1]) // patch, 1)
             w = max(int(image.shape[2]) // patch, 1)
-            if h * w != tokens.shape[1]:
-                side = int(tokens.shape[1] ** 0.5)
-                h = max(side, 1)
-                w = max(tokens.shape[1] // h, 1)
-            return tokens[:, : h * w, :].reshape(1, h, w, -1).permute(0, 3, 1, 2).squeeze(0).cpu()
+            prefix_tokens = 1 + register_tokens
+            expected = prefix_tokens + h * w
+            if tokens.shape[1] != expected:
+                raise ValueError(
+                    "Unexpected Hugging Face DINO token layout: "
+                    f"got {tokens.shape[1]}, expected CLS(1)+register({register_tokens})+patches({h * w})"
+                )
+            patch_tokens = tokens[:, prefix_tokens:, :]
+            return patch_tokens.reshape(1, h, w, -1).permute(0, 3, 1, 2).squeeze(0).cpu()
         if self.real_backend in {"torchhub", "dinov2"}:
             if hasattr(self.model, "forward_features"):
                 out = self.model.forward_features(pixels)

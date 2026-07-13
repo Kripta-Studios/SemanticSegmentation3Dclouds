@@ -46,6 +46,8 @@ def infer_in_channels(
 def infer_channel_layout(
     block_dir: str,
     use_tw_input: bool = False,
+    base_feature_dir: str | None = None,
+    base_feature_key: str = "geom_features",
     external_feature_dir: str | None = None,
     external_feature_key: str = "dino_features",
 ) -> dict[str, int]:
@@ -56,6 +58,19 @@ def infer_channel_layout(
         raise FileNotFoundError(f"No .pt blocks in {block_dir}")
     data = torch.load(files[0], weights_only=False, map_location="cpu")
     base_channels = int(block_features(data, use_tw_input=use_tw_input).shape[1])
+    if base_feature_dir:
+        source = Path(files[0])
+        root = Path(base_feature_dir)
+        candidates = [root / Path(block_dir).name / source.name, root / source.name]
+        for candidate in candidates:
+            if candidate.exists():
+                payload = torch.load(candidate, weights_only=False, map_location="cpu")
+                if base_feature_key not in payload:
+                    raise KeyError(f"{candidate} does not contain '{base_feature_key}'")
+                base_channels += int(payload[base_feature_key].shape[1])
+                break
+        else:
+            raise FileNotFoundError(f"Base features for {source.name} not found under {base_feature_dir}")
     external_channels = 0
     if external_feature_dir:
         source = Path(files[0])

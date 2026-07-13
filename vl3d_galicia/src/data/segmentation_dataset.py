@@ -112,6 +112,8 @@ class SegmentationBlockDataset(Dataset):
         blocks_dir: str,
         max_blocks: int | None = None,
         use_tw_input: bool = False,
+        base_feature_dir: str | None = None,
+        base_feature_key: str = "geom_features",
         external_feature_dir: str | None = None,
         external_feature_key: str = "dino_features",
         require_external_features: bool = True,
@@ -136,6 +138,9 @@ class SegmentationBlockDataset(Dataset):
         )
         self.use_tw_input = use_tw_input
         self.blocks_dir = Path(blocks_dir)
+        self.base_feature_dir = Path(base_feature_dir) if base_feature_dir else None
+        self.base_feature_key = base_feature_key
+        self.base_feature_schema_sha256 = self._manifest_schema_hash(self.base_feature_dir)
         self.external_feature_dir = Path(external_feature_dir) if external_feature_dir else None
         self.external_feature_key = external_feature_key
         self.require_external_features = require_external_features
@@ -170,6 +175,20 @@ class SegmentationBlockDataset(Dataset):
         x = block_features(data, use_tw_input=self.use_tw_input)
         x = self._normalize_base_features(x)
         x = self._augment_base_spectral(x)
+        base_external = self._load_feature_payload(
+            file_path,
+            root=self.base_feature_dir,
+            feature_key=self.base_feature_key,
+            expected_schema_sha256=self.base_feature_schema_sha256,
+            normalize=False,
+        )
+        if base_external is not None:
+            if base_external.shape[0] != x.shape[0]:
+                raise ValueError(
+                    f"Base feature point count mismatch for {file_path}: "
+                    f"{base_external.shape[0]} vs {x.shape[0]}"
+                )
+            x = torch.cat([x, base_external.float()], dim=1)
         external = self._load_external_features(file_path)
         if external is not None:
             if external.shape[0] != x.shape[0]:
@@ -272,30 +291,57 @@ class SegmentationBlockDataset(Dataset):
         return external
 
     def _load_external_features(self, file_path: str) -> torch.Tensor | None:
-        if self.external_feature_dir is None:
+        return self._load_feature_payload(
+            file_path,
+            root=self.external_feature_dir,
+            feature_key=self.external_feature_key,
+            expected_schema_sha256=self.external_feature_schema_sha256,
+            normalize=True,
+        )
+
+    @staticmethod
+    def _manifest_schema_hash(root: Path | None) -> str | None:
+        if root is None:
+            return None
+        config_path = root / "feature_config.json"
+        if not config_path.exists():
+            return None
+        return json.loads(config_path.read_text(encoding="utf-8")).get("feature_schema_sha256")
+
+    def _load_feature_payload(
+        self,
+        file_path: str,
+        *,
+        root: Path | None,
+        feature_key: str,
+        expected_schema_sha256: str | None,
+        normalize: bool,
+    ) -> torch.Tensor | None:
+        if root is None:
             return None
         source = Path(file_path)
         candidates = [
-            self.external_feature_dir / self.blocks_dir.name / source.name,
-            self.external_feature_dir / source.name,
+            root / self.blocks_dir.name / source.name,
+            root / source.name,
         ]
         for candidate in candidates:
             if candidate.exists():
                 payload = torch.load(candidate, weights_only=False, map_location="cpu")
-                if self.external_feature_key not in payload:
-                    raise KeyError(f"{candidate} does not contain '{self.external_feature_key}'")
-                if self.external_feature_schema_sha256 is not None:
+                if feature_key not in payload:
+                    raise KeyError(f"{candidate} does not contain '{feature_key}'")
+                if expected_schema_sha256 is not None:
                     actual_hash = payload.get("feature_schema_sha256")
-                    if actual_hash != self.external_feature_schema_sha256:
+                    if actual_hash != expected_schema_sha256:
                         raise ValueError(
                             f"External feature schema mismatch for {candidate}: manifest expects "
-                            f"{self.external_feature_schema_sha256}, cache contains {actual_hash}. Rebuild the cache."
+                            f"{expected_schema_sha256}, cache contains {actual_hash}. Rebuild the cache."
                         )
                 names = payload.get("feature_names")
-                return self._normalize_external_features(payload[self.external_feature_key].float(), names)
+                values = payload[feature_key].float()
+                return self._normalize_external_features(values, names) if normalize else values
         if self.require_external_features:
             raise FileNotFoundError(
-                f"External features for {source.name} not found under {self.external_feature_dir}"
+                f"External features for {source.name} not found under {root}"
             )
         return None
 

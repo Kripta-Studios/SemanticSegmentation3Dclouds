@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import subprocess
 import sys
 import time
 from concurrent.futures import ProcessPoolExecutor, as_completed
@@ -34,6 +36,7 @@ def build_one(payload: dict) -> dict:
     include_tw_summary = bool(payload["include_tw_summary"])
     include_metric_height = bool(payload["include_metric_height"])
     feature_key = payload["feature_key"]
+    split_hash = payload["split_hash"]
     block = torch.load(path, weights_only=False, map_location="cpu")
     config = GeomContextConfig(
         cell_sizes=cell_sizes,
@@ -44,7 +47,7 @@ def build_one(payload: dict) -> dict:
     schema = geom_context_schema(config, tw_feature_count=tw_count)
     if out_path.exists() and not force:
         cached = torch.load(out_path, weights_only=False, map_location="cpu")
-        if cached.get("feature_schema_sha256") == schema.sha256:
+        if cached.get("feature_schema_sha256") == schema.sha256 and cached.get("split_hash") == split_hash:
             return {
                 "split": split,
                 "path": str(path),
@@ -54,6 +57,7 @@ def build_one(payload: dict) -> dict:
                 "feature_dim": schema.dimension,
                 "feature_schema_sha256": schema.sha256,
             }
+        raise ValueError(f"Existing geometric cache is incompatible and was preserved: {out_path}")
     features, names = build_geom_context_features(
         block,
         config,
@@ -72,6 +76,10 @@ def build_one(payload: dict) -> dict:
             "feature_schema_version": schema.version,
             "feature_schema_sha256": schema.sha256,
             "uses_labels": False,
+            "tile_id": block.get("tile_id"),
+            "split": block.get("split"),
+            "split_hash": split_hash,
+            "git_commit": payload["git_commit"],
         },
         out_path,
     )
@@ -105,6 +113,17 @@ def main() -> None:
     splits = [item.strip() for item in args.splits.split(",") if item.strip()]
     cell_sizes = [float(item.strip()) for item in args.cell_sizes.split(",") if item.strip()]
     paths = iter_block_paths(data_root, splits, max_blocks_per_split=args.max_blocks_per_split)
+    input_manifest = {}
+    for name in ("_dataset_manifest.json", "_prepare_complete.json"):
+        candidate = data_root / name
+        if candidate.exists():
+            input_manifest = json.loads(candidate.read_text(encoding="utf-8"))
+            break
+    input_run = input_manifest.get("run", input_manifest)
+    split_hash = input_run.get("split_hash") or input_manifest.get("split_hash")
+    if not split_hash:
+        raise ValueError("Geometric context features require a validated split_hash")
+    git_commit = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
     out_root.mkdir(parents=True, exist_ok=True)
     manifest = {
         "data_root": str(data_root),
@@ -117,6 +136,8 @@ def main() -> None:
         "max_blocks_per_split": int(args.max_blocks_per_split),
         "num_workers": int(args.num_workers),
         "uses_labels": False,
+        "split_hash": split_hash,
+        "git_commit": git_commit,
         "started_at": time.strftime("%Y-%m-%d %H:%M:%S"),
     }
     (out_root / "feature_config.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
@@ -135,6 +156,8 @@ def main() -> None:
                 "include_tw_summary": not args.no_tw_summary,
                 "include_metric_height": not args.no_metric_height,
                 "feature_key": args.feature_key,
+                "split_hash": split_hash,
+                "git_commit": git_commit,
             }
         )
 
@@ -179,6 +202,19 @@ def main() -> None:
             "feature_schema_hashes": sorted(schema_hashes),
         }
     )
+    manifest["cache_hash"] = hashlib.sha256(
+        json.dumps(
+            {
+                "split_hash": split_hash,
+                "feature_schema_sha256": manifest.get("feature_schema_sha256"),
+                "cell_sizes": cell_sizes,
+                "include_tw_summary": not args.no_tw_summary,
+                "include_metric_height": not args.no_metric_height,
+            },
+            sort_keys=True,
+            separators=(",", ":"),
+        ).encode("utf-8")
+    ).hexdigest()
     (out_root / "feature_config.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     print(json.dumps(manifest, indent=2))
 

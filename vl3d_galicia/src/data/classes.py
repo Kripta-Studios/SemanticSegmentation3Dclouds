@@ -4,6 +4,7 @@ import numpy as np
 import torch
 
 IGNORE_INDEX = 6
+TRAINABLE_CLASS_COUNT = 6
 
 CLASS_NAMES = {
     0: "ground",
@@ -37,6 +38,16 @@ ASPRS_TO_PAPER = {
     6: 4,
     9: 5,
 }
+
+
+def validate_num_output_classes(num_output_classes: int) -> int:
+    value = int(num_output_classes)
+    if value != TRAINABLE_CLASS_COUNT:
+        raise ValueError(
+            f"The target schema has {TRAINABLE_CLASS_COUNT} trainable classes; "
+            f"got {value} logits. ignore={IGNORE_INDEX} is target-only and must not be optimized."
+        )
+    return value
 
 
 def map_labels(classification: np.ndarray) -> np.ndarray:

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import glob
+import hashlib
 import json
 import os
 import sys
@@ -71,6 +72,9 @@ def fit_stats(files: list[str], args) -> dict:
 
 def enrich_file(path: str, out_path: Path, stats: dict, args) -> dict:
     if not args.no_skip_existing and out_path.exists() and out_path.stat().st_size > 0:
+        existing = torch.load(out_path, weights_only=False, map_location="cpu")
+        if existing.get("tw_config_hash") != args.tw_config_hash:
+            raise ValueError(f"Existing TW block is incompatible and was preserved: {out_path}")
         return {"points": 0, "valid_points": 0, "written_blocks": 0, "skipped_blocks": 1}
     data = torch.load(path, weights_only=False, map_location="cpu")
     tw = compute_taubin_weingarten_features(
@@ -100,6 +104,9 @@ def enrich_file(path: str, out_path: Path, stats: dict, args) -> dict:
     else:
         data.pop("features_with_tw", None)
     data["tw_valid_mask"] = torch.from_numpy(valid[:, 0])
+    data["tw_feature_names"] = list(TW_FEATURE_NAMES)
+    data["tw_config_hash"] = args.tw_config_hash
+    data["tw_normalization_stats_hash"] = args.tw_normalization_stats_hash
     torch_save_atomic(data, out_path)
     return {"points": int(tw.shape[0]), "valid_points": int(valid.sum()), "written_blocks": 1, "skipped_blocks": 0}
 
@@ -131,6 +138,17 @@ def main() -> None:
     parser.add_argument("--no-skip-existing", action="store_true")
     args = parser.parse_args()
 
+    input_manifest = {}
+    for name in ("_dataset_manifest.json", "_prepare_complete.json"):
+        candidate = Path(args.input) / name
+        if candidate.exists():
+            input_manifest = json.loads(candidate.read_text(encoding="utf-8"))
+            break
+    input_run = input_manifest.get("run", input_manifest)
+    split_hash = input_run.get("split_hash") or input_manifest.get("split_hash")
+    if not split_hash:
+        raise ValueError("TW features require an input block root with a validated split_hash")
+
     train_files = block_files(args.input, "train")
     if args.max_blocks > 0:
         train_files = train_files[: args.max_blocks]
@@ -153,7 +171,22 @@ def main() -> None:
         stats["fit_stats_blocks"] = args.fit_stats_blocks
         stats["sample_points_per_block"] = args.sample_points_per_block
         stats_path.write_text(json.dumps(stats, indent=2), encoding="utf-8")
-    report = {"splits": {}, "stats": stats}
+    stats_hash = hashlib.sha256(json.dumps(stats, sort_keys=True, separators=(",", ":"), default=str).encode("utf-8")).hexdigest()
+    tw_config = {
+        "neighbor_mode": args.neighbor_mode,
+        "k_neighbors": args.k_neighbors,
+        "radius": args.radius,
+        "min_neighbors": args.min_neighbors,
+        "eigenthreshold": args.eigenthreshold,
+        "tikhonov": args.tikhonov,
+        "split_hash": split_hash,
+        "normalization_stats_hash": stats_hash,
+        "feature_names": TW_FEATURE_NAMES,
+    }
+    tw_config_hash = hashlib.sha256(json.dumps(tw_config, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
+    args.tw_config_hash = tw_config_hash
+    args.tw_normalization_stats_hash = stats_hash
+    report = {"splits": {}, "stats": stats, "tw_config": tw_config, "tw_config_hash": tw_config_hash, "split_hash": split_hash}
     worker_args = vars(args).copy()
     for split in args.splits:
         files = block_files(args.input, split)
@@ -205,6 +238,17 @@ def main() -> None:
         }
     (Path(args.reports) / "tw_compute_report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     (Path(args.out) / "_tw_complete.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+    derived_manifest = dict(input_manifest)
+    derived_manifest.update(
+        {
+            "source_root": args.input,
+            "data_root": args.out,
+            "split_hash": split_hash,
+            "tw_config_hash": tw_config_hash,
+            "tw_normalization_stats_hash": stats_hash,
+        }
+    )
+    (Path(args.out) / "_dataset_manifest.json").write_text(json.dumps(derived_manifest, indent=2), encoding="utf-8")
     print(json.dumps(report["splits"], indent=2))
 
 

@@ -12,7 +12,7 @@ from src.data.classes import IGNORE_INDEX
 from src.data.pnoa import PNOA_FEATURE_SCHEMA, read_col_cir_pair
 
 
-BLOCK_SCHEMA_VERSION = "pnoa-block-v2-label-blind-eval"
+BLOCK_SCHEMA_VERSION = "pnoa-block-v3-geographic-provenance"
 
 
 def torch_save_atomic(payload: dict, path: str | Path) -> None:
@@ -111,6 +111,9 @@ def make_blocks_from_pair(
     seed: int,
     skip_existing: bool = True,
     force_split: str | None = None,
+    split_hash: str | None = None,
+    source_metadata: dict | None = None,
+    git_commit: str | None = None,
 ) -> dict:
     tile = read_col_cir_pair(col_path, cir_path)
     split = force_split or assign_split(tile["tile_id"], tile["campaign"], val_ratio=val_ratio, test_ratio=test_ratio, split_mode=split_mode)
@@ -130,6 +133,9 @@ def make_blocks_from_pair(
         "nir_join": tile["nir_join"],
         "col_points": tile["col_points"],
         "cir_points": tile["cir_points"],
+        "split_hash": split_hash,
+        "git_commit": git_commit,
+        "source_metadata": source_metadata or {},
     }
     coords = tile["coords"]
     labels = tile["labels"]
@@ -156,6 +162,7 @@ def make_blocks_from_pair(
                     existing.get("block_schema_version") != BLOCK_SCHEMA_VERSION
                     or existing.get("feature_schema_sha256") != PNOA_FEATURE_SCHEMA.sha256
                     or existing.get("sampling_policy") != sampling_policy
+                    or existing.get("split_hash") != split_hash
                 ):
                     raise ValueError("stale block cache schema")
                 existing_labels = existing["labels"].numpy()
@@ -165,8 +172,11 @@ def make_blocks_from_pair(
                 stats["blocks"] += 1
                 stats["skipped_blocks"] += 1
                 stats["points_written"] += int(existing_labels.size)
-            except Exception:
-                out_path.unlink(missing_ok=True)
+            except Exception as exc:
+                raise ValueError(
+                    f"Existing block is incompatible and was preserved: {out_path}. "
+                    "Use a new versioned --out directory."
+                ) from exc
             else:
                 continue
         counts = np.bincount(block_labels, minlength=7)
@@ -192,6 +202,9 @@ def make_blocks_from_pair(
                 "tile_id": tile["tile_id"],
                 "campaign": tile["campaign"],
                 "split": split,
+                "split_hash": split_hash,
+                "git_commit": git_commit,
+                "source_metadata": source_metadata or {},
                 "bbox": [x0, y0, x1, y1],
             },
             out_path,

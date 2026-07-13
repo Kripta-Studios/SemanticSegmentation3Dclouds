@@ -17,6 +17,12 @@ def _empty_metrics(labels: list[int], prediction_labels: list[int]) -> dict:
         "weighted_f1": 0.0,
         "macro_iou": 0.0,
         "mIoU": 0.0,
+        "balanced_accuracy": 0.0,
+        "coverage": 0.0,
+        "ignored_prediction_rate": 0.0,
+        "predicted_ignore_count": 0,
+        "evaluated_points": 0,
+        "ignored_target_points": 0,
         "class_precision": {},
         "class_recall": {},
         "class_f1": {},
@@ -100,10 +106,14 @@ def compute_segmentation_metrics(preds, targets, num_classes: int = 7, ignore_in
     class_support = {label: int(value) for label, value in zip(labels, support_arr)}
     class_iou = {label: float(value) for label, value in zip(labels, iou_arr)}
     macro_iou = float(np.mean(iou_arr))
+    predicted_ignore_count = int(np.sum(preds_valid == ignore_index))
+    evaluated_points = int(targets_valid.size)
+    coverage = float(1.0 - predicted_ignore_count / evaluated_points) if evaluated_points else 0.0
 
     return {
         "OA": float(np.mean(preds_valid == targets_valid)),
         "AA": float(np.mean(recall_arr)),
+        "balanced_accuracy": float(np.mean(recall_arr)),
         "macro_f1": float(macro_f1),
         "macro_F1": float(macro_f1),
         "weighted_f1": float(weighted_f1),
@@ -119,6 +129,10 @@ def compute_segmentation_metrics(preds, targets, num_classes: int = 7, ignore_in
         "confusion_matrix": cm.tolist(),
         "confusion_matrix_true_labels": labels,
         "confusion_matrix_prediction_labels": prediction_labels,
-        "predicted_ignore_count": int(np.sum(preds_valid == ignore_index)),
+        "coverage": coverage,
+        "ignored_prediction_rate": float(1.0 - coverage),
+        "predicted_ignore_count": predicted_ignore_count,
+        "evaluated_points": evaluated_points,
+        "ignored_target_points": int(np.sum(~mask)),
         "metric_protocol_version": METRIC_PROTOCOL_VERSION,
     }

@@ -44,6 +44,32 @@ PNOA_FEATURE_SCHEMA = FeatureSchema(
 )
 
 
+def canonical_pnoa_features(block: dict) -> "torch.Tensor":
+    """Validate and reorder a block's physical channels by semantic name."""
+
+    import torch
+
+    features = torch.as_tensor(block.get("features_original", block["features"]))
+    names = block.get("feature_names")
+    schema = block.get("feature_schema")
+    if names is None and isinstance(schema, dict):
+        names = schema.get("names")
+    version = block.get("feature_schema_version")
+    if version is None and isinstance(schema, dict):
+        version = schema.get("version")
+    if version != PNOA_FEATURE_SCHEMA.version:
+        raise ValueError(
+            f"Unknown PNOA feature schema version {version!r}; expected {PNOA_FEATURE_SCHEMA.version!r}"
+        )
+    names = [str(name) for name in (names or [])]
+    if features.ndim != 2 or features.shape[1] != len(names):
+        raise ValueError(f"PNOA feature names/tensor dimension mismatch: names={len(names)}, shape={tuple(features.shape)}")
+    if set(names) != set(PNOA_FEATURE_SCHEMA.names) or len(names) != len(PNOA_FEATURE_SCHEMA.names):
+        raise ValueError(f"PNOA feature names do not match the canonical schema: {names}")
+    indices = [names.index(name) for name in PNOA_FEATURE_SCHEMA.names]
+    return features[:, indices].float()
+
+
 def tile_id_from_col(path: Path) -> str:
     return path.stem
 

@@ -15,7 +15,7 @@ from tqdm import tqdm
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scripts.train_common import infer_channel_layout, save_json
-from src.data.classes import IGNORE_INDEX
+from src.data.classes import IGNORE_INDEX, TRAINABLE_CLASS_COUNT, validate_num_output_classes
 from src.data.segmentation_dataset import SegmentationBlockDataset, segmentation_collate_fn
 from src.eval.segmentation_metrics import compute_segmentation_metrics
 from src.models.segmentation.heads import GatedExternalPointSegmentationNet, PointSegmentationNet
@@ -44,8 +44,8 @@ def build_model(config: dict, channel_layout: dict) -> torch.nn.Module:
     embed_dim = int(config.get("embed_dim", 256))
     dropout = float(config.get("dropout", 0.2))
     probe_type = config.get("probe_type", "mlp")
-    # Old run configs predate the target-only ignore contract and have 7 logits.
-    num_output_classes = int(config.get("num_output_classes", 7))
+    num_output_classes = int(config.get("num_output_classes", TRAINABLE_CLASS_COUNT))
+    validate_num_output_classes(num_output_classes)
     if model_type == "pointnet2_lite":
         return PointNet2LiteSegmentationNet(
             in_channels=channel_layout["in_channels"],
@@ -91,7 +91,12 @@ def evaluate(model, loader, device: torch.device) -> dict:
         labels_all.append(labels.reshape(-1).cpu())
     preds = torch.cat(preds_all)
     labels = torch.cat(labels_all)
-    return compute_segmentation_metrics(preds, labels, num_classes=7, ignore_index=IGNORE_INDEX)
+    return compute_segmentation_metrics(
+        preds,
+        labels,
+        num_classes=TRAINABLE_CLASS_COUNT,
+        ignore_index=IGNORE_INDEX,
+    )
 
 
 def write_reports(out: Path, metrics: dict, run_config: dict) -> None:
@@ -153,8 +158,10 @@ def main() -> None:
     parser.add_argument("--batch-size", type=int, default=24)
     parser.add_argument("--num-workers", type=int, default=4)
     parser.add_argument("--use-tw-input", action="store_true")
+    parser.add_argument("--base-feature-dir", default="")
+    parser.add_argument("--base-feature-key", default="geom_features")
     parser.add_argument("--external-feature-dir", default="")
-    parser.add_argument("--external-feature-key", default="geom_features")
+    parser.add_argument("--external-feature-key", default="dino_features")
     parser.add_argument("--coordinate-normalization", choices=["", "none", "xy_unit_z_robust"], default="")
     parser.add_argument("--spectral-normalization", choices=["", "none", "block_robust"], default="")
     parser.add_argument("--external-feature-normalization", choices=["", "none", "block_robust", "spectral_block_robust"], default="")
@@ -166,8 +173,10 @@ def main() -> None:
     if not train_config:
         raise SystemExit(f"No run_config.json/config.json found in {model_dir}")
     use_tw = bool(args.use_tw_input or train_config.get("use_tw_input", False))
+    base_dir = args.base_feature_dir or train_config.get("base_feature_dir", "")
+    base_key = args.base_feature_key or train_config.get("base_feature_key", "geom_features")
     external_dir = args.external_feature_dir or train_config.get("external_feature_dir", "")
-    external_key = args.external_feature_key or train_config.get("external_feature_key", "geom_features")
+    external_key = args.external_feature_key or train_config.get("external_feature_key", "dino_features")
     coordinate_normalization = args.coordinate_normalization or train_config.get("coordinate_normalization", "none")
     spectral_normalization = args.spectral_normalization or train_config.get("spectral_normalization", "none")
     external_feature_normalization = args.external_feature_normalization or train_config.get("external_feature_normalization", "none")
@@ -182,6 +191,8 @@ def main() -> None:
     channel_layout = infer_channel_layout(
         split_dir,
         use_tw_input=use_tw,
+        base_feature_dir=base_dir,
+        base_feature_key=base_key,
         external_feature_dir=external_dir,
         external_feature_key=external_key,
     )
@@ -193,6 +204,8 @@ def main() -> None:
         split_dir,
         max_blocks=args.max_blocks,
         use_tw_input=use_tw,
+        base_feature_dir=base_dir or None,
+        base_feature_key=base_key,
         external_feature_dir=external_dir or None,
         external_feature_key=external_key,
         coordinate_normalization=coordinate_normalization,
@@ -218,6 +231,8 @@ def main() -> None:
         "data_root": args.data,
         "split": args.split,
         "use_tw_input": use_tw,
+        "base_feature_dir": base_dir,
+        "base_feature_key": base_key,
         "external_feature_dir": external_dir,
         "external_feature_key": external_key,
         "coordinate_normalization": coordinate_normalization,

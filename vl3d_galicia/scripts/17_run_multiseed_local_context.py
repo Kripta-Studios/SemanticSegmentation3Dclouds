@@ -104,7 +104,8 @@ def write_summary(path: Path, rows: list[dict]) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run the best medium local-context model with multiple seeds.")
     parser.add_argument("--python", default=sys.executable)
-    parser.add_argument("--seeds", type=parse_seeds, default=parse_seeds("42,1337,2026"))
+    parser.add_argument("--seeds", type=parse_seeds, default=parse_seeds("7,13,21"))
+    parser.add_argument("--data-selection-seed", type=int, default=20260714)
     parser.add_argument("--data", default="data/processed/galicia_blocks_medium_tw")
     parser.add_argument("--feature-dir", default="data/processed/galicia_blocks_medium_geom_context")
     parser.add_argument("--out-root", default="outputs/local_context_multiseed")
@@ -123,7 +124,7 @@ def main() -> None:
     started = time.perf_counter()
 
     for seed in args.seeds:
-        exp_dir = out_root / f"geom_concat_h256_balancedval_seed{seed}"
+        exp_dir = out_root / f"geom_concat_h256_labelblindval_seed{seed}"
         complete = exp_dir / "training_complete.json"
         if complete.exists() and not args.force:
             print(f"Skipping completed seed {seed}: {complete}", flush=True)
@@ -158,6 +159,8 @@ def main() -> None:
             "0.15",
             "--seed",
             str(seed),
+            "--data-selection-seed",
+            str(args.data_selection_seed),
             "--class-weight-mode",
             "inverse_sqrt",
             "--max-class-weight",
@@ -184,7 +187,7 @@ def main() -> None:
             "--train-block-selection",
             "class_balanced",
             "--val-block-selection",
-            "class_balanced",
+            "random",
         ]
         if args.force:
             cmd.append("--no-resume")
