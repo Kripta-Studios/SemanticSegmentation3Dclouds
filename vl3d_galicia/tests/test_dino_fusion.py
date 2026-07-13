@@ -40,6 +40,7 @@ def _toy_block(n: int = 32) -> dict:
         "features": features,
         "feature_names": list(PNOA_FEATURE_SCHEMA.names),
         "feature_schema": PNOA_FEATURE_SCHEMA.as_dict(),
+        "feature_schema_version": PNOA_FEATURE_SCHEMA.version,
         "labels": labels.long(),
         "reliable_mask": torch.ones(n, dtype=torch.bool),
         "tw_features": tw,
@@ -73,6 +74,30 @@ def test_segmentation_dataset_external_features(tmp_path: Path):
     item = ds[0]
     expected = 3 + 5 + 25 + 7
     assert item["features"].shape == (10, expected)
+
+
+def test_geom_base_then_dino_external_channel_order(tmp_path: Path):
+    data_root = tmp_path / "blocks"
+    geom_root = tmp_path / "geom"
+    dino_root = tmp_path / "dino"
+    for root in (data_root, geom_root, dino_root):
+        (root / "train").mkdir(parents=True)
+    block = _toy_block(10)
+    torch.save(block, data_root / "train" / "tile_000.pt")
+    (geom_root / "feature_config.json").write_text(json.dumps({"feature_schema_sha256": "geom"}), encoding="utf-8")
+    (dino_root / "feature_config.json").write_text(json.dumps({"feature_schema_sha256": "dino"}), encoding="utf-8")
+    torch.save({"geom_features": torch.full((10, 5), 2.0), "feature_schema_sha256": "geom"}, geom_root / "train" / "tile_000.pt")
+    torch.save({"dino_features": torch.full((10, 7), 3.0), "feature_schema_sha256": "dino"}, dino_root / "train" / "tile_000.pt")
+    ds = SegmentationBlockDataset(
+        str(data_root / "train"),
+        use_tw_input=True,
+        base_feature_dir=str(geom_root),
+        external_feature_dir=str(dino_root),
+    )
+    features = ds[0]["features"]
+    assert features.shape[1] == 3 + 5 + 25 + 5 + 7
+    assert torch.all(features[:, -12:-7] == 2.0)
+    assert torch.all(features[:, -7:] == 3.0)
 
 
 def test_external_payload_schema_hash_mismatch_fails_closed(tmp_path: Path):
@@ -201,3 +226,107 @@ def test_dino_raster_fails_when_semantic_channels_are_missing():
         assert "missing required PNOA channels" in str(exc)
     else:
         raise AssertionError("missing NIR channel must fail")
+
+
+def test_dino_raster_rejects_unknown_channel_schema():
+    block = _toy_block(4)
+    block["feature_schema_version"] = "unknown-v99"
+    block["feature_schema"] = {"version": "unknown-v99", "names": block["feature_names"]}
+    try:
+        make_multichannel_raster(block, grid_size=2, tw_channels=0)
+    except ValueError as exc:
+        assert "Unknown PNOA feature schema" in str(exc)
+    else:
+        raise AssertionError("unknown channel schemas must fail closed")
+
+
+def test_hf_dinov3_register_tokens_are_not_reshaped_as_patches():
+    class Config:
+        patch_size = 2
+        num_register_tokens = 4
+
+    class DummyModel(torch.nn.Module):
+        config = Config()
+
+        def __init__(self):
+            super().__init__()
+            self.weight = torch.nn.Parameter(torch.zeros(1))
+
+        def forward(self, **kwargs):
+            # CLS=-1, registers=-2, four spatial patch values=0..3.
+            values = torch.tensor([-1, -2, -2, -2, -2, 0, 1, 2, 3], dtype=torch.float32)
+            return type("Output", (), {"last_hidden_state": values.view(1, 9, 1)})()
+
+    extractor = DinoDenseExtractor.__new__(DinoDenseExtractor)
+    extractor.real_backend = "hf"
+    extractor.model = DummyModel()
+    extractor.device = torch.device("cpu")
+    extractor.normalize = "imagenet"
+    extractor.model_name = "facebook/dinov3-vit-test"
+    feature_map = extractor.image_feature_map(torch.zeros(3, 4, 4))
+    assert feature_map.shape == (1, 2, 2)
+    assert torch.equal(feature_map.flatten(), torch.arange(4, dtype=torch.float32))
+
+
+def test_multiview_rasters_change_projection_and_preserve_point_mapping():
+    block = _toy_block(40)
+    top = make_multichannel_raster(block, grid_size=16, tw_channels=0, projection_view="top_xy")
+    side = make_multichannel_raster(block, grid_size=16, tw_channels=0, projection_view="side_xz")
+    assert top.point_cells.shape == side.point_cells.shape == (40, 2)
+    assert not torch.equal(top.point_cells, side.point_cells)
+
+
+def test_multiview_mean_keeps_parameter_matched_feature_dimension():
+    builder = _load_script("scripts/14_build_dino_features.py", "dino_builder_multiview_schema_test")
+    extractor = DinoDenseExtractor(backend="stat", device="cpu")
+    views = ("top_xy", "side_xz", "side_yz")
+    concat = builder.external_feature_schema(
+        extractor, 16, "rgb", 0, 12, 13, False, projection_views=views, view_fusion="concat"
+    )
+    mean = builder.external_feature_schema(
+        extractor, 16, "rgb", 0, 12, 13, False, projection_views=views, view_fusion="mean"
+    )
+    assert concat["feature_dim"] == 36
+    assert mean["feature_dim"] == 12
+    assert concat["sha256"] != mean["sha256"]
+
+
+def test_dino_cache_schema_changes_with_split_or_checkpoint(tmp_path: Path):
+    builder = _load_script("scripts/14_build_dino_features.py", "dino_builder_provenance_test")
+
+    class Config:
+        patch_size = 16
+        hidden_size = 32
+        num_register_tokens = 4
+
+    class DummyModel(torch.nn.Module):
+        config = Config()
+
+        def __init__(self):
+            super().__init__()
+            self.weight = torch.nn.Parameter(torch.zeros(1))
+
+    config_path = tmp_path / "config.json"
+    config_path.write_text("{}", encoding="utf-8")
+    weights_a = tmp_path / "a.safetensors"
+    weights_b = tmp_path / "b.safetensors"
+    weights_a.write_bytes(b"checkpoint-a")
+    weights_b.write_bytes(b"checkpoint-b")
+    extractor = DinoDenseExtractor.__new__(DinoDenseExtractor)
+    extractor.backend = "hf"
+    extractor.requested_model_name = "facebook/dinov3-test"
+    extractor.model_name = "facebook/dinov3-test"
+    extractor.real_backend = "hf"
+    extractor.model = DummyModel()
+    extractor.model_source = tmp_path
+    extractor.hf_repo_id = "facebook/dinov3-test"
+    extractor.hf_revision = "rev-a"
+    extractor.normalize = "imagenet"
+    extractor.weights = str(weights_a)
+    schema_a = builder.external_feature_schema(extractor, 16, "rgb", 0, 8, 13, False, split_hash="split-a")
+    schema_split = builder.external_feature_schema(extractor, 16, "rgb", 0, 8, 13, False, split_hash="split-b")
+    extractor.weights = str(weights_b)
+    schema_checkpoint = builder.external_feature_schema(extractor, 16, "rgb", 0, 8, 13, False, split_hash="split-a")
+    assert schema_a["sha256"] != schema_split["sha256"]
+    assert schema_a["sha256"] != schema_checkpoint["sha256"]
+    assert schema_a["checkpoint_sha256"] != schema_checkpoint["checkpoint_sha256"]
