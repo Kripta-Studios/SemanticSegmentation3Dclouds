@@ -181,10 +181,13 @@ def test_dinov2_loader_uses_the_declared_local_checkpoint(monkeypatch, tmp_path:
         model_name="dinov2_vits14",
         repo_dir=str(tmp_path / "repo"),
         weights=str(weights),
+        hf_repo_id="facebookresearch/dinov2",
         device="cpu",
         dtype="float32",
     )
     assert extractor.uses_real_dino
+    assert extractor.requested_model_name == "dinov2_vits14"
+    assert extractor.hf_repo_id == "facebookresearch/dinov2"
     assert captured["weights"] == str(weights)
     assert captured["repo_or_dir"] == str(tmp_path / "repo")
     assert captured["source"] == "local"
