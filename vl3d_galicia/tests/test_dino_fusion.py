@@ -161,6 +161,35 @@ def test_auto_backend_never_substitutes_backbone_family():
     assert dino2._backend_candidates() == ["dinov2"]
 
 
+def test_dinov2_loader_uses_the_declared_local_checkpoint(monkeypatch, tmp_path: Path):
+    weights = tmp_path / "dinov2.pth"
+    weights.write_bytes(b"declared checkpoint")
+    captured = {}
+
+    class DummyModel(torch.nn.Module):
+        def __init__(self):
+            super().__init__()
+            self.weight = torch.nn.Parameter(torch.zeros(1))
+
+    def fake_load(repo_or_dir, name, **kwargs):
+        captured.update({"repo_or_dir": repo_or_dir, "name": name, **kwargs})
+        return DummyModel()
+
+    monkeypatch.setattr(torch.hub, "load", fake_load)
+    extractor = DinoDenseExtractor(
+        backend="dinov2",
+        model_name="dinov2_vits14",
+        repo_dir=str(tmp_path / "repo"),
+        weights=str(weights),
+        device="cpu",
+        dtype="float32",
+    )
+    assert extractor.uses_real_dino
+    assert captured["weights"] == str(weights)
+    assert captured["repo_or_dir"] == str(tmp_path / "repo")
+    assert captured["source"] == "local"
+
+
 def test_gated_external_segmentation_backward_smoke():
     torch.manual_seed(17)
     model = GatedExternalPointSegmentationNet(
