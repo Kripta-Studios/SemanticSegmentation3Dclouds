@@ -240,7 +240,10 @@ class DinoDenseExtractor:
         self.backend = backend
         self.hf_repo_id = hf_repo_id
         self.hf_revision = hf_revision
-        self.requested_model_name = hf_repo_id or model_name
+        # A Hugging Face repository ID is provenance, not necessarily a
+        # torch-hub architecture name. Only HF loading uses it as the requested
+        # backbone identity; DINOv2 must keep names such as dinov2_vits14.
+        self.requested_model_name = hf_repo_id if backend in {"hf", "auto"} and hf_repo_id else model_name
         self.model_name = self.requested_model_name
         env_model_path = os.environ.get("DINOV3_MODEL_PATH")
         self.model_source = env_model_path if env_model_path and "dinov3" in self.requested_model_name.lower() else model_name
