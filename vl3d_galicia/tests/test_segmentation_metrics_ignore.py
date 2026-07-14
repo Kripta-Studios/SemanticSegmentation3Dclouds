@@ -45,3 +45,11 @@ def test_seven_trainable_logits_are_rejected():
     with pytest.raises(ValueError, match="target-only"):
         validate_num_output_classes(7)
     assert validate_num_output_classes(6) == 6
+
+
+def test_six_logit_predictions_keep_the_auditable_ignore_column():
+    metrics = compute_segmentation_metrics([0, 1, 2, 3, 4, 5], [0, 1, 2, 3, 4, 5], num_classes=7, ignore_index=6)
+    assert len(metrics["confusion_matrix"]) == 6
+    assert all(len(row) == 7 for row in metrics["confusion_matrix"])
+    assert all(row[6] == 0 for row in metrics["confusion_matrix"])
+    assert metrics["coverage"] == pytest.approx(1.0)
