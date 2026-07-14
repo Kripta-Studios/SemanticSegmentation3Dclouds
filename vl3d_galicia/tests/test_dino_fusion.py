@@ -287,7 +287,8 @@ def test_hf_dinov3_register_tokens_are_not_reshaped_as_patches():
         def forward(self, **kwargs):
             # CLS=-1, registers=-2, four spatial patch values=0..3.
             values = torch.tensor([-1, -2, -2, -2, -2, 0, 1, 2, 3], dtype=torch.float32)
-            return type("Output", (), {"last_hidden_state": values.view(1, 9, 1)})()
+            batch = kwargs["pixel_values"].shape[0]
+            return type("Output", (), {"last_hidden_state": values.view(1, 9, 1).repeat(batch, 1, 1)})()
 
     extractor = DinoDenseExtractor.__new__(DinoDenseExtractor)
     extractor.real_backend = "hf"
@@ -298,6 +299,9 @@ def test_hf_dinov3_register_tokens_are_not_reshaped_as_patches():
     feature_map = extractor.image_feature_map(torch.zeros(3, 4, 4))
     assert feature_map.shape == (1, 2, 2)
     assert torch.equal(feature_map.flatten(), torch.arange(4, dtype=torch.float32))
+    feature_maps = extractor.image_feature_maps(torch.zeros(3, 3, 4, 4))
+    assert feature_maps.shape == (3, 1, 2, 2)
+    assert torch.equal(feature_maps[2].flatten(), torch.arange(4, dtype=torch.float32))
 
 
 def test_multiview_rasters_change_projection_and_preserve_point_mapping():
