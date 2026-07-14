@@ -6,7 +6,7 @@ from src.eval.segmentation_metrics import METRIC_PROTOCOL_VERSION, compute_segme
 
 
 def test_prediction_ignore_is_a_false_negative_for_valid_target():
-    metrics = compute_segmentation_metrics([6, 1], [0, 1], num_classes=7, ignore_index=6)
+    metrics = compute_segmentation_metrics([6, 1], [0, 1], num_classes=6, ignore_index=6)
 
     assert metrics["OA"] == pytest.approx(0.5)
     assert metrics["class_iou"][0] == pytest.approx(0.0)
@@ -20,7 +20,7 @@ def test_prediction_ignore_is_a_false_negative_for_valid_target():
 
 
 def test_target_ignore_is_excluded_but_prediction_ignore_is_not():
-    metrics = compute_segmentation_metrics([0, 6, 2], [6, 1, 2], num_classes=7, ignore_index=6)
+    metrics = compute_segmentation_metrics([0, 6, 2], [6, 1, 2], num_classes=6, ignore_index=6)
 
     assert metrics["OA"] == pytest.approx(0.5)
     assert sum(sum(row) for row in metrics["confusion_matrix"]) == 2
@@ -29,12 +29,12 @@ def test_target_ignore_is_excluded_but_prediction_ignore_is_not():
 
 def test_out_of_schema_predictions_fail_loudly():
     with pytest.raises(ValueError, match="outside the declared schema"):
-        compute_segmentation_metrics([7], [0], num_classes=7, ignore_index=6)
+        compute_segmentation_metrics([7], [0], num_classes=6, ignore_index=6)
 
 
 def test_miou_cannot_improve_by_hiding_an_error_as_ignore():
-    hidden = compute_segmentation_metrics([6, 1, 2, 3, 4, 5], [0, 1, 2, 3, 4, 5], num_classes=7, ignore_index=6)
-    incorrectly_filtered = compute_segmentation_metrics([1, 2, 3, 4, 5], [1, 2, 3, 4, 5], num_classes=7, ignore_index=6)
+    hidden = compute_segmentation_metrics([6, 1, 2, 3, 4, 5], [0, 1, 2, 3, 4, 5], num_classes=6, ignore_index=6)
+    incorrectly_filtered = compute_segmentation_metrics([1, 2, 3, 4, 5], [1, 2, 3, 4, 5], num_classes=6, ignore_index=6)
     assert hidden["mIoU"] <= incorrectly_filtered["mIoU"]
     assert hidden["class_iou"][0] == pytest.approx(0.0)
 
@@ -48,7 +48,7 @@ def test_seven_trainable_logits_are_rejected():
 
 
 def test_six_logit_predictions_keep_the_auditable_ignore_column():
-    metrics = compute_segmentation_metrics([0, 1, 2, 3, 4, 5], [0, 1, 2, 3, 4, 5], num_classes=7, ignore_index=6)
+    metrics = compute_segmentation_metrics([0, 1, 2, 3, 4, 5], [0, 1, 2, 3, 4, 5], num_classes=6, ignore_index=6)
     assert len(metrics["confusion_matrix"]) == 6
     assert all(len(row) == 7 for row in metrics["confusion_matrix"])
     assert all(row[6] == 0 for row in metrics["confusion_matrix"])

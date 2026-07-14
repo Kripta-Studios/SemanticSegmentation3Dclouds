@@ -48,7 +48,7 @@ def test_phase5_metrics():
     # Inject some ignore indices
     targets[0:10] = 6
     
-    metrics = compute_segmentation_metrics(preds, targets, num_classes=7, ignore_index=6)
+    metrics = compute_segmentation_metrics(preds, targets, num_classes=6, ignore_index=6)
     
     assert 'macro_f1' in metrics
     assert 'class_f1' in metrics

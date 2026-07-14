@@ -10,7 +10,7 @@ class PointSegmentationNet(nn.Module):
     def __init__(
         self,
         in_channels: int,
-        num_classes: int = 7,
+        num_classes: int = 6,
         hidden_dim: int = 192,
         embed_dim: int = 256,
         dropout: float = 0.2,
@@ -96,7 +96,7 @@ class GatedExternalPointSegmentationNet(nn.Module):
         self,
         base_in_channels: int,
         external_in_channels: int,
-        num_classes: int = 7,
+        num_classes: int = 6,
         hidden_dim: int = 192,
         embed_dim: int = 256,
         dropout: float = 0.2,

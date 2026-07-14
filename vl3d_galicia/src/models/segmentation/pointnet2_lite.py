@@ -32,7 +32,7 @@ class PointNet2LiteSegmentationNet(nn.Module):
     def __init__(
         self,
         in_channels: int,
-        num_classes: int = 7,
+        num_classes: int = 6,
         hidden_dim: int = 160,
         embed_dim: int = 256,
         dropout: float = 0.2,

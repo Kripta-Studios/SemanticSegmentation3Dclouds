@@ -175,7 +175,7 @@ class SegmentationTrainer:
         metrics = compute_segmentation_metrics(
             preds_cat,
             labels_cat,
-            num_classes=7,
+            num_classes=6,
             ignore_index=self.ignore_index,
         )
         if return_predictions:

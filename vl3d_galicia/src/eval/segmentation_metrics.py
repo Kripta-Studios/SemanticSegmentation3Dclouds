@@ -37,7 +37,7 @@ def _empty_metrics(labels: list[int], prediction_labels: list[int]) -> dict:
     }
 
 
-def compute_segmentation_metrics(preds, targets, num_classes: int = 7, ignore_index: int = 6):
+def compute_segmentation_metrics(preds, targets, num_classes: int = 6, ignore_index: int = 6):
     """Compute metrics while ignoring only *target* ignore labels.
 
     A prediction equal to ``ignore_index`` for a valid target remains an error and
@@ -57,6 +57,8 @@ def compute_segmentation_metrics(preds, targets, num_classes: int = 7, ignore_in
 
     labels = [idx for idx in range(num_classes) if idx != ignore_index]
     prediction_labels = list(range(num_classes))
+    if ignore_index not in prediction_labels:
+        prediction_labels.append(ignore_index)
     mask = targets != ignore_index
     preds_valid = preds[mask].astype(np.int64, copy=False)
     targets_valid = targets[mask].astype(np.int64, copy=False)
