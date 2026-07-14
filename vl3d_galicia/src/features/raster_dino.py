@@ -340,7 +340,10 @@ class DinoDenseExtractor:
         raise RuntimeError("Could not load a DINO backend. Tried: " + " | ".join(errors))
 
     def _normalize_image(self, image: torch.Tensor) -> torch.Tensor:
-        batch = image.unsqueeze(0).float().to(self.device)
+        batch = image.unsqueeze(0) if image.ndim == 3 else image
+        if batch.ndim != 4:
+            raise ValueError(f"Expected CHW or BCHW image tensor, got {tuple(image.shape)}")
+        batch = batch.float().to(self.device)
         if self.normalize == "sat493m" or "sat493m" in self.model_name.lower():
             mean, std = SAT493M_MEAN.to(self.device), SAT493M_STD.to(self.device)
         else:
@@ -374,10 +377,11 @@ class DinoDenseExtractor:
         return None
 
     @torch.inference_mode()
-    def image_feature_map(self, image: torch.Tensor) -> torch.Tensor:
+    def image_feature_maps(self, images: torch.Tensor) -> torch.Tensor:
         if self.real_backend == "stat":
             raise RuntimeError("Stat backend does not expose DINO image features")
-        pixels = self._normalize_image(image)
+        pixels = self._normalize_image(images)
+        image_h, image_w = int(pixels.shape[-2]), int(pixels.shape[-1])
         if self.real_backend == "hf":
             outputs = self.model(
                 pixel_values=pixels,
@@ -387,8 +391,8 @@ class DinoDenseExtractor:
             tokens = outputs.last_hidden_state
             patch = int(getattr(self.model.config, "patch_size", 16) or 16)
             register_tokens = int(getattr(self.model.config, "num_register_tokens", 0) or 0)
-            h = max(int(image.shape[1]) // patch, 1)
-            w = max(int(image.shape[2]) // patch, 1)
+            h = max(image_h // patch, 1)
+            w = max(image_w // patch, 1)
             prefix_tokens = 1 + register_tokens
             expected = prefix_tokens + h * w
             if tokens.shape[1] != expected:
@@ -397,7 +401,7 @@ class DinoDenseExtractor:
                     f"got {tokens.shape[1]}, expected CLS(1)+register({register_tokens})+patches({h * w})"
                 )
             patch_tokens = tokens[:, prefix_tokens:, :]
-            return patch_tokens.reshape(1, h, w, -1).permute(0, 3, 1, 2).squeeze(0).cpu()
+            return patch_tokens.reshape(pixels.shape[0], h, w, -1).permute(0, 3, 1, 2).cpu()
         if self.real_backend in {"torchhub", "dinov2"}:
             if hasattr(self.model, "forward_features"):
                 out = self.model.forward_features(pixels)
@@ -405,14 +409,14 @@ class DinoDenseExtractor:
                     tokens = self._first_tensor(out, ("x_norm_patchtokens", "patchtokens", "tokens"))
                     if tokens is not None:
                         h = w = int(tokens.shape[1] ** 0.5)
-                        return tokens[:, : h * w, :].reshape(1, h, w, -1).permute(0, 3, 1, 2).squeeze(0).cpu()
+                        return tokens[:, : h * w, :].reshape(tokens.shape[0], h, w, -1).permute(0, 3, 1, 2).cpu()
             out = self.model(pixels)
             if isinstance(out, torch.Tensor) and out.ndim == 4:
-                return out.squeeze(0).cpu()
+                return out.cpu()
             if isinstance(out, torch.Tensor) and out.ndim == 3:
                 tokens = out[:, 1:, :] if out.shape[1] > 1 else out
                 h = w = int(tokens.shape[1] ** 0.5)
-                return tokens[:, : h * w, :].reshape(1, h, w, -1).permute(0, 3, 1, 2).squeeze(0).cpu()
+                return tokens[:, : h * w, :].reshape(tokens.shape[0], h, w, -1).permute(0, 3, 1, 2).cpu()
             raise RuntimeError("Unsupported torchhub DINO output shape")
         if self.real_backend == "timm":
             if hasattr(self.model, "forward_features"):
@@ -422,13 +426,58 @@ class DinoDenseExtractor:
             if isinstance(out, dict):
                 out = self._first_tensor(out, ("x_norm_patchtokens", "features", "last_hidden_state"))
             if isinstance(out, torch.Tensor) and out.ndim == 4:
-                return out.squeeze(0).cpu()
+                return out.cpu()
             if isinstance(out, torch.Tensor) and out.ndim == 3:
                 tokens = out[:, 1:, :] if out.shape[1] > 1 else out
                 h = w = int(tokens.shape[1] ** 0.5)
-                return tokens[:, : h * w, :].reshape(1, h, w, -1).permute(0, 3, 1, 2).squeeze(0).cpu()
+                return tokens[:, : h * w, :].reshape(tokens.shape[0], h, w, -1).permute(0, 3, 1, 2).cpu()
             raise RuntimeError("Unsupported timm DINO output shape")
         raise RuntimeError(f"Unsupported backend: {self.real_backend}")
+
+    @torch.inference_mode()
+    def image_feature_map(self, image: torch.Tensor) -> torch.Tensor:
+        return self.image_feature_maps(image)[0]
+
+    def _point_features_from_map(
+        self,
+        rasterized: RasterizedBlock,
+        fmap: torch.Tensor,
+        out_dim: int,
+        projection_seed: int,
+        include_stat_features: bool,
+    ) -> torch.Tensor:
+        fmap = F.interpolate(
+            fmap.unsqueeze(0),
+            size=(rasterized.raster.shape[1], rasterized.raster.shape[2]),
+            mode="bilinear",
+            align_corners=False,
+        ).squeeze(0)
+        features = sample_raster_at_points(fmap, rasterized.point_cells)
+        if include_stat_features:
+            features = torch.cat([features, stat_dense_features(rasterized.raster, rasterized.point_cells)], dim=1)
+        features = normalize_features(features.float())
+        return deterministic_projection(features, int(out_dim), seed=int(projection_seed))
+
+    def point_features_batch(
+        self,
+        rasterized_blocks: list[RasterizedBlock],
+        out_dim: int = 64,
+        projection_seed: int = 13,
+        include_stat_features: bool = True,
+    ) -> list[torch.Tensor]:
+        if not rasterized_blocks:
+            return []
+        if self.real_backend == "stat":
+            return [
+                self.point_features(item, out_dim, projection_seed, include_stat_features)
+                for item in rasterized_blocks
+            ]
+        images = torch.stack([item.image for item in rasterized_blocks], dim=0)
+        maps = self.image_feature_maps(images)
+        return [
+            self._point_features_from_map(item, fmap, out_dim, projection_seed, include_stat_features)
+            for item, fmap in zip(rasterized_blocks, maps, strict=True)
+        ]
 
     def point_features(
         self,
@@ -441,14 +490,12 @@ class DinoDenseExtractor:
             features = stat_dense_features(rasterized.raster, rasterized.point_cells)
         else:
             fmap = self.image_feature_map(rasterized.image)
-            fmap = F.interpolate(
-                fmap.unsqueeze(0),
-                size=(rasterized.raster.shape[1], rasterized.raster.shape[2]),
-                mode="bilinear",
-                align_corners=False,
-            ).squeeze(0)
-            features = sample_raster_at_points(fmap, rasterized.point_cells)
-            if include_stat_features:
-                features = torch.cat([features, stat_dense_features(rasterized.raster, rasterized.point_cells)], dim=1)
+            return self._point_features_from_map(
+                rasterized,
+                fmap,
+                out_dim=out_dim,
+                projection_seed=projection_seed,
+                include_stat_features=include_stat_features,
+            )
         features = normalize_features(features.float())
         return deterministic_projection(features, int(out_dim), seed=int(projection_seed))

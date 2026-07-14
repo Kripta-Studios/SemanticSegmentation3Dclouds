@@ -201,7 +201,7 @@ def build_one(
             f"Block split hash mismatch for {path}: expected {split_hash}, got {block_split_hash}. "
             "Do not build DINO caches on unvalidated blocks."
         )
-    feature_parts = []
+    rasterized_views = []
     raster_digest = hashlib.sha256()
     raster_channels: list[str] = []
     for view_index, projection_view in enumerate(projection_views):
@@ -221,17 +221,15 @@ def build_one(
         raster_digest.update(projection_view.encode("utf-8"))
         raster_digest.update(rasterized.image.contiguous().numpy().tobytes())
         raster_channels = rasterized.channel_names
-        feature_parts.append(
-            extractor.point_features(
-                rasterized,
-                out_dim=out_dim,
-                # Mean fusion requires a shared projection basis. Keeping that
-                # basis for concatenation too makes the per-view channels
-                # directly comparable in multiview ablations.
-                projection_seed=projection_seed,
-                include_stat_features=include_stat_features,
-            )
-        )
+        rasterized_views.append(rasterized)
+    feature_parts = extractor.point_features_batch(
+        rasterized_views,
+        out_dim=out_dim,
+        # Mean fusion requires a shared projection basis. Keeping that basis
+        # for concatenation makes per-view channels directly comparable too.
+        projection_seed=projection_seed,
+        include_stat_features=include_stat_features,
+    )
     if view_fusion == "concat":
         features = torch.cat(feature_parts, dim=1)
         feature_names = [
