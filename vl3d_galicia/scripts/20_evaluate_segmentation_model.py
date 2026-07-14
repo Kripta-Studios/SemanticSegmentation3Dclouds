@@ -94,7 +94,10 @@ def evaluate(model, loader, device: torch.device) -> dict:
     return compute_segmentation_metrics(
         preds,
         labels,
-        num_classes=TRAINABLE_CLASS_COUNT,
+        # The model has six logits, while the metric schema keeps a seventh
+        # prediction column for a possible abstain/ignore output. With ordinary
+        # six-logit checkpoints that column is present and correctly remains 0.
+        num_classes=IGNORE_INDEX + 1,
         ignore_index=IGNORE_INDEX,
     )
 

@@ -3,6 +3,8 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import shlex
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -291,6 +293,8 @@ def main() -> None:
     optimizer_groups, lr_info = segmentation_optimizer_groups(model, lr=lr, encoder_lr_scale=1.0)
     run_config = {
         "model_name": out.name,
+        "git_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
+        "command": " ".join(shlex.quote(item) for item in sys.argv),
         "experiment_type": "baseline_supervised",
         "data_root": data_root,
         "use_tw_input": use_tw,
