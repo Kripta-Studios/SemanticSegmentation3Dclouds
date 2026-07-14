@@ -283,7 +283,19 @@ class DinoDenseExtractor:
                     name = self.model_name
                     source = str(Path(self.repo_dir)) if self.repo_dir else "facebookresearch/dinov2"
                     kwargs = {"source": "local"} if self.repo_dir else {}
-                    self.model = torch.hub.load(source, name, **kwargs).to(self.device).eval()
+                    if self.weights:
+                        # DINOv2's hub entrypoint accepts a local path and loads
+                        # it strictly. Passing it here makes the checkpoint hash
+                        # recorded in the cache manifest the checkpoint actually
+                        # used by the model.
+                        kwargs["weights"] = self.weights
+                    self.model = torch.hub.load(source, name, **kwargs).to(self.device)
+                    model_dtype = {
+                        "float32": torch.float32,
+                        "float16": torch.float16,
+                        "bfloat16": torch.bfloat16,
+                    }[self.dtype]
+                    self.model = self.model.to(dtype=model_dtype).eval()
                     self.real_backend = "dinov2"
                     self.model_name = name
                     return
