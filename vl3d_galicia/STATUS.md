@@ -13,7 +13,7 @@ Fecha: 2026-07-13.
 | Bloques procesados | Bloqueado/ausente | `data/processed/galicia_blocks` no existe |
 | Cachés DINO antiguas | No encontradas | No se borró nada |
 | Pesos DINO reales | No encontrados localmente | Regeneración DINO bloqueada |
-| Entrenamientos 3 seeds | Pendientes | Requieren commit base, bloques y backbone real |
+| Entrenamientos 3 seeds | Ejecutándose | Implementado Early Stopping (patience=3) y fix numérico (LR=1e-4, fp16) |
 
 El único skip es `tests/test_prepare_tiles.py:12`: no hay `.pt` procesados y el
 test indica ejecutar `01_prepare_tiles.py`. Es un skip heredado condicionado a
